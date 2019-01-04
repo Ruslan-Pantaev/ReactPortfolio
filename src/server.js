@@ -28,18 +28,16 @@ app.post('/api/form', (req, res) => {
             port: 587,
             secure: false, // true for 465, false for other ports
             auth: {
-                user: keys.account, // generated ethereal user
-                pass: keys.password // generated ethereal password
+                user: keys.account,
+                pass: keys.password
             }
         });
 
         let mailOptions = {
             from: '"Contact-Portfolio" <contact@rpantaev.com>', // sender address
-            to: keys.account, // list of receivers
-            subject: 'New Message!', // Subject line
-            // text: 'Hello world?', // plain text body
-            html: htmlEmail, // html body
-            // replyTo: '"Fred Foo 👻" <foo@example.com>'
+            to: keys.account,
+            subject: 'New Message!',
+            html: htmlEmail, // email body
         };
         
         transporter.sendMail(mailOptions, (err, info) => {

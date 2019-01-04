@@ -132,7 +132,6 @@ class About extends Component {
                                     // opacity: 1
                                     }}
                             >
-                                {/* test */}
                                 <p>My name is Ruslan Pantaev and I'm an INTJ.  I grew up in Siberia and moved to NYC when I was six.
                                 My grandpa is a composer in Ulan-Ude and one of my passions is music.
                                 I studied Film Scoring at Berklee College of Music in Boston for two years.</p>
