@@ -1,0 +1,27 @@
+.footerClass {
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    height: 65px;
+    /* min-width: 389px; */
+    width: 100%;
+    background: transparent;
+  }
+
+  #footerLinks img {
+    text-align: center;
+    width: 45px;
+    height: 45px;
+    opacity: 0.5;
+    transition: 0.3s;
+    -webkit-box-reflect: below 0 -webkit-gradient(linear, left bottom, left top, from(rgba(255,255,255,0.25)), color-stop(0.9, transparent));
+  }
+  
+  #footerLinks img:hover {
+    opacity: 1;
+  }
+
+  #footerSig {
+    text-align: center;
+    -webkit-box-reflect: below 0 -webkit-gradient(linear, left bottom, left top, from(rgba(255,255,255,0.5)), color-stop(0.9, transparent));
+  }
