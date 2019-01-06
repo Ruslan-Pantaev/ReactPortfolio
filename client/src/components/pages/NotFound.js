@@ -33,7 +33,8 @@ class NotFound extends Component {
                         height: "100vmax",
                         margin: "auto",
                         position: "relative",
-                        backgroundImage: "radial-gradient(circle, #000000, #0a0909, #121111, #181717, #1d1c1c, #242222, #2b2929, #323030, #3d3b3b, #484545, #535151, #5f5c5c)"
+                        backgroundImage: "radial-gradient(circle, #4f4f4f, #494949, #434343, #3d3d3d, #373737, #313131, #2c2c2c, #262626, #1f1f1f, #181818, #111111, #060606)"
+                        // backgroundImage: "radial-gradient(circle, #000000, #0a0909, #121111, #181717, #1d1c1c, #242222, #2b2929, #323030, #3d3b3b, #484545, #535151, #5f5c5c)"
                     }}
                 >
                     <img
@@ -59,7 +60,7 @@ class NotFound extends Component {
                     <div style={{
                         // width:"100%",
                         position: "absolute",
-                        color: "#999",
+                        color: "#fff",
                         textAlign: "center",
                         fontFamily: "monospace",
                         // textAlignVertical: "center",
