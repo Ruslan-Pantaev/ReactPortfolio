@@ -94,7 +94,7 @@ class Landing extends Component {
                             <path fill="none" stroke="#ffffff" strokeWidth="1" d="M 100 300 A 50 50 0 1 1 400 100 A 50 50 0 1 1 700 300 L 400 600 L 100 300" />
 
                             {/* rp */}
-                            <path fill="none" stroke="#ffffff" strokeWidth="3" d="M 250 400 L 300 300 A 100 50 0 1 1 300 150 L 350 450 L 450 450 L 500 150 A 100 50 0 1 1 500 300" />
+                            <path fill="none" stroke="#be1a1a" strokeWidth="3" d="M 250 400 L 300 300 A 100 50 0 1 1 300 150 L 350 450 L 450 450 L 500 150 A 100 50 0 1 1 500 300" />
                         </Tween>
                         {/* </Controls> */}
                     </span>
