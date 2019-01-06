@@ -21,6 +21,7 @@ class About extends Component {
                     <ul>
                         <li><Link style={{color: '#aaeaff'}} to="/">Home</Link></li>
                         <li><Link style={{color: '#fff'}} to="/about">About</Link></li>
+                        <li><Link style={{color: '#aaeaff'}} to="/cv">CV</Link></li>
                         <li><Link style={{color: '#aaeaff'}} to="/projects">Projects</Link></li>
                         <li><Link style={{color: '#aaeaff'}} to="/contact">Contact</Link></li>
                     </ul>
@@ -32,7 +33,9 @@ class About extends Component {
                         height: "100vmax",
                         margin: "auto",
                         position: "relative",
-                        backgroundImage: "radial-gradient(circle, #09aaed, #09abf1, #0aadf4, #0baef8, #0eaffb, #05b4fd, #00b8fe, #00bdff, #03c6ff, #18ceff, #2dd6ff, #40deff)"
+                        backgroundImage: "radial-gradient(circle, #e0f8f8, #d9f6f6, #d3f4f4, #ccf1f2, #c5eff0, #beecef, #b8eaef, #b1e7ef, #aae4f0, #a3e0f1, #9edcf3, #99d8f4)"
+                        // backgroundImage: "radial-gradient(circle, #91fbff, #8af7fb, #82f3f8, #7af0f4, #72ecf1, #68e6ef, #5edfed, #54d9eb, #49cee9, #42c3e6, #40b7e1, #42acdc)"
+                        // backgroundImage: "radial-gradient(circle, #09aaed, #09abf1, #0aadf4, #0baef8, #0eaffb, #05b4fd, #00b8fe, #00bdff, #03c6ff, #18ceff, #2dd6ff, #40deff)"
                     }}
                 >
                     <img
@@ -52,13 +55,13 @@ class About extends Component {
                             // overflow: "auto",
                             // objectFit: "fill",
                             display: "inline-block",
-                            opacity: 0.08
+                            opacity: 0.1
                         }}
                     />
                     <div style={{
                         // width:"100%",
                         position: "absolute",
-                        color: "#fff",
+                        color: "#000",
                         textAlign: "center",
                         fontFamily: "monospace",
                         // fontFamily: "Helvetica Neue",
@@ -74,7 +77,7 @@ class About extends Component {
                         margin: "auto",
                         // display: "block",
                         opacity: 1
-                        }}>
+                    }}>
                         <Tween
                             from={{ y: '1000px', rotation: 0, scale: 0.01, opacity: 0 }}
                             to={{ y: '0px', rotation: 0, scale: 1, opacity: 1 }}
@@ -115,7 +118,7 @@ class About extends Component {
                                 style={{
                                     // width:"100%",
                                     position: "relative",
-                                    color: "#fff",
+                                    color: "#000",
                                     textAlign: "center",
                                     // textAlignVertical: "center",
                                     // display: "block",
@@ -130,6 +133,12 @@ class About extends Component {
                                     margin: "auto",
                                     // display: "block",
                                     // opacity: 1
+                                    backgroundColor: "rgba(181, 183, 183, 0.1)",
+                                    borderStyle: "groove",
+                                    borderWidth: "1px",
+                                    borderColor: "#999",
+                                    borderRadius: "8px",
+                                    padding: "10px"
                                     }}
                             >
                                 <p>My name is Ruslan Pantaev and I'm an INTJ.  I grew up in Siberia and moved to NYC when I was six.
@@ -163,8 +172,8 @@ class About extends Component {
                                     position: "relative",
                                     textAlign: "center",
                                     // maxHeight: "100%",
-                                    // maxWidth: "100%",
-                                    width: "auto/9",
+                                    maxWidth: 600,
+                                    width: "90%",
                                     height: "auto",
                                     top: 0,
                                     bottom: 0,
@@ -195,7 +204,7 @@ class About extends Component {
                                     <a href="https://github.com/Ruslan-Pantaev" target="_blank" rel="noopener noreferrer"> <img alt="gitHub" src={require("../../assets/socialMediaIcons/Github.png")} /></a>
                                     <a href="https://www.linkedin.com/in/ruslan-pantaev-482579b8" target="_blank"rel="noopener noreferrer"> <img alt="linkedin" src={require("../../assets/socialMediaIcons/Linkedin.png")} /></a> 
                                     <a href="https://www.instagram.com/arpiseaQ/" target="_blank"rel="noopener noreferrer"> <img alt="instagram" src={require("../../assets/socialMediaIcons/Instagram.png")} /></a> 
-                                    <a href="http://baltosequoia.deviantart.com" target="_blank" rel="noopener noreferrer"> <img alt="deviantart" src={require("../../assets/socialMediaIcons/Deviantart.png")} /></a> 
+                                    <a href="https://baltosequoia.deviantart.com" target="_blank" rel="noopener noreferrer"> <img alt="deviantart" src={require("../../assets/socialMediaIcons/Deviantart.png")} /></a> 
                                     <a href="https://soundcloud.com/ruslanpantaev" target="_blank" rel="noopener noreferrer"> <img alt="soundcloud" src={require("../../assets/socialMediaIcons/Soundcloud.png")} /></a>
                                 </div>
                                 <br></br>

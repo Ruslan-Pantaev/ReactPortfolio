@@ -54,6 +54,7 @@ class Contact extends Component {
                     <ul>
                         <li><Link style={{color: '#aaeaff'}} to="/">Home</Link></li>
                         <li><Link style={{color: '#aaeaff'}} to="/about">About</Link></li>
+                        <li><Link style={{color: '#aaeaff'}} to="/cv">CV</Link></li>
                         <li><Link style={{color: '#aaeaff'}} to="/projects">Projects</Link></li>
                         <li><Link style={{color: '#fff'}} to="/contact">Contact</Link></li>
                     </ul>
@@ -182,7 +183,7 @@ class Contact extends Component {
                                         name="message"
                                         onChange={this.handleChange} />
                                 </FormGroup>
-                                <Button>Submit</Button>
+                                <Button color="info">Submit</Button>
                             </Form>
                             <br></br>
                             <br></br>
@@ -225,7 +226,7 @@ class Contact extends Component {
                                     <a href="https://github.com/Ruslan-Pantaev" target="_blank" rel="noopener noreferrer"> <img alt="gitHub" src={require("../../assets/socialMediaIcons/Github.png")} /></a>
                                     <a href="https://www.linkedin.com/in/ruslan-pantaev-482579b8" target="_blank"rel="noopener noreferrer"> <img alt="linkedin" src={require("../../assets/socialMediaIcons/Linkedin.png")} /></a> 
                                     <a href="https://www.instagram.com/arpiseaQ/" target="_blank"rel="noopener noreferrer"> <img alt="instagram" src={require("../../assets/socialMediaIcons/Instagram.png")} /></a> 
-                                    <a href="http://baltosequoia.deviantart.com" target="_blank" rel="noopener noreferrer"> <img alt="deviantart" src={require("../../assets/socialMediaIcons/Deviantart.png")} /></a> 
+                                    <a href="https://baltosequoia.deviantart.com" target="_blank" rel="noopener noreferrer"> <img alt="deviantart" src={require("../../assets/socialMediaIcons/Deviantart.png")} /></a> 
                                     <a href="https://soundcloud.com/ruslanpantaev" target="_blank" rel="noopener noreferrer"> <img alt="soundcloud" src={require("../../assets/socialMediaIcons/Soundcloud.png")} /></a>
                                 </div>
                                 <br></br>

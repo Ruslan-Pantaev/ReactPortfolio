@@ -39,6 +39,7 @@ class Landing extends Component {
                     <ul>
                         <li><Link style={{color: '#fff'}} to="/">Home</Link></li>
                         <li><Link style={{color: '#aaeaff'}} to="/about">About</Link></li>
+                        <li><Link style={{color: '#aaeaff'}} to="/cv">CV</Link></li>
                         <li><Link style={{color: '#aaeaff'}} to="/projects">Projects</Link></li>
                         <li><Link style={{color: '#aaeaff'}} to="/contact">Contact</Link></li>
                     </ul>
@@ -263,7 +264,7 @@ class Landing extends Component {
                                     move: {
                                         radius: 100
                                     },
-                                    url: "/assets/3.svg",
+                                    url: "/assets/images/3.svg",
                                     inline: {
                                         arrangement: "random-point"//"equidistant"
                                     },
