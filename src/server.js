@@ -4,9 +4,12 @@ const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
 const keys = require('./config')
 const app = express()
+const path = require('path');
+
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(express.static(path.join(__dirname, '../client/build')))
 
 app.post('/api/form', (req, res) => {
     console.log(req.body)
