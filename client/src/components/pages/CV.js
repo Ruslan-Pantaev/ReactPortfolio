@@ -61,7 +61,7 @@ class CV extends Component {
                         position: "absolute",
                         color: "#fff",
                         textAlign: "center",
-                        fontFamily: "monospace",
+                        // fontFamily: "monospace",
                         // fontFamily: "Helvetica Neue",
                         // textAlignVertical: "center",
                         // display: "block",

@@ -360,7 +360,7 @@ class Landing extends Component {
                             style={{
                                 textAlign: "center",
                                 color: "#999",
-                                fontFamily: "monospace",
+                                // fontFamily: "monospace",
                                 position: "absolute",
                                 bottom: 10,
                                 width: "100%"

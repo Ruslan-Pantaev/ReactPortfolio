@@ -62,7 +62,7 @@ class NotFound extends Component {
                         position: "absolute",
                         color: "#fff",
                         textAlign: "center",
-                        fontFamily: "monospace",
+                        // fontFamily: "monospace",
                         // textAlignVertical: "center",
                         // display: "block",
                         // maxHeight: "80%",

@@ -102,7 +102,7 @@ class Projects extends Component {
                         position: "absolute",
                         color: "#000",
                         textAlign: "center",
-                        fontFamily: "monospace",
+                        // fontFamily: "monospace",
                         // textAlignVertical: "center",
                         // display: "block",
                         // maxHeight: "80%",

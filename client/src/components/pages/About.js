@@ -63,7 +63,7 @@ class About extends Component {
                         position: "absolute",
                         color: "#000",
                         textAlign: "center",
-                        fontFamily: "monospace",
+                        // fontFamily: "monospace",
                         // fontFamily: "Helvetica Neue",
                         // textAlignVertical: "center",
                         // display: "block",
