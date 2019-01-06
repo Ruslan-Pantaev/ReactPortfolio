@@ -358,7 +358,7 @@ class Projects extends Component {
                                 <br></br>
                                 <Iframe url="https://ruslan-pantaev.github.io/3d_regl_vis_env/"
                                     width="70%"
-                                    height="35vw"
+                                    height="50vw"
                                     // id="myId"
                                     // className="myClassname"
                                     display="initial"
@@ -477,7 +477,7 @@ class Projects extends Component {
                             </div>
                             <br></br>
                             <br></br>
-                            <div style={{
+                            {/* <div style={{
                                     position: "relative",
                                     textAlign: "center",
                                     width: "95%",
@@ -517,7 +517,7 @@ class Projects extends Component {
                                 <br></br>
                             </div>
                             <br></br>
-                            <br></br>
+                            <br></br> */}
                             <div style={{
                                     position: "relative",
                                     textAlign: "center",

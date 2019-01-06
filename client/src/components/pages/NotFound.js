@@ -13,7 +13,7 @@ class NotFound extends Component {
             <div id="outer-container">
                 <Menu
                     right
-                    customBurgerIcon={ <img src={require("../../assets/menu/thin_burger.png")} alt={""} /> }
+                    customBurgerIcon={ <img src={require("../../assets/menu/thin_burger_light.png")} alt={""} /> }
                     customCrossIcon={ <img src={require("../../assets/menu/round_cross.png")} alt={""} /> }
                     pageWrapId={ "page-wrap" }
                     outerContainerId={ "outer-container" }
@@ -109,7 +109,8 @@ class NotFound extends Component {
                             <br></br>
                             <br></br>
                             <br></br>
-                            <h3>oops, this page doesn't exist...</h3>
+                            <h3>404</h3>
+                            <p>oops, this page doesn't exist...</p>
                             <br></br>
                             <br></br>
                             <br></br>

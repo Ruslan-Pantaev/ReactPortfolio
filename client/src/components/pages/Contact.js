@@ -46,7 +46,7 @@ class Contact extends Component {
             <div id="outer-container">
                 <Menu
                     right
-                    customBurgerIcon={ <img src={require("../../assets/menu/thin_burger.png")} alt={""} /> }
+                    customBurgerIcon={ <img src={require("../../assets/menu/thin_burger_light.png")} alt={""} /> }
                     customCrossIcon={ <img src={require("../../assets/menu/round_cross.png")} alt={""} /> }
                     pageWrapId={ "page-wrap" }
                     outerContainerId={ "outer-container" }
