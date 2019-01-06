@@ -49,7 +49,8 @@ class Landing extends Component {
                     style={{
                         height:"100vh",
                         position: "relative",
-                        backgroundColor: "#666"
+                        // backgroundColor: "#666"
+                        backgroundImage: "radial-gradient(circle, #bebebe, #a4a4a4, #8b8b8b, #737373, #5c5c5c, #4d4d4d, #3f3f3f, #313131, #272727, #1d1d1d, #141414, #060606)"
                     }}
                 >
                     
@@ -84,12 +85,15 @@ class Landing extends Component {
                             }}
                             duration={8}
                         >
+                            {/* not in use */}
                             {/* <path fill="#111111" stroke="#333333" stroke-width="250%" d="M41.40 0L41.40-49.61L34.56-49.61L34.56-28.87L14.40-28.87L14.40-49.61L7.56-49.61L7.56 0L14.40 0L14.40-23.26L34.56-23.26L34.56 0ZM82.58-44.14L83.38-49.61L56.52-49.61L56.52 0L83.95 0L83.95-5.47L63.36-5.47L63.36-22.46L80.06-22.46L80.06-27.94L63.36-27.94L63.36-44.14ZM121.82 0L122.62-5.98L102.24-5.98L102.24-49.61L95.40-49.61L95.40 0ZM158.04 0L158.83-5.98L138.46-5.98L138.46-49.61L131.62-49.61L131.62 0ZM203.76-24.77C203.76-41.62 195.34-50.47 183.17-50.47C171.00-50.47 162.58-41.26 162.58-24.70C162.58-7.85 171.00 0.86 183.17 0.86C195.34 0.86 203.76-8.21 203.76-24.77ZM196.49-24.77C196.49-10.22 191.23-4.75 183.17-4.75C175.32-4.75 169.85-10.15 169.85-24.70C169.85-39.24 175.10-44.86 183.17-44.86C191.23-44.86 196.49-39.31 196.49-24.77Z"/> */}
-                            
-                            <path fill="#000000" stroke="#111" strokeWidth="1%" d="M 100 300 A 50 50 0 1 1 400 100 A 50 50 0 1 1 700 300 L 400 600 L 100 300" />
-                            <path fill="none" stroke="#ffffff" strokeWidth="0.1%" d="M 100 300 A 50 50 0 1 1 400 100 A 50 50 0 1 1 700 300 L 400 600 L 100 300" />
                             {/* <path fill="000000" stroke="#ffffff" stroke-width="1%" d="M 50 300 A 100 50 0 1 1 750 300 A 100 50 0 1 1 50 300" /> */}
 
+                            {/* heart */}
+                            {/* <path fill="#000000" stroke="#111" strokeWidth="1%" d="M 100 300 A 50 50 0 1 1 400 100 A 50 50 0 1 1 700 300 L 400 600 L 100 300" /> */}
+                            <path fill="none" stroke="#ffffff" strokeWidth="1" d="M 100 300 A 50 50 0 1 1 400 100 A 50 50 0 1 1 700 300 L 400 600 L 100 300" />
+
+                            {/* rp */}
                             <path fill="none" stroke="#ffffff" strokeWidth="3" d="M 250 400 L 300 300 A 100 50 0 1 1 300 150 L 350 450 L 450 450 L 500 150 A 100 50 0 1 1 500 300" />
                         </Tween>
                         {/* </Controls> */}
@@ -194,14 +198,35 @@ class Landing extends Component {
                                         direction: "right",
                                         random: true,
                                         straight: true,
-                                        speed: 5,
+                                        speed: 2,
                                         out_mode: "out"
                                     },
                                     line_linked: {
                                         enable: true,
                                         distance: 65,
                                         opacity: 1,
-                                        color: "#be1a1a"
+                                        // color: "#be1a1a" //red
+                                        color: "#09aaed" //blue
+                                    }
+                                },
+                                interactivity: {
+                                    events: {
+                                        onhover: {
+                                            enable: true,
+                                            mode: "grab"
+                                        }
+                                    },
+                                    modes: {
+                                        bubble: {
+                                            size: 20,
+                                            distance: 120
+                                        },
+                                        repulse: {
+                                            distance: 40
+                                        },
+                                        grab: {
+                                            distance: 500
+                                        }
                                     }
                                 },
                                 retina_detect: true
@@ -226,10 +251,10 @@ class Landing extends Component {
                                 // fps_limit: 28,
                                 particles: {
                                     color: {
-                                        value: "#333"
+                                        value: "#111"
                                     },
                                     number: {
-                                        value: this.state.width/11,
+                                        value: this.state.width/15,
                                         density: {
                                             enable: false,
                                             // value_area: 10
@@ -238,14 +263,24 @@ class Landing extends Component {
                                     size: {
                                         value: 2
                                     },
+                                    shape: {
+                                        type: "image",
+                                        image: {
+                                            src: "/assets/images/3.svg",
+                                            width: 50,
+                                            height: 50
+                                        }
+                                    },
                                     line_linked: {
                                         enable: true,
-                                        distance: 70,
-                                        opacity: 0.4,
-                                        color: "#09aaed"
+                                        distance: 80,
+                                        opacity: 0.3,
+                                        color: "#ddd"
+                                        // color: "#09aaed" //blue
+                                        // color: "#be1a1a" //red
                                     },
                                     move: {
-                                        speed: 5
+                                        speed: 2
                                     },
                                     opacity: {
                                         anim: {
@@ -260,7 +295,7 @@ class Landing extends Component {
                                 polygon: {
                                     enable: true,
                                     scale: 1,
-                                    type: "inline",
+                                    type: "inline", // inside
                                     move: {
                                         radius: 100
                                     },
@@ -282,18 +317,27 @@ class Landing extends Component {
                                         onhover: {
                                             enable: true,
                                             mode: "grab"
+                                        },
+                                        onclick: {
+                                            enable: false,
+                                            mode: "push"
                                         }
                                     },
                                     modes: {
                                         bubble: {
-                                            size: 20,
-                                            distance: 120
+                                            size: 40,
+                                            distance: 40,
+                                            opacity: 0,
+                                            // duration: 2
                                         },
                                         repulse: {
                                             distance: 40
                                         },
                                         grab: {
-                                            distance: 500
+                                            line_linked: {
+                                                opacity: 0.8
+                                            },
+                                            distance: 300
                                         }
                                     }
                                 }
