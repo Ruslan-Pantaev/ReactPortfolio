@@ -540,6 +540,7 @@ class Projects extends Component {
                                 <br></br>
                                 <div style={{
                                         maxWidth: "900px",
+                                        minWidth: "200px",
                                         width: "70%",
                                         height: "auto",
                                         textAlign: "center",
@@ -581,6 +582,7 @@ class Projects extends Component {
                                 <br></br>
                                 <div style={{
                                         maxWidth: "900px",
+                                        minWidth: "200px",
                                         width: "70%",
                                         height: "auto",
                                         textAlign: "center",
@@ -622,6 +624,7 @@ class Projects extends Component {
                                 <br></br>
                                 <div style={{
                                         maxWidth: "900px",
+                                        minWidth: "200px",
                                         width: "70%",
                                         height: "auto",
                                         textAlign: "center",
@@ -719,6 +722,7 @@ class Projects extends Component {
                                     <br></br>
                                     <h3>Compatibility:</h3>
                                     <p>Latest Stable Releases of Safari and Chrome are recommended</p>
+                                    <p>Currently not supported on mobile platforms</p>
                                 </section>
                                 <br></br>
                                 <br></br>
