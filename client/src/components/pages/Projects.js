@@ -560,7 +560,7 @@ class Projects extends Component {
                             </div>
                             <br></br>
                             <br></br>
-                            <div style={{
+                            {/* <div style={{
                                     position: "relative",
                                     textAlign: "center",
                                     width: "95%",
@@ -643,7 +643,7 @@ class Projects extends Component {
                                 <br></br>
                             </div>
                             <br></br>
-                            <br></br>
+                            <br></br> */}
                             <div style={{
                                     position: "relative",
                                     textAlign: "center",
