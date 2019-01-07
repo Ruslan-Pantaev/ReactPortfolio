@@ -51,7 +51,7 @@ class Contact extends Component {
                     pageWrapId={ "page-wrap" }
                     outerContainerId={ "outer-container" }
                 >
-                    <ul>
+                    <ul style={{ outline: "none" }}>
                         <li><Link style={{color: '#aaeaff'}} to="/">Home</Link></li>
                         <li><Link style={{color: '#aaeaff'}} to="/about">About</Link></li>
                         <li><Link style={{color: '#aaeaff'}} to="/cv">CV</Link></li>

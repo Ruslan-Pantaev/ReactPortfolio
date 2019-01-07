@@ -53,7 +53,7 @@ class Projects extends Component {
                     pageWrapId={ "page-wrap" }
                     outerContainerId={ "outer-container" }
                 >
-                    <ul>
+                    <ul style={{ outline: "none" }}>
                         <li><a style={{color: '#aaeaff'}} href="/">Home</a></li>
                         <li><a style={{color: '#aaeaff'}} href="/about">About</a></li>
                         <li><a style={{color: '#aaeaff'}} href="/cv">CV</a></li>
@@ -541,7 +541,7 @@ class Projects extends Component {
                                 <div style={{
                                         maxWidth: "900px",
                                         minWidth: "200px",
-                                        width: "70%",
+                                        width: "70vw",
                                         height: "auto",
                                         textAlign: "center",
                                         top: 0,
@@ -583,7 +583,7 @@ class Projects extends Component {
                                 <div style={{
                                         maxWidth: "900px",
                                         minWidth: "200px",
-                                        width: "70%",
+                                        width: "70vw",
                                         height: "auto",
                                         textAlign: "center",
                                         top: 0,
@@ -625,7 +625,7 @@ class Projects extends Component {
                                 <div style={{
                                         maxWidth: "900px",
                                         minWidth: "200px",
-                                        width: "70%",
+                                        width: "70vw",
                                         height: "auto",
                                         textAlign: "center",
                                         top: 0,
