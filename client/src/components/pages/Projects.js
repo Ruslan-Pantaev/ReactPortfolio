@@ -9,6 +9,10 @@ import Gist from 'react-gist';
 import './Menu.css';
 import './Footer.css';
 
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-87922163-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 
 class Projects extends Component {
     constructor(props) {
