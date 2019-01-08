@@ -172,8 +172,6 @@ class CV extends Component {
                     <br></br>
                     <br></br>
                     <br></br>
-                    <br></br>
-                    <br></br>
                     <footer className="footerClass"
                         style={{
                             textAlign: "center",

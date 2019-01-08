@@ -29,11 +29,11 @@ class NotFound extends Component {
                 <div
                     id="page-wrap"
                     style={{
-                        // position: "absolute",
-                        overflow: "auto",
+                        position: "relative",
+                        overflow: "hidden",
+                        width: "auto/9",
                         height: "100vmax",
                         margin: "auto",
-                        position: "relative",
                         backgroundImage: "radial-gradient(circle, #4f4f4f, #494949, #434343, #3d3d3d, #373737, #313131, #2c2c2c, #262626, #1f1f1f, #181818, #111111, #060606)"
                         // backgroundImage: "radial-gradient(circle, #000000, #0a0909, #121111, #181717, #1d1c1c, #242222, #2b2929, #323030, #3d3b3b, #484545, #535151, #5f5c5c)"
                     }}
@@ -60,7 +60,7 @@ class NotFound extends Component {
                     />
                     <div style={{
                         // width:"100%",
-                        position: "absolute",
+                        position: "relative",
                         color: "#fff",
                         textAlign: "center",
                         // fontFamily: "monospace",
@@ -113,44 +113,50 @@ class NotFound extends Component {
                             <br></br>
                             <h3>404</h3>
                             <p>oops, this page doesn't exist...</p>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                        </Tween>
-                        <Tween
-                            from={{ y: '-1000px', rotation: 0, scale: 0.01, opacity: 0 }}
-                            to={{ y: '0px', rotation: 0, scale: 1, opacity: 1 }}
-                            // stagger={1}
-                            duration={3}
-                            repeat={0}
-                            yoyo={true}
-                            position="+=0"
-                            ease="Back.easeOut"
-                        >
-                            <footer className="footerClass">
-                                <div id="footerLinks">
-                                    <a href="https://github.com/Ruslan-Pantaev" target="_blank" rel="noopener noreferrer"> <img alt="gitHub" src={require("../../assets/socialMediaIcons/Github.png")} /></a>
-                                    <a href="https://www.linkedin.com/in/ruslan-pantaev-482579b8" target="_blank"rel="noopener noreferrer"> <img alt="linkedin" src={require("../../assets/socialMediaIcons/Linkedin.png")} /></a> 
-                                    <a href="https://www.instagram.com/arpiseaQ/" target="_blank"rel="noopener noreferrer"> <img alt="instagram" src={require("../../assets/socialMediaIcons/Instagram.png")} /></a> 
-                                    <a href="https://baltosequoia.deviantart.com" target="_blank" rel="noopener noreferrer"> <img alt="deviantart" src={require("../../assets/socialMediaIcons/Deviantart.png")} /></a> 
-                                    <a href="https://soundcloud.com/ruslanpantaev" target="_blank" rel="noopener noreferrer"> <img alt="soundcloud" src={require("../../assets/socialMediaIcons/Soundcloud.png")} /></a>
-                                </div>
-                                <br></br>
-                                <p id="footerSig" style={{color: "#ccc"}}>Ruslan Pantaev &copy; 2019</p>
-                            </footer>
-                            <br></br>
-                            <br></br>
                         </Tween>
                     </div>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <Tween
+                        from={{ y: '-1000px', rotation: 0, scale: 0.01, opacity: 0 }}
+                        to={{ y: '0px', rotation: 0, scale: 1, opacity: 1 }}
+                        // stagger={1}
+                        duration={3}
+                        repeat={0}
+                        yoyo={true}
+                        position="+=0"
+                        ease="Back.easeOut"
+                    >
+                        <footer className="footerClass"
+                            style={{
+                                textAlign: "center",
+                                top: 0,
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                margin: "auto"
+                            }}>
+                            <div id="footerLinks">
+                                <a href="https://github.com/Ruslan-Pantaev" target="_blank" rel="noopener noreferrer"> <img alt="gitHub" src={require("../../assets/socialMediaIcons/Github.png")} /></a>
+                                <a href="https://www.linkedin.com/in/ruslan-pantaev-482579b8" target="_blank"rel="noopener noreferrer"> <img alt="linkedin" src={require("../../assets/socialMediaIcons/Linkedin.png")} /></a> 
+                                <a href="https://www.instagram.com/arpiseaQ/" target="_blank"rel="noopener noreferrer"> <img alt="instagram" src={require("../../assets/socialMediaIcons/Instagram.png")} /></a> 
+                                <a href="https://baltosequoia.deviantart.com" target="_blank" rel="noopener noreferrer"> <img alt="deviantart" src={require("../../assets/socialMediaIcons/Deviantart.png")} /></a> 
+                                <a href="https://soundcloud.com/ruslanpantaev" target="_blank" rel="noopener noreferrer"> <img alt="soundcloud" src={require("../../assets/socialMediaIcons/Soundcloud.png")} /></a>
+                            </div>
+                            <br></br>
+                            <p id="footerSig" style={{color: "#ccc"}}>Ruslan Pantaev &copy; 2019</p>
+                        </footer>
+                        </Tween>
+                    <br></br>
+                    <br></br>
                 </div>
             </div>
         );
