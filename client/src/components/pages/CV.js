@@ -29,11 +29,11 @@ class CV extends Component {
                 <div
                     id="page-wrap"
                     style={{
-                        // position: "absolute",
+                        position: "relative",
                         overflow: "hidden",
+                        width: "auto/9",
                         height: "auto",
                         margin: "auto",
-                        position: "relative",
                         backgroundImage: "radial-gradient(circle, #ffffff, #f7f7fa, #eeeef5, #e4e7f1, #d9dfec, #d1dced, #c8daee, #bed8ee, #b4daf3, #a8ddf6, #9be0f7, #8de3f7)"
                     }}
                 >

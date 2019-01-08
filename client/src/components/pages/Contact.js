@@ -62,11 +62,11 @@ class Contact extends Component {
                 <div
                     id="page-wrap"
                     style={{
-                        // position: "absolute",
-                        overflow: "auto",
-                        height: "100vmax",
-                        margin: "auto",
                         position: "relative",
+                        overflow: "hidden",
+                        width: "auto/9",
+                        height: "auto",
+                        margin: "auto",
                         backgroundImage: "radial-gradient(circle, #666666, #4c4c4c, #343434, #1d1d1d, #000000)"
                     }}
                 >
@@ -92,7 +92,7 @@ class Contact extends Component {
                     />
                     <div style={{
                         // width:"100%",
-                        position: "absolute",
+                        position: "relative",
                         color: "#fff",
                         textAlign: "center",
                         // fontFamily: "monospace",
@@ -108,135 +108,130 @@ class Contact extends Component {
                         margin: "auto",
                         // display: "block",
                         opacity: 1
-                        }}>
-                        {/* <Tween
-                            from={{ y: '1000px', rotation: 0, scale: 0.01, opacity: 0 }}
-                            to={{ y: '0px', rotation: 0, scale: 1, opacity: 1 }}
-                            // stagger={1}
-                            duration={3}
-                            repeat={0}
-                            yoyo={true}
-                            position="+=0"
-                            ease="Back.easeOut"
-                        > */}
-                            <img
-                                // width={"42%"}
-                                src={require("../../assets/images/favicon3.png")}
-                                alt={""}
-                                style={{
-                                    position: "relative",
-                                    textAlign: "center",
-                                    // maxHeight: "100%",
-                                    // maxWidth: "100%",
-                                    width: "auto/9",
-                                    height: "auto",
-                                    top: 0,
-                                    bottom: 0,
-                                    left: 0,
-                                    right: 0,
-                                    margin: "auto",
-                                    // display: "block",
-                                    // opacity: 1
-                                }}
-                            />
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <h1>Contact</h1>
-                            <br></br>
-                            <br></br>
-                            <Form
-                                onSubmit={this.handleSubmit}
-                                style={{
-                                    // width:"100%",
-                                    position: "relative",
-                                    color: "#fff",
-                                    textAlign: "center",
-                                    maxWidth: "600px",
-                                    width: "auto/9",
-                                    height: "auto",
-                                    top: 0,
-                                    bottom: 0,
-                                    left: 0,
-                                    right: 0,
-                                    margin: "auto",
-                                    // display: "block"
-                                    }}>
-                                <FormGroup>
-                                    <Label for="name">Name:</Label>
-                                    <Input
-                                        type="text"
-                                        name="name"
-                                        onChange={this.handleChange} />
-                                </FormGroup>
-                                <FormGroup>
-                                    <Label for="email">Email:</Label>
-                                    <Input
-                                        type="email"
-                                        name="email"
-                                        onChange={this.handleChange} />
-                                </FormGroup>
-                                <FormGroup>
-                                    <Label for="message">Message:</Label>
-                                    <Input
-                                        type="textarea"
-                                        name="message"
-                                        onChange={this.handleChange} />
-                                </FormGroup>
-                                <Button color="info">Submit</Button>
-                            </Form>
-                            <br></br>
-                            <br></br>
-                            <Alert
-                                color="success"
-                                isOpen={this.state.alert}
-                                toggle={this.onDismiss}
-                                fade={true}
-                                style={{
-                                    position: "relative",
-                                    textAlign: "center",
-                                    maxWidth: "600px",
-                                    width: "auto/9",
-                                    height: "auto",
-                                    top: 0,
-                                    bottom: 0,
-                                    left: 0,
-                                    right: 0,
-                                    margin: "auto",
-                                    opacity: 1
-                                }}
-                            >
-                                Email Sent
-                            </Alert>
-                            <br></br>
-                            <br></br>
-                        {/* </Tween>
-                        <Tween
-                            from={{ y: '-1000px', rotation: 0, scale: 0.01, opacity: 0 }}
-                            to={{ y: '0px', rotation: 0, scale: 1, opacity: 1 }}
-                            // stagger={1}
-                            duration={3}
-                            repeat={0}
-                            yoyo={true}
-                            position="+=0"
-                            ease="Back.easeOut"
-                        > */}
-                            <footer className="footerClass">
-                                <div id="footerLinks">
-                                    <a href="https://github.com/Ruslan-Pantaev" target="_blank" rel="noopener noreferrer"> <img alt="gitHub" src={require("../../assets/socialMediaIcons/Github.png")} /></a>
-                                    <a href="https://www.linkedin.com/in/ruslan-pantaev-482579b8" target="_blank"rel="noopener noreferrer"> <img alt="linkedin" src={require("../../assets/socialMediaIcons/Linkedin.png")} /></a> 
-                                    <a href="https://www.instagram.com/arpiseaQ/" target="_blank"rel="noopener noreferrer"> <img alt="instagram" src={require("../../assets/socialMediaIcons/Instagram.png")} /></a> 
-                                    <a href="https://baltosequoia.deviantart.com" target="_blank" rel="noopener noreferrer"> <img alt="deviantart" src={require("../../assets/socialMediaIcons/Deviantart.png")} /></a> 
-                                    <a href="https://soundcloud.com/ruslanpantaev" target="_blank" rel="noopener noreferrer"> <img alt="soundcloud" src={require("../../assets/socialMediaIcons/Soundcloud.png")} /></a>
-                                </div>
-                                <br></br>
-                                <p id="footerSig" style={{color: "#ccc"}}>Ruslan Pantaev &copy; 2019</p>
-                            </footer>
-                            <br></br>
-                            <br></br>
-                        {/* </Tween> */}
+                        }}
+                    >
+                        <img
+                            // width={"42%"}
+                            src={require("../../assets/images/favicon3.png")}
+                            alt={""}
+                            style={{
+                                position: "relative",
+                                textAlign: "center",
+                                // maxHeight: "100%",
+                                // maxWidth: "100%",
+                                width: "auto/9",
+                                height: "auto",
+                                top: 0,
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                margin: "auto",
+                                // display: "block",
+                                // opacity: 1
+                            }}
+                        />
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <h1>Contact</h1>
+                        <br></br>
+                        <br></br>
+                        <Form
+                            onSubmit={this.handleSubmit}
+                            style={{
+                                // width:"100%",
+                                position: "relative",
+                                color: "#fff",
+                                textAlign: "center",
+                                maxWidth: "600px",
+                                width: "auto/9",
+                                height: "auto",
+                                top: 0,
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                margin: "auto",
+                                // display: "block"
+                                }}>
+                            <FormGroup>
+                                <Label for="name">Name:</Label>
+                                <Input
+                                    type="text"
+                                    name="name"
+                                    onChange={this.handleChange} />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label for="email">Email:</Label>
+                                <Input
+                                    type="email"
+                                    name="email"
+                                    onChange={this.handleChange} />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label for="message">Message:</Label>
+                                <Input
+                                    type="textarea"
+                                    name="message"
+                                    onChange={this.handleChange} />
+                            </FormGroup>
+                            <Button color="info">Submit</Button>
+                        </Form>
+                        <br></br>
+                        <br></br>
+                        <Alert
+                            color="success"
+                            isOpen={this.state.alert}
+                            toggle={this.onDismiss}
+                            fade={true}
+                            style={{
+                                position: "relative",
+                                textAlign: "center",
+                                maxWidth: "600px",
+                                width: "auto/9",
+                                height: "auto",
+                                top: 0,
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                margin: "auto",
+                                opacity: 1
+                            }}
+                        >
+                            Email Sent
+                        </Alert>
                     </div>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <footer className="footerClass"
+                        style={{
+                            textAlign: "center",
+                            top: 0,
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            margin: "auto"
+                        }}>
+                        <div id="footerLinks">
+                            <a href="https://github.com/Ruslan-Pantaev" target="_blank" rel="noopener noreferrer"> <img alt="gitHub" src={require("../../assets/socialMediaIcons/Github.png")} /></a>
+                            <a href="https://www.linkedin.com/in/ruslan-pantaev-482579b8" target="_blank"rel="noopener noreferrer"> <img alt="linkedin" src={require("../../assets/socialMediaIcons/Linkedin.png")} /></a> 
+                            <a href="https://www.instagram.com/arpiseaQ/" target="_blank"rel="noopener noreferrer"> <img alt="instagram" src={require("../../assets/socialMediaIcons/Instagram.png")} /></a> 
+                            <a href="https://baltosequoia.deviantart.com" target="_blank" rel="noopener noreferrer"> <img alt="deviantart" src={require("../../assets/socialMediaIcons/Deviantart.png")} /></a> 
+                            <a href="https://soundcloud.com/ruslanpantaev" target="_blank" rel="noopener noreferrer"> <img alt="soundcloud" src={require("../../assets/socialMediaIcons/Soundcloud.png")} /></a>
+                        </div>
+                        <br></br>
+                        <p id="footerSig" style={{color: "#ccc"}}>Ruslan Pantaev &copy; 2019</p>
+                    </footer>
+                    <br></br>
+                    <br></br>
                 </div>
             </div>
         );
