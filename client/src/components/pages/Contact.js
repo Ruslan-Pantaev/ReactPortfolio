@@ -47,6 +47,9 @@ class Contact extends Component {
 
     onDismiss() {
         this.setState({ alert: false });
+        // setTimeout(() => {
+            window.location.reload()
+        // }, 1000);
     }
   
     render() {
