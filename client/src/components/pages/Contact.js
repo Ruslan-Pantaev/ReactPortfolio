@@ -39,6 +39,10 @@ class Contact extends Component {
             email,
             message
         })
+        ReactGA.event({
+            category: 'Contact',
+            action: 'email sent'
+        });
     }
 
     onDismiss() {
