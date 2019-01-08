@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'normalize.css';
 import 'bootstrap/dist/css/bootstrap.min.css'; // may not be needed, see public/index.html
 import './index.css';
 import App from './App';

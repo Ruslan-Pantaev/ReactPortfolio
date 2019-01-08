@@ -8,6 +8,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.2.1",
+    "normalize.css": "^8.0.1",
     "react": "^16.7.0",
     "react-burger-menu": "^2.5.4",
     "react-dom": "^16.7.0",
