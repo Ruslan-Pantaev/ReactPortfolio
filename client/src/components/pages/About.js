@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bubble as Menu } from 'react-burger-menu';
 import { Link } from 'react-router-dom';
-import { Tween } from 'react-gsap';
+// import { Tween } from 'react-gsap';
 import './Menu.css';
 import './Footer.css';
 
@@ -10,7 +10,7 @@ class About extends Component {
   
     render() {
         return (
-            <div id="outer-container">
+            <div id="outer-container" style={{ overflow: "hidden" }}>
                 <Menu
                     right
                     customBurgerIcon={ <img src={require("../../assets/menu/thin_burger.png")} alt={""} /> }
@@ -29,6 +29,7 @@ class About extends Component {
                 <div
                     id="page-wrap"
                     style={{
+                        // position: "absolute",
                         overflow: "auto",
                         height: "100vmax",
                         margin: "auto",
@@ -78,7 +79,7 @@ class About extends Component {
                         // display: "block",
                         opacity: 1
                     }}>
-                        <Tween
+                        {/* <Tween
                             from={{ y: '1000px', rotation: 0, scale: 0.01, opacity: 0 }}
                             to={{ y: '0px', rotation: 0, scale: 1, opacity: 1 }}
                             // stagger={1}
@@ -87,7 +88,7 @@ class About extends Component {
                             yoyo={true}
                             position="+=0"
                             ease="Back.easeOut"
-                        >
+                        > */}
                             <img
                                 // width={"42%"}
                                 src={require("../../assets/images/favicon3.png")}
@@ -154,7 +155,7 @@ class About extends Component {
                             </section>
                             <br></br>
                             <br></br>
-                        </Tween>
+                        {/* </Tween>
                         <Tween
                             from={{ x: '0px', rotation: 0, scale: 0.01, opacity: 0 }}
                             to={{ x: '0px', rotation: 0, scale: 1, opacity: 0.8 }}
@@ -164,7 +165,7 @@ class About extends Component {
                             yoyo={true}
                             position="+=0"
                             ease="Back.easeOut"
-                        >
+                        > */}
                             <img
                                 src={require("../../assets/images/homeMudHat.jpg")}
                                 alt={""}
@@ -188,7 +189,7 @@ class About extends Component {
                             <br></br>
                             <br></br>
                             <br></br>
-                        </Tween>
+                        {/* </Tween>
                         <Tween
                             from={{ y: '-1000px', rotation: 0, scale: 0.01, opacity: 0 }}
                             to={{ y: '0px', rotation: 0, scale: 1, opacity: 1 }}
@@ -198,7 +199,7 @@ class About extends Component {
                             yoyo={true}
                             position="+=0"
                             ease="Back.easeOut"
-                        >
+                        > */}
                             <footer className="footerClass">
                                 <div id="footerLinks">
                                     <a href="https://github.com/Ruslan-Pantaev" target="_blank" rel="noopener noreferrer"> <img alt="gitHub" src={require("../../assets/socialMediaIcons/Github.png")} /></a>
@@ -212,7 +213,7 @@ class About extends Component {
                             </footer>
                             <br></br>
                             <br></br>
-                        </Tween>
+                        {/* </Tween> */}
                     </div>
                 </div>
             </div>

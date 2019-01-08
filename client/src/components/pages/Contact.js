@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bubble as Menu } from 'react-burger-menu';
 import { Link } from 'react-router-dom';
-import { Tween } from 'react-gsap';
+// import { Tween } from 'react-gsap';
 import { Form, FormGroup, Input, Label, Button, Alert } from 'reactstrap';
 import './Menu.css';
 import './Footer.css';
@@ -43,7 +43,7 @@ class Contact extends Component {
   
     render() {
         return (
-            <div id="outer-container">
+            <div id="outer-container" style={{ overflow: "hidden" }}>
                 <Menu
                     right
                     customBurgerIcon={ <img src={require("../../assets/menu/thin_burger_light.png")} alt={""} /> }
@@ -62,6 +62,7 @@ class Contact extends Component {
                 <div
                     id="page-wrap"
                     style={{
+                        // position: "absolute",
                         overflow: "auto",
                         height: "100vmax",
                         margin: "auto",
@@ -108,7 +109,7 @@ class Contact extends Component {
                         // display: "block",
                         opacity: 1
                         }}>
-                        <Tween
+                        {/* <Tween
                             from={{ y: '1000px', rotation: 0, scale: 0.01, opacity: 0 }}
                             to={{ y: '0px', rotation: 0, scale: 1, opacity: 1 }}
                             // stagger={1}
@@ -117,7 +118,7 @@ class Contact extends Component {
                             yoyo={true}
                             position="+=0"
                             ease="Back.easeOut"
-                        >
+                        > */}
                             <img
                                 // width={"42%"}
                                 src={require("../../assets/images/favicon3.png")}
@@ -210,7 +211,7 @@ class Contact extends Component {
                             </Alert>
                             <br></br>
                             <br></br>
-                        </Tween>
+                        {/* </Tween>
                         <Tween
                             from={{ y: '-1000px', rotation: 0, scale: 0.01, opacity: 0 }}
                             to={{ y: '0px', rotation: 0, scale: 1, opacity: 1 }}
@@ -220,7 +221,7 @@ class Contact extends Component {
                             yoyo={true}
                             position="+=0"
                             ease="Back.easeOut"
-                        >
+                        > */}
                             <footer className="footerClass">
                                 <div id="footerLinks">
                                     <a href="https://github.com/Ruslan-Pantaev" target="_blank" rel="noopener noreferrer"> <img alt="gitHub" src={require("../../assets/socialMediaIcons/Github.png")} /></a>
@@ -234,7 +235,7 @@ class Contact extends Component {
                             </footer>
                             <br></br>
                             <br></br>
-                        </Tween>
+                        {/* </Tween> */}
                     </div>
                 </div>
             </div>

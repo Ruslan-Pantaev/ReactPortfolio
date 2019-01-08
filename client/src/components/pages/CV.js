@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bubble as Menu } from 'react-burger-menu';
 import { Link } from 'react-router-dom';
-import { Tween } from 'react-gsap';
+// import { Tween } from 'react-gsap';
 import './Menu.css';
 import './Footer.css';
 
@@ -10,7 +10,7 @@ class CV extends Component {
   
     render() {
         return (
-            <div id="outer-container">
+            <div id="outer-container" style={{ overflow: "hidden" }}>
                 <Menu
                     right
                     customBurgerIcon={ <img src={require("../../assets/menu/thin_burger.png")} alt={""} /> }
@@ -29,8 +29,9 @@ class CV extends Component {
                 <div
                     id="page-wrap"
                     style={{
-                        overflow: "auto",
-                        height: "100vmax",
+                        // position: "absolute",
+                        overflow: "hidden",
+                        height: "auto",
                         margin: "auto",
                         position: "relative",
                         backgroundImage: "radial-gradient(circle, #ffffff, #f7f7fa, #eeeef5, #e4e7f1, #d9dfec, #d1dced, #c8daee, #bed8ee, #b4daf3, #a8ddf6, #9be0f7, #8de3f7)"
@@ -42,6 +43,7 @@ class CV extends Component {
                         style={{
                             position: "fixed",
                             textAlign: "center",
+                            overflow: "hidden",
                             // height: "calc(100vmax + 100vmax)",
                             height: "100vh",
                             width: "100vw",
@@ -58,7 +60,8 @@ class CV extends Component {
                     />
                     <div style={{
                         // width:"100%",
-                        position: "absolute",
+                        position: "relative",
+                        overflow: "hidden",
                         color: "#fff",
                         textAlign: "center",
                         // fontFamily: "monospace",
@@ -77,7 +80,7 @@ class CV extends Component {
                         opacity: 1
                         }}
                     >
-                        <Tween
+                        {/* <Tween
                             from={{ y: '1000px', rotation: 0, scale: 0.01, opacity: 0 }}
                             to={{ y: '0px', rotation: 0, scale: 1, opacity: 1 }}
                             // stagger={1}
@@ -86,7 +89,7 @@ class CV extends Component {
                             yoyo={true}
                             position="+=0"
                             ease="Back.easeOut"
-                        >
+                        > */}
                             <img
                                 // width={"42%"}
                                 src={require("../../assets/images/favicon3.png")}
@@ -107,7 +110,7 @@ class CV extends Component {
                                     // opacity: 1
                                 }}
                             />
-                        </Tween>
+                        {/* </Tween> */}
                         <br></br>
                         <br></br>
                         <br></br>
@@ -118,6 +121,7 @@ class CV extends Component {
                                 position: "relative",
                                 color: "#000",
                                 textAlign: "center",
+                                overflow: "hidden",
                                 // textAlignVertical: "center",
                                 // display: "block",
                                 // maxHeight: "80%",
@@ -140,8 +144,9 @@ class CV extends Component {
                                 src={require("../../assets/cv/RuslanPantaev_cv_2019-1-6.jpg")}
                                 alt={""}
                                 style={{
-                                    position: "relative",
+                                    // position: "relative",
                                     textAlign: "center",
+                                    overflow: "hidden",
                                     // maxHeight: "100%",
                                     maxWidth: 1080,
                                     width: "100%",
@@ -156,35 +161,40 @@ class CV extends Component {
                                 }}
                             />
                         </section>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <Tween
-                            from={{ y: '-1000px', rotation: 0, scale: 0.01, opacity: 0 }}
-                            to={{ y: '0px', rotation: 0, scale: 1, opacity: 1 }}
-                            // stagger={1}
-                            duration={3}
-                            repeat={0}
-                            yoyo={true}
-                            position="+=0"
-                            ease="Back.easeOut"
-                        >
-                            <footer className="footerClass">
-                                <div id="footerLinks">
-                                    <a href="https://github.com/Ruslan-Pantaev" target="_blank" rel="noopener noreferrer"> <img alt="gitHub" src={require("../../assets/socialMediaIcons/Github.png")} /></a>
-                                    <a href="https://www.linkedin.com/in/ruslan-pantaev-482579b8" target="_blank"rel="noopener noreferrer"> <img alt="linkedin" src={require("../../assets/socialMediaIcons/Linkedin.png")} /></a> 
-                                    <a href="https://www.instagram.com/arpiseaQ/" target="_blank"rel="noopener noreferrer"> <img alt="instagram" src={require("../../assets/socialMediaIcons/Instagram.png")} /></a> 
-                                    <a href="https://baltosequoia.deviantart.com" target="_blank" rel="noopener noreferrer"> <img alt="deviantart" src={require("../../assets/socialMediaIcons/Deviantart.png")} /></a> 
-                                    <a href="https://soundcloud.com/ruslanpantaev" target="_blank" rel="noopener noreferrer"> <img alt="soundcloud" src={require("../../assets/socialMediaIcons/Soundcloud.png")} /></a>
-                                </div>
-                                <br></br>
-                                <p id="footerSig" style={{color: "#333"}}>Ruslan Pantaev &copy; 2019</p>
-                            </footer>
-                            <br></br>
-                            <br></br>
-                        </Tween>
                     </div>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <footer className="footerClass"
+                        style={{
+                            textAlign: "center",
+                            top: 0,
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            margin: "auto"
+                        }}>
+                        <div id="footerLinks">
+                            <a href="https://github.com/Ruslan-Pantaev" target="_blank" rel="noopener noreferrer"> <img alt="gitHub" src={require("../../assets/socialMediaIcons/Github.png")} /></a>
+                            <a href="https://www.linkedin.com/in/ruslan-pantaev-482579b8" target="_blank"rel="noopener noreferrer"> <img alt="linkedin" src={require("../../assets/socialMediaIcons/Linkedin.png")} /></a> 
+                            <a href="https://www.instagram.com/arpiseaQ/" target="_blank"rel="noopener noreferrer"> <img alt="instagram" src={require("../../assets/socialMediaIcons/Instagram.png")} /></a> 
+                            <a href="https://baltosequoia.deviantart.com" target="_blank" rel="noopener noreferrer"> <img alt="deviantart" src={require("../../assets/socialMediaIcons/Deviantart.png")} /></a> 
+                            <a href="https://soundcloud.com/ruslanpantaev" target="_blank" rel="noopener noreferrer"> <img alt="soundcloud" src={require("../../assets/socialMediaIcons/Soundcloud.png")} /></a>
+                        </div>
+                        <br></br>
+                        <p id="footerSig" style={{color: "#333"}}>Ruslan Pantaev &copy; 2019</p>
+                    </footer>
+                    <br></br>
+                    <br></br>
                 </div>
             </div>
         );

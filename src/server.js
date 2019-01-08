@@ -5,11 +5,13 @@ const nodemailer = require('nodemailer')
 const keys = require('./config')
 const app = express()
 const path = require('path');
+const compression = require('compression');
 
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, '../client/build')))
+app.use(compression())
 
 app.post('/api/form', (req, res) => {
     console.log(req.body)

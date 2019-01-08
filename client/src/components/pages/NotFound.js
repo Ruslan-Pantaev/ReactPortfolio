@@ -10,7 +10,7 @@ class NotFound extends Component {
   
     render() {
         return (
-            <div id="outer-container">
+            <div id="outer-container" style={{ overflow: "hidden" }}>
                 <Menu
                     right
                     customBurgerIcon={ <img src={require("../../assets/menu/thin_burger_light.png")} alt={""} /> }
@@ -29,6 +29,7 @@ class NotFound extends Component {
                 <div
                     id="page-wrap"
                     style={{
+                        // position: "absolute",
                         overflow: "auto",
                         height: "100vmax",
                         margin: "auto",

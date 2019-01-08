@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { bubble as Menu } from 'react-burger-menu';
-import { Tween } from 'react-gsap';
+// import { Tween } from 'react-gsap';
 import Unity, { UnityContent } from "react-unity-webgl";
 import { Form, Button } from 'reactstrap';
 import Iframe from 'react-iframe';
@@ -45,7 +45,7 @@ class Projects extends Component {
     render() {
         // window.document.getElementById('root').muted = true;
         return (
-            <div id="outer-container">
+            <div id="outer-container" style={{ overflow: "hidden" }}>
                 <Menu
                     right
                     customBurgerIcon={ <img src={require("../../assets/menu/thin_burger.png")} alt={""} /> }
@@ -65,14 +65,14 @@ class Projects extends Component {
                     id="page-wrap"
                     style={{
                         overflow: "auto",
-                        // width: "100vw",
-                        height: "100vmax",
+                        width: "auto",
+                        height: "auto",
                         top: 0,
                         bottom: 0,
                         left: 0,
                         right: 0,
                         margin: "auto",
-                        position: "relative",
+                        position: "absolute",
                         // backgroundColor: "#666"
                         backgroundImage: "radial-gradient(circle, #fcfcfc, #f3f1f4, #ede5ea, #e8d9dc, #e2cdcd)"
                     }}
@@ -82,6 +82,7 @@ class Projects extends Component {
                         alt={""}
                         style={{
                             position: "fixed",
+                            // overflow: "hidden",
                             textAlign: "center",
                             // height: "calc(100vmax + 100vmax)",
                             height: "100vh",
@@ -91,7 +92,6 @@ class Projects extends Component {
                             left: 0,
                             right: 0,
                             margin: "auto",
-                            // overflow: "auto",
                             // objectFit: "fill",
                             display: "inline-block",
                             opacity: 0.08
@@ -117,7 +117,7 @@ class Projects extends Component {
                         opacity: 1
                         }}
                     >
-                        <Tween
+                        {/* <Tween
                             from={{ y: '1000px', rotation: 0, scale: 0.01, opacity: 0 }}
                             to={{ y: '0px', rotation: 0, scale: 1, opacity: 1 }}
                             // stagger={1}
@@ -126,7 +126,7 @@ class Projects extends Component {
                             yoyo={true}
                             position="+=0"
                             ease="Back.easeOut"
-                        >
+                        > */}
                             <img
                                 // width={"42%"}
                                 src={require("../../assets/images/favicon3.png")}
@@ -147,7 +147,7 @@ class Projects extends Component {
                                     // opacity: 1
                                 }}
                             />
-                        </Tween>
+                        {/* </Tween> */}
                         <br></br>
                         <br></br>
                         <br></br>
@@ -157,6 +157,7 @@ class Projects extends Component {
                         <div style={{
                                 position: "relative",
                                 textAlign: "center",
+                                overflow: "hidden",
                                 width: "95%",
                                 top: 0,
                                 bottom: 0,
@@ -288,6 +289,7 @@ class Projects extends Component {
                             <div style={{
                                     position: "relative",
                                     textAlign: "center",
+                                    overflow: "hidden",
                                     // maxWidth: "960px", //h:600
                                     width: "70%",
                                     height: "38vw",
@@ -315,6 +317,7 @@ class Projects extends Component {
                             <div style={{
                                     position: "relative",
                                     textAlign: "center",
+                                    overflow: "hidden",
                                     width: "95%",
                                     top: 0,
                                     bottom: 0,
@@ -374,6 +377,7 @@ class Projects extends Component {
                             <div style={{
                                     position: "relative",
                                     textAlign: "center",
+                                    overflow: "hidden",
                                     width: "95%",
                                     top: 0,
                                     bottom: 0,
@@ -439,6 +443,7 @@ class Projects extends Component {
                             <div style={{
                                     position: "relative",
                                     textAlign: "center",
+                                    overflow: "hidden",
                                     width: "95%",
                                     top: 0,
                                     bottom: 0,
@@ -521,6 +526,7 @@ class Projects extends Component {
                             <div style={{
                                     position: "relative",
                                     textAlign: "center",
+                                    overflow: "hidden",
                                     width: "95%",
                                     top: 0,
                                     bottom: 0,
@@ -539,6 +545,7 @@ class Projects extends Component {
                                 <br></br>
                                 <br></br>
                                 <div style={{
+                                        overflow: "hidden",
                                         maxWidth: "900px",
                                         minWidth: "200px",
                                         width: "70vw",
@@ -647,6 +654,7 @@ class Projects extends Component {
                             <div style={{
                                     position: "relative",
                                     textAlign: "center",
+                                    overflow: "hidden",
                                     width: "95%",
                                     top: 0,
                                     bottom: 0,
@@ -670,6 +678,7 @@ class Projects extends Component {
                                         position: "relative",
                                         color: "#000",
                                         textAlign: "center",
+                                        overflow: "hidden",
                                         // textAlignVertical: "center",
                                         // display: "block",
                                         // maxHeight: "80%",
