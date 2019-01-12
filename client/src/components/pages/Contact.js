@@ -112,7 +112,7 @@ class Contact extends Component {
                         // maxHeight: "80%",
                         width: "auto/9",
                         height: "auto",
-                        top: '150px',
+                        top: 0,
                         bottom: 0,
                         left: 0,
                         right: 0,
@@ -123,14 +123,14 @@ class Contact extends Component {
                     >
                         <img
                             // width={"42%"}
-                            src={require("../../assets/images/favicon3.png")}
+                            src={require("../../assets/images/favicon3.svg")}
                             alt={""}
                             style={{
                                 position: "relative",
                                 textAlign: "center",
                                 // maxHeight: "100%",
-                                // maxWidth: "100%",
-                                width: "auto/9",
+                                maxWidth: "800px",
+                                width: "100%",
                                 height: "auto",
                                 top: 0,
                                 bottom: 0,

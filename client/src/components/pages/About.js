@@ -68,14 +68,14 @@ class About extends Component {
                         position: "relative",
                         color: "#000",
                         textAlign: "center",
-                        // fontFamily: "monospace",
+                        fontFamily: "Museo",
                         // fontFamily: "Helvetica Neue",
                         // textAlignVertical: "center",
                         // display: "block",
                         // maxHeight: "80%",
                         width: "auto/9",
                         height: "auto",
-                        top: '150px',
+                        top: 0,
                         bottom: 0,
                         left: 0,
                         right: 0,
@@ -85,14 +85,14 @@ class About extends Component {
                     }}>
                         <img
                             // width={"42%"}
-                            src={require("../../assets/images/favicon3.png")}
+                            src={require("../../assets/images/favicon3.svg")}
                             alt={""}
                             style={{
                                 position: "relative",
                                 textAlign: "center",
                                 // maxHeight: "100%",
-                                // maxWidth: "100%",
-                                width: "auto/9",
+                                maxWidth: "800px",
+                                width: "100%",
                                 height: "auto",
                                 top: 0,
                                 bottom: 0,
@@ -113,7 +113,8 @@ class About extends Component {
                             style={{
                                 // width:"100%",
                                 position: "relative",
-                                color: "#000",
+                                // color: "#000",\
+                                // fontFamily: "Museo",
                                 textAlign: "center",
                                 // textAlignVertical: "center",
                                 // display: "block",

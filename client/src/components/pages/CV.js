@@ -66,7 +66,7 @@ class CV extends Component {
                         // width:"100%",
                         position: "relative",
                         overflow: "hidden",
-                        color: "#fff",
+                        color: "#333",
                         textAlign: "center",
                         // fontFamily: "monospace",
                         // fontFamily: "Helvetica Neue",
@@ -75,7 +75,7 @@ class CV extends Component {
                         // maxHeight: "80%",
                         width: "auto/9",
                         height: "auto",
-                        top: '150px',
+                        top: 0,
                         bottom: 0,
                         left: 0,
                         right: 0,
@@ -96,14 +96,14 @@ class CV extends Component {
                         > */}
                             <img
                                 // width={"42%"}
-                                src={require("../../assets/images/favicon3.png")}
+                                src={require("../../assets/images/favicon3.svg")}
                                 alt={""}
                                 style={{
                                     position: "relative",
                                     textAlign: "center",
                                     // maxHeight: "100%",
-                                    // maxWidth: "100%",
-                                    width: "auto/9",
+                                    maxWidth: "800px",
+                                    width: "100%",
                                     height: "auto",
                                     top: 0,
                                     bottom: 0,
@@ -118,6 +118,8 @@ class CV extends Component {
                         <br></br>
                         <br></br>
                         <br></br>
+                        <br></br>
+                        <h1>CV - Resume</h1>
                         <br></br>
                         <section 
                             style={{

@@ -59,14 +59,12 @@ class Landing extends Component {
                 >
                     
                     <span style={{
-                            // display: "inline-block",
-                            // verticalAlign: "middle",
                             position: "absolute",
                             textAlign: "center",
                             // maxHeight: "40%",
                             // maxWidth: "40%",
-                            width: "40%",
-                            height: "40%",
+                            width: "60%",
+                            height: "auto",
                             top: 0,
                             bottom: 0,
                             left: 0,
@@ -78,16 +76,16 @@ class Landing extends Component {
                         <Tween
                             wrapper={
                                 <svg xmlns="http://www.w3.org/2000/svg"
-                                width="100%" height="180%"
-                                viewBox="0 0 800 1056"/>
+                                width="100%" height="100%"
+                                viewBox="0 0 800 600"/>
                             }
                             from={{
-                            svgDraw: 0, opacity: 0.5, y: '1000px'
+                            svgDraw: 0, opacity: 0.5, y: '600px'
                             }}
                             to={{
                             svgDraw: 1, opacity: 1, y: '0px'
                             }}
-                            duration={8}
+                            duration={7}
                         >
                             {/* not in use */}
                             {/* <path fill="#111111" stroke="#333333" stroke-width="250%" d="M41.40 0L41.40-49.61L34.56-49.61L34.56-28.87L14.40-28.87L14.40-49.61L7.56-49.61L7.56 0L14.40 0L14.40-23.26L34.56-23.26L34.56 0ZM82.58-44.14L83.38-49.61L56.52-49.61L56.52 0L83.95 0L83.95-5.47L63.36-5.47L63.36-22.46L80.06-22.46L80.06-27.94L63.36-27.94L63.36-44.14ZM121.82 0L122.62-5.98L102.24-5.98L102.24-49.61L95.40-49.61L95.40 0ZM158.04 0L158.83-5.98L138.46-5.98L138.46-49.61L131.62-49.61L131.62 0ZM203.76-24.77C203.76-41.62 195.34-50.47 183.17-50.47C171.00-50.47 162.58-41.26 162.58-24.70C162.58-7.85 171.00 0.86 183.17 0.86C195.34 0.86 203.76-8.21 203.76-24.77ZM196.49-24.77C196.49-10.22 191.23-4.75 183.17-4.75C175.32-4.75 169.85-10.15 169.85-24.70C169.85-39.24 175.10-44.86 183.17-44.86C191.23-44.86 196.49-39.31 196.49-24.77Z"/> */}
@@ -95,7 +93,7 @@ class Landing extends Component {
 
                             {/* heart */}
                             {/* <path fill="#000000" stroke="#111" strokeWidth="1%" d="M 100 300 A 50 50 0 1 1 400 100 A 50 50 0 1 1 700 300 L 400 600 L 100 300" /> */}
-                            <path fill="none" stroke="#ffffff" strokeWidth="1" d="M 100 300 A 50 50 0 1 1 400 100 A 50 50 0 1 1 700 300 L 400 600 L 100 300" />
+                            {/* <path fill="none" stroke="#999" strokeWidth="1" d="M 100 300 A 50 50 0 1 1 400 100 A 50 50 0 1 1 700 300 L 400 600 L 100 300" /> */}
 
                             {/* rp */}
                             <path fill="none" stroke="#be1a1a" strokeWidth="3" d="M 250 400 L 300 300 A 100 50 0 1 1 300 150 L 350 450 L 450 450 L 500 150 A 100 50 0 1 1 500 300" />
@@ -129,7 +127,7 @@ class Landing extends Component {
                             svgDraw: 1, opacity: 0.1
                             }}
                             to={{
-                            svgDraw: 0, opacity: 1
+                            svgDraw: 0, opacity: 0.3
                             }}
                             duration={7}
                         >
@@ -138,7 +136,7 @@ class Landing extends Component {
                         {/* </Controls> */}
                     </span>
                     
-                    <Tween
+                    {/* <Tween
                         from={{ x: '-2000px', rotation: 180, scale: 0.1, opacity: 0 }}
                         to={{ x: '0px', rotation: 0, scale: 1, opacity: 1 }}
                         // stagger={1}
@@ -167,7 +165,7 @@ class Landing extends Component {
                                 opacity: 1
                             }}
                         />
-                    </Tween>
+                    </Tween> */}
                     
                     <Tween
                         from={{ x: '2000px', rotation: -45, scale: 0.1, opacity: 0 }}

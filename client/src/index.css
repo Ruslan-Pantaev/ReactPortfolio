@@ -1,8 +1,18 @@
+@font-face {
+  font-family: 'Museo';
+  src:
+    local('Museo'),
+    url(./assets/fonts/Museo100/Museo100.otf) format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   padding: 0;
 
-  font-family: 'Josefin Slab', serif;
+  font-family: 'Museo', serif;
+  /* font-family: 'Josefin Slab', serif; */
   /* font-family: 'Advent Pro', sans-serif; */
   /* font-family: 'Waiting for the Sunrise', cursive; */
   /* font-family: 'Swanky and Moo Moo', cursive; */
@@ -10,6 +20,7 @@ body {
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif; */
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(to bottom, #000000, #0a0909, #121012, #171618, #1b1b1e, #1d1e21, #1e2124, #202427, #202527, #212628, #212728, #222828);
