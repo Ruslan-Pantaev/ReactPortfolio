@@ -5,9 +5,6 @@ import { bubble as Menu } from 'react-burger-menu';
 import { Link } from 'react-router-dom';
 import './Menu.css';
 
-import ReactGA from 'react-ga';
-ReactGA.initialize('UA-87922163-1');
-ReactGA.pageview(window.location.pathname + window.location.search);
 
 class Landing extends Component {
     constructor(props) {
@@ -57,49 +54,6 @@ class Landing extends Component {
                         backgroundImage: "radial-gradient(circle, #bebebe, #a4a4a4, #8b8b8b, #737373, #5c5c5c, #4d4d4d, #3f3f3f, #313131, #272727, #1d1d1d, #141414, #060606)"
                     }}
                 >
-                    
-                    <span style={{
-                            position: "absolute",
-                            textAlign: "center",
-                            // maxHeight: "40%",
-                            // maxWidth: "40%",
-                            width: "60%",
-                            height: "auto",
-                            top: 0,
-                            bottom: 0,
-                            left: 0,
-                            right: 0,
-                            margin: "auto",
-                            opacity: 1
-                        }}>
-                        {/* <Controls> */}
-                        <Tween
-                            wrapper={
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                width="100%" height="100%"
-                                viewBox="0 0 800 600"/>
-                            }
-                            from={{
-                            svgDraw: 0, opacity: 0.5, y: '600px'
-                            }}
-                            to={{
-                            svgDraw: 1, opacity: 1, y: '0px'
-                            }}
-                            duration={7}
-                        >
-                            {/* not in use */}
-                            {/* <path fill="#111111" stroke="#333333" stroke-width="250%" d="M41.40 0L41.40-49.61L34.56-49.61L34.56-28.87L14.40-28.87L14.40-49.61L7.56-49.61L7.56 0L14.40 0L14.40-23.26L34.56-23.26L34.56 0ZM82.58-44.14L83.38-49.61L56.52-49.61L56.52 0L83.95 0L83.95-5.47L63.36-5.47L63.36-22.46L80.06-22.46L80.06-27.94L63.36-27.94L63.36-44.14ZM121.82 0L122.62-5.98L102.24-5.98L102.24-49.61L95.40-49.61L95.40 0ZM158.04 0L158.83-5.98L138.46-5.98L138.46-49.61L131.62-49.61L131.62 0ZM203.76-24.77C203.76-41.62 195.34-50.47 183.17-50.47C171.00-50.47 162.58-41.26 162.58-24.70C162.58-7.85 171.00 0.86 183.17 0.86C195.34 0.86 203.76-8.21 203.76-24.77ZM196.49-24.77C196.49-10.22 191.23-4.75 183.17-4.75C175.32-4.75 169.85-10.15 169.85-24.70C169.85-39.24 175.10-44.86 183.17-44.86C191.23-44.86 196.49-39.31 196.49-24.77Z"/> */}
-                            {/* <path fill="000000" stroke="#ffffff" stroke-width="1%" d="M 50 300 A 100 50 0 1 1 750 300 A 100 50 0 1 1 50 300" /> */}
-
-                            {/* heart */}
-                            {/* <path fill="#000000" stroke="#111" strokeWidth="1%" d="M 100 300 A 50 50 0 1 1 400 100 A 50 50 0 1 1 700 300 L 400 600 L 100 300" /> */}
-                            {/* <path fill="none" stroke="#999" strokeWidth="1" d="M 100 300 A 50 50 0 1 1 400 100 A 50 50 0 1 1 700 300 L 400 600 L 100 300" /> */}
-
-                            {/* rp */}
-                            <path fill="none" stroke="#be1a1a" strokeWidth="3" d="M 250 400 L 300 300 A 100 50 0 1 1 300 150 L 350 450 L 450 450 L 500 150 A 100 50 0 1 1 500 300" />
-                        </Tween>
-                        {/* </Controls> */}
-                    </span>
                     <span style={{
                             // display: "inline-block",
                             // verticalAlign: "middle",
@@ -135,9 +89,51 @@ class Landing extends Component {
                         </Tween>
                         {/* </Controls> */}
                     </span>
+                    <span style={{
+                            position: "absolute",
+                            textAlign: "center",
+                            // maxHeight: "40%",
+                            maxWidth: "1000px",
+                            width: "60%",
+                            height: "auto",
+                            top: 0,
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            margin: "auto",
+                            opacity: 1
+                        }}>
+                        {/* <Controls> */}
+                        <Tween
+                            wrapper={
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                width="100%" height="100%"
+                                viewBox="0 0 800 600"/>
+                            }
+                            from={{
+                            svgDraw: 0, opacity: 0.5, x: '200px', y: '200px', scale: '0.1'
+                            }}
+                            to={{
+                            svgDraw: 1, opacity: 1, x: '0px', y: '0px', scale: '1'
+                            }}
+                            duration={7}
+                        >
+                            {/* not in use */}
+                            {/* <path fill="#111111" stroke="#333333" stroke-width="250%" d="M41.40 0L41.40-49.61L34.56-49.61L34.56-28.87L14.40-28.87L14.40-49.61L7.56-49.61L7.56 0L14.40 0L14.40-23.26L34.56-23.26L34.56 0ZM82.58-44.14L83.38-49.61L56.52-49.61L56.52 0L83.95 0L83.95-5.47L63.36-5.47L63.36-22.46L80.06-22.46L80.06-27.94L63.36-27.94L63.36-44.14ZM121.82 0L122.62-5.98L102.24-5.98L102.24-49.61L95.40-49.61L95.40 0ZM158.04 0L158.83-5.98L138.46-5.98L138.46-49.61L131.62-49.61L131.62 0ZM203.76-24.77C203.76-41.62 195.34-50.47 183.17-50.47C171.00-50.47 162.58-41.26 162.58-24.70C162.58-7.85 171.00 0.86 183.17 0.86C195.34 0.86 203.76-8.21 203.76-24.77ZM196.49-24.77C196.49-10.22 191.23-4.75 183.17-4.75C175.32-4.75 169.85-10.15 169.85-24.70C169.85-39.24 175.10-44.86 183.17-44.86C191.23-44.86 196.49-39.31 196.49-24.77Z"/> */}
+                            {/* <path fill="000000" stroke="#ffffff" stroke-width="1%" d="M 50 300 A 100 50 0 1 1 750 300 A 100 50 0 1 1 50 300" /> */}
+
+                            {/* heart */}
+                            {/* <path fill="#000000" stroke="#111" strokeWidth="1%" d="M 100 300 A 50 50 0 1 1 400 100 A 50 50 0 1 1 700 300 L 400 600 L 100 300" /> */}
+                            {/* <path fill="none" stroke="#999" strokeWidth="1" d="M 100 300 A 50 50 0 1 1 400 100 A 50 50 0 1 1 700 300 L 400 600 L 100 300" /> */}
+
+                            {/* rp */}
+                            <path fill="none" stroke="#777" /*"#be1a1a"*/ strokeWidth="3" d="M 250 400 L 300 300 A 100 50 0 1 1 300 150 L 350 450 L 450 450 L 500 150 A 100 50 0 1 1 500 300" />
+                        </Tween>
+                        {/* </Controls> */}
+                    </span>
                     
-                    {/* <Tween
-                        from={{ x: '-2000px', rotation: 180, scale: 0.1, opacity: 0 }}
+                    <Tween
+                        from={{ x: '0px', rotation: 0, scale: 0.1, opacity: 0 }}
                         to={{ x: '0px', rotation: 0, scale: 1, opacity: 1 }}
                         // stagger={1}
                         duration={7}
@@ -148,7 +144,7 @@ class Landing extends Component {
                     >
                         <img
                             // width={"42%"}
-                            src={require("../../assets/images/sphere3.png")}
+                            src={require("../../assets/images/sphere1.png")}
                             alt={""}
                             style={{
                                 position: "absolute",
@@ -165,10 +161,10 @@ class Landing extends Component {
                                 opacity: 1
                             }}
                         />
-                    </Tween> */}
+                    </Tween>
                     
                     <Tween
-                        from={{ x: '2000px', rotation: -45, scale: 0.1, opacity: 0 }}
+                        from={{ x: '0px', rotation: -5, scale: 0.1, opacity: 0 }}
                         to={{ x: '0px', rotation: 0, scale: 1, opacity: 1 }}
                         // stagger={1}
                         duration={7}
@@ -183,7 +179,7 @@ class Landing extends Component {
                                 // fps_limit: 28,
                                 particles: {
                                     color: {
-                                        value: "#000"
+                                        value: "#fff"
                                     },
                                     number: {
                                         value: this.state.width/8 + this.state.height/12,
@@ -215,19 +211,29 @@ class Landing extends Component {
                                     events: {
                                         onhover: {
                                             enable: true,
-                                            mode: "grab"
+                                            mode: "bubble"
+                                        },
+                                        onclick: {
+                                            enable: true,
+                                            mode: "repulse"
                                         }
                                     },
                                     modes: {
                                         bubble: {
-                                            size: 20,
-                                            distance: 120
+                                            size: 5,
+                                            distance: 100,
+                                            opacity: 0.8,
+                                            duration: 5
                                         },
                                         repulse: {
-                                            distance: 40
+                                            distance: 100,
+                                            duration: 0.5
                                         },
                                         grab: {
-                                            distance: 500
+                                            line_linked: {
+                                                opacity: 0.8
+                                            },
+                                            distance: 300
                                         }
                                     }
                                 },
@@ -237,7 +243,7 @@ class Landing extends Component {
                         />
                     </span>
                     </Tween>
-                    <Tween
+                    {/* <Tween
                         from={{ y: '200px', rotation: 0, scale: 0.01, opacity: 0 }}
                         to={{ y: '0px', rotation: 0, scale: 1, opacity: 1 }}
                         // stagger={1}
@@ -347,7 +353,7 @@ class Landing extends Component {
                             height={"100vh"}
                         />
                     </span>
-                    </Tween>
+                    </Tween> */}
                     <Tween
                         from={{ x: '-2000px', rotation: 0, scale: 0.01, opacity: 0 }}
                         to={{ x: '0px', rotation: 0, scale: 1, opacity: 1 }}

@@ -7,10 +7,6 @@ import './Menu.css';
 import './Footer.css';
 import Axios from 'axios';
 
-import ReactGA from 'react-ga';
-ReactGA.initialize('UA-87922163-1');
-ReactGA.pageview(window.location.pathname + window.location.search);
-
 
 class Contact extends Component {
     constructor() {
@@ -39,10 +35,10 @@ class Contact extends Component {
             email,
             message
         })
-        ReactGA.event({
-            category: 'Contact',
-            action: 'email sent'
-        });
+        // ReactGA.event({
+        //     category: 'Contact',
+        //     action: 'email sent'
+        // });
     }
 
     onDismiss() {

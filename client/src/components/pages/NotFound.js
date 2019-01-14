@@ -5,10 +5,6 @@ import { Tween } from 'react-gsap';
 import './Menu.css';
 import './Footer.css';
 
-import ReactGA from 'react-ga';
-ReactGA.initialize('UA-87922163-1');
-ReactGA.pageview(window.location.pathname + window.location.search);
-
 
 class NotFound extends Component {
   
