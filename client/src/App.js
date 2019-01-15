@@ -15,13 +15,14 @@ const history = createHistory();
 ReactGA.initialize('UA-87922163-1');
 history.listen((location, action) => {
   ReactGA.pageview(location.pathname + location.search);
-  console.log(location.pathname)
+  // console.log(location.pathname)
 });
 
 
 class App extends Component {
   componentDidMount(){
     window.ga('create', 'UA-87922163-1', 'auto');
+    ReactGA.pageview('/');
   }
   
   render() {
