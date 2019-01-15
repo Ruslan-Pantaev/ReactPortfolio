@@ -7,9 +7,6 @@ import { Form, Button } from 'reactstrap';
 import './Menu.css';
 import './Footer.css';
 
-ReactGA.initialize('UA-87922163-1');
-ReactGA.pageview('/codecontrol');
-
 let unityContent = new UnityContent(
     "/assets/unityWebGL/CodeControl_3_1/Build/CodeControl_3_1.json",
     "/assets/unityWebGL/CodeControl_3_1/Build/UnityLoader.js",
@@ -17,6 +14,11 @@ let unityContent = new UnityContent(
 );
 
 class CV extends Component {
+    componentDidMount() {
+        ReactGA.initialize('UA-87922163-1');
+        ReactGA.pageview('/codecontrol');
+    }
+
     toggleCodeControl(e) {
         unityContent.setFullscreen(true);
         e.preventDefault()
