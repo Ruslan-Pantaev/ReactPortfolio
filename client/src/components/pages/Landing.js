@@ -36,6 +36,7 @@ class Landing extends Component {
                     customCrossIcon={ <img src={require("../../assets/menu/round_cross.png")} alt={""} /> }
                     pageWrapId={ "page-wrap" }
                     outerContainerId={ "outer-container" }
+                    style={{ outline: "none" }}
                 >
                     <ul style={{ outline: "none" }}>
                         <li><Link style={{color: '#fff'}} to="/">Home</Link></li>
@@ -70,7 +71,6 @@ class Landing extends Component {
                             margin: "auto",
                             opacity: 1
                         }}>
-                        {/* <Controls> */}
                         <Tween
                             wrapper={
                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +87,6 @@ class Landing extends Component {
                         >
                             <path fill="none" stroke="#000" strokeWidth="300%" d="M 50 300 A 100 50 0 1 1 750 300 A 100 50 0 1 1 50 300" />
                         </Tween>
-                        {/* </Controls> */}
                     </span>
                     <span style={{
                             position: "absolute",
@@ -103,7 +102,6 @@ class Landing extends Component {
                             margin: "auto",
                             opacity: 1
                         }}>
-                        {/* <Controls> */}
                         <Tween
                             wrapper={
                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -124,14 +122,12 @@ class Landing extends Component {
 
                             {/* heart */}
                             {/* <path fill="#000000" stroke="#111" strokeWidth="1%" d="M 100 300 A 50 50 0 1 1 400 100 A 50 50 0 1 1 700 300 L 400 600 L 100 300" /> */}
-                            {/* <path fill="none" stroke="#999" strokeWidth="1" d="M 100 300 A 50 50 0 1 1 400 100 A 50 50 0 1 1 700 300 L 400 600 L 100 300" /> */}
+                            {/* <path fill="#666" stroke="#999" strokeWidth="1" d="M 100 300 A 50 50 0 1 1 400 100 A 50 50 0 1 1 700 300 L 400 600 L 100 300" /> */}
 
                             {/* rp */}
                             <path fill="none" stroke="#777" /*"#be1a1a"*/ strokeWidth="3" d="M 250 400 L 300 300 A 100 50 0 1 1 300 150 L 350 450 L 450 450 L 500 150 A 100 50 0 1 1 500 300" />
                         </Tween>
-                        {/* </Controls> */}
                     </span>
-                    
                     <Tween
                         from={{ x: '0px', rotation: 0, scale: 0.1, opacity: 0 }}
                         to={{ x: '0px', rotation: 0, scale: 1, opacity: 1 }}
@@ -162,7 +158,6 @@ class Landing extends Component {
                             }}
                         />
                     </Tween>
-                    
                     <Tween
                         from={{ x: '0px', rotation: -5, scale: 0.1, opacity: 0 }}
                         to={{ x: '0px', rotation: 0, scale: 1, opacity: 1 }}
@@ -355,12 +350,12 @@ class Landing extends Component {
                     </span>
                     </Tween> */}
                     <Tween
-                        from={{ x: '-2000px', rotation: 0, scale: 0.01, opacity: 0 }}
+                        from={{ x: '0px', rotation: 0, scale: 0.01, opacity: 0 }}
                         to={{ x: '0px', rotation: 0, scale: 1, opacity: 1 }}
                         // stagger={1}
                         duration={7}
                         repeat={0}
-                        yoyo={true}
+                        yoyo={false}
                         position="+=0"
                         ease="Back.easeOut"
                     >

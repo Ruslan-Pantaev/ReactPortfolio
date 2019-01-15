@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
 import { bubble as Menu } from 'react-burger-menu';
-import { Link } from 'react-router-dom';
-// import { Tween } from 'react-gsap';
+// import { Link } from 'react-router-dom';
+import Unity, { UnityContent } from "react-unity-webgl";
+import { Form, Button } from 'reactstrap';
 import './Menu.css';
 import './Footer.css';
 
+let unityContent = new UnityContent(
+    "/assets/unityWebGL/CodeControl_3_1/Build/CodeControl_3_1.json",
+    "/assets/unityWebGL/CodeControl_3_1/Build/UnityLoader.js",
+    { adjustOnWindowResize: true }
+);
 
 class CV extends Component {
+    toggleCodeControl(e) {
+        unityContent.setFullscreen(true);
+        e.preventDefault()
+    }
   
     render() {
         return (
@@ -20,11 +30,11 @@ class CV extends Component {
                     style={{ outline: "none" }}
                 >
                     <ul style={{ outline: "none" }}>
-                        <li><Link style={{color: '#aaeaff'}} to="/">Home</Link></li>
-                        <li><Link style={{color: '#aaeaff'}} to="/about">About</Link></li>
-                        <li><Link style={{color: '#fff'}} to="/cv">CV</Link></li>
-                        <li><Link style={{color: '#aaeaff'}} to="/projects">Projects</Link></li>
-                        <li><Link style={{color: '#aaeaff'}} to="/contact">Contact</Link></li>
+                        <li><a style={{color: '#aaeaff'}} href="/">Home</a></li>
+                        <li><a style={{color: '#aaeaff'}} href="/about">About</a></li>
+                        <li><a style={{color: '#aaeaff'}} href="/cv">CV</a></li>
+                        <li><a style={{color: '#fff'}} href="/projects">Projects</a></li>
+                        <li><a style={{color: '#aaeaff'}} href="/contact">Contact</a></li>
                     </ul>
                 </Menu>
                 <div
@@ -116,59 +126,46 @@ class CV extends Component {
                         <br></br>
                         <br></br>
                         <br></br>
-                        <h1>CV - Resume</h1>
+                        <h1>Code Control</h1>
                         <br></br>
-                        <section 
-                            style={{
-                                // width:"100%",
+                        <div style={{
                                 position: "relative",
-                                color: "#000",
                                 textAlign: "center",
                                 overflow: "hidden",
-                                // textAlignVertical: "center",
-                                // display: "block",
-                                // maxHeight: "80%",
-                                maxWidth: 1080,
-                                width: "80%",
-                                height: "auto",
+                                // maxWidth: "960px", //h:600
+                                width: "70%",
+                                height: "45vw",
                                 top: 0,
                                 bottom: 0,
                                 left: 0,
                                 right: 0,
                                 margin: "auto",
-                                borderStyle: "solid",
-                                borderWidth: "1px",
+                                // display: "inline-block",
+                                borderStyle: "double",
+                                borderWidth: "5px",
                                 borderColor: "#999",
-                                borderRadius: "8px",
-                                padding: "10px"
+                                borderRadius: "8px"
                             }}
                         >
-                            <img
-                                src={require("../../assets/cv/RuslanPantaev_cv_2019-1-6.jpg")}
-                                alt={""}
-                                style={{
-                                    // position: "relative",
-                                    textAlign: "center",
-                                    overflow: "hidden",
-                                    // maxHeight: "100%",
-                                    maxWidth: 1080,
-                                    width: "100%",
-                                    height: "auto",
-                                    top: 0,
-                                    bottom: 0,
-                                    left: 0,
-                                    right: 0,
-                                    margin: "auto",
-                                    // display: "block",
-                                    // opacity: 0.1
-                                }}
-                            />
-                        </section>
+                            <Unity unityContent={unityContent} />
+                        </div>
+                        <Form onSubmit={this.toggleCodeControl}>
+                                <Button
+                                    color={'success'}
+                                    style={{
+                                        position: "relative",
+                                        textAlign: "center",
+                                        top: 0,
+                                        bottom: 0,
+                                        left: 0,
+                                        right: 0,
+                                        margin: "auto"
+                                    }}
+                                >
+                                    Full Screen
+                                </Button>
+                            </Form>
                     </div>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
                     <br></br>
                     <br></br>
                     <br></br>

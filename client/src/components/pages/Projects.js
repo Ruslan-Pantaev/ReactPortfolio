@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bubble as Menu } from 'react-burger-menu';
 // import { Tween } from 'react-gsap';
+import { Link } from 'react-router-dom';
 import Unity, { UnityContent } from "react-unity-webgl";
 import { Form, Button } from 'reactstrap';
 import Iframe from 'react-iframe';
@@ -52,13 +53,14 @@ class Projects extends Component {
                     customCrossIcon={ <img src={require("../../assets/menu/round_cross.png")} alt={""} /> }
                     pageWrapId={ "page-wrap" }
                     outerContainerId={ "outer-container" }
+                    style={{ outline: "none" }}
                 >
                     <ul style={{ outline: "none" }}>
-                        <li><a style={{color: '#aaeaff'}} href="/">Home</a></li>
-                        <li><a style={{color: '#aaeaff'}} href="/about">About</a></li>
-                        <li><a style={{color: '#aaeaff'}} href="/cv">CV</a></li>
-                        <li><a style={{color: '#fff'}} href="/projects">Projects</a></li>
-                        <li><a style={{color: '#aaeaff'}} href="/contact">Contact</a></li>
+                        <li><Link style={{color: '#aaeaff'}} to="/">Home</Link></li>
+                        <li><Link style={{color: '#aaeaff'}} to="/about">About</Link></li>
+                        <li><Link style={{color: '#aaeaff'}} to="/cv">CV</Link></li>
+                        <li><Link style={{color: '#fff'}} to="/projects">Projects</Link></li>
+                        <li><Link style={{color: '#aaeaff'}} to="/contact">Contact</Link></li>
                     </ul>
                 </Menu>
                 <div
@@ -230,6 +232,29 @@ class Projects extends Component {
                                 <h3>Compatibility:</h3>
                                 <p>Currently not supported on mobile platforms</p>
                                 <p>Latest Stable Releases of FireFox and Chrome are recommended</p>
+                                <br></br>
+                                <br></br>
+                                <a href="/codecontrol" target="_blank" rel="noopener noreferrer">
+                                    <h3 style={{
+                                        color: "#000",
+                                        width: "200px",
+                                        textAlign: "center",
+                                        borderStyle: "outset",
+                                        borderWidth: "5px",
+                                        borderColor: "#999",
+                                        borderRadius: "8px",
+                                        padding: "10px",
+                                        top: 0,
+                                        bottom: 0,
+                                        left: 0,
+                                        right: 0,
+                                        margin: "auto"
+                                    }}>
+                                        Launch Code Control
+                                    </h3>
+                                </a>
+                                <br></br>
+                                <br></br>                            
                             </section>
                             {/* <br></br>
                             <img
@@ -250,51 +275,6 @@ class Projects extends Component {
                                 }}
                             />
                             <br></br> */}
-                            <br></br>
-                            <br></br>
-                            <Form onSubmit={this.toggleCodeControl}>
-                                <Button
-                                    color={this.state.codeControlBtnColor}
-                                    style={{
-                                        position: "relative",
-                                        textAlign: "center",
-                                        top: 0,
-                                        bottom: 0,
-                                        left: 0,
-                                        right: 0,
-                                        margin: "auto"
-                                    }}
-                                >
-                                    {this.state.codeControlText}
-                                </Button>
-                            </Form>
-                            <br></br>
-                            <br></br>
-                            <div style={{
-                                    position: "relative",
-                                    textAlign: "center",
-                                    overflow: "hidden",
-                                    // maxWidth: "960px", //h:600
-                                    width: "70%",
-                                    height: "38vw",
-                                    top: 0,
-                                    bottom: 0,
-                                    left: 0,
-                                    right: 0,
-                                    margin: "auto",
-                                    // display: "inline-block",
-                                    borderStyle: "double",
-                                    borderWidth: "5px",
-                                    borderColor: "#999",
-                                    borderRadius: "8px"
-                                }}
-                            >
-                                {this.state.loadCodeControl === true && <Unity unityContent={this.unityContent} /> }
-                            </div>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
                         </div>
                         <br></br>
                         <br></br>

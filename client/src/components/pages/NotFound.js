@@ -17,6 +17,7 @@ class NotFound extends Component {
                     customCrossIcon={ <img src={require("../../assets/menu/round_cross.png")} alt={""} /> }
                     pageWrapId={ "page-wrap" }
                     outerContainerId={ "outer-container" }
+                    style={{ outline: "none" }}
                 >
                     <ul style={{ outline: "none" }}>
                         <li><Link style={{color: '#aaeaff'}} to="/">Home</Link></li>
