@@ -29,7 +29,7 @@ class CV extends Component {
             <div id="outer-container" style={{ overflow: "hidden" }}>
                 <Menu
                     right
-                    customBurgerIcon={ <img src={require("../../assets/menu/thin_burger.png")} alt={""} /> }
+                    customBurgerIcon={ <img src={require("../../assets/menu/thin_burger_light.png")} alt={""} /> }
                     customCrossIcon={ <img src={require("../../assets/menu/round_cross.png")} alt={""} /> }
                     pageWrapId={ "page-wrap" }
                     outerContainerId={ "outer-container" }
@@ -51,7 +51,7 @@ class CV extends Component {
                         width: "auto/9",
                         height: "auto",
                         margin: "auto",
-                        backgroundImage: "radial-gradient(circle, #ffffff, #f7f7fa, #eeeef5, #e4e7f1, #d9dfec, #d1dced, #c8daee, #bed8ee, #b4daf3, #a8ddf6, #9be0f7, #8de3f7)"
+                        backgroundImage: "radial-gradient(circle, #252424, #292828, #2d2c2c, #303031, #343435, #393939, #3d3d3e, #424242, #484848, #4e4e4e, #545454, #5a5a5a)"
                     }}
                 >
                     <img
@@ -79,7 +79,7 @@ class CV extends Component {
                         // width:"100%",
                         position: "relative",
                         overflow: "hidden",
-                        color: "#333",
+                        color: "#999",
                         textAlign: "center",
                         // fontFamily: "monospace",
                         // fontFamily: "Helvetica Neue",
@@ -149,12 +149,13 @@ class CV extends Component {
                                 // display: "inline-block",
                                 borderStyle: "double",
                                 borderWidth: "5px",
-                                borderColor: "#999",
+                                borderColor: "#333",
                                 borderRadius: "8px"
                             }}
                         >
                             <Unity unityContent={unityContent} />
                         </div>
+                        <br></br>
                         <Form onSubmit={this.toggleCodeControl}>
                                 <Button
                                     color={'success'}
@@ -195,7 +196,7 @@ class CV extends Component {
                             <a href="https://soundcloud.com/ruslanpantaev" target="_blank" rel="noopener noreferrer"> <img alt="soundcloud" src={require("../../assets/socialMediaIcons/Soundcloud.png")} /></a>
                         </div>
                         <br></br>
-                        <p id="footerSig" style={{color: "#333"}}>Ruslan Pantaev &copy; 2019</p>
+                        <p id="footerSig" style={{color: "#999"}}>Ruslan Pantaev &copy; 2019</p>
                     </footer>
                     <br></br>
                     <br></br>
