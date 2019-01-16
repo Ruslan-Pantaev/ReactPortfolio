@@ -55,13 +55,9 @@ class Landing extends Component {
                         backgroundImage: "radial-gradient(circle, #bebebe, #a4a4a4, #8b8b8b, #737373, #5c5c5c, #4d4d4d, #3f3f3f, #313131, #272727, #1d1d1d, #141414, #060606)"
                     }}
                 >
-                    <span style={{
-                            // display: "inline-block",
-                            // verticalAlign: "middle",
+                    {/* <span style={{
                             position: "absolute",
                             textAlign: "center",
-                            // maxHeight: "40%",
-                            // maxWidth: "40%",
                             width: "auto",
                             height: "auto",
                             top: 0,
@@ -87,7 +83,7 @@ class Landing extends Component {
                         >
                             <path fill="none" stroke="#000" strokeWidth="300%" d="M 50 300 A 100 50 0 1 1 750 300 A 100 50 0 1 1 50 300" />
                         </Tween>
-                    </span>
+                    </span> */}
                     <span style={{
                             position: "absolute",
                             textAlign: "center",

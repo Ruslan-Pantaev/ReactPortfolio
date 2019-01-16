@@ -30,7 +30,7 @@ class Contact extends Component {
         this.setState({ alert: true })
         e.preventDefault()
         const { name, email, message } = this.state
-        const form = await Axios.post('/api/form', {
+        await Axios.post('/api/form', {
             name,
             email,
             message

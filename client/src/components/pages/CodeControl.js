@@ -19,7 +19,7 @@ class CV extends Component {
         ReactGA.pageview('/codecontrol');
     }
 
-    toggleCodeControl(e) {
+    toggleFullScreen(e) {
         unityContent.setFullscreen(true);
         e.preventDefault()
     }
@@ -156,7 +156,7 @@ class CV extends Component {
                             <Unity unityContent={unityContent} />
                         </div>
                         <br></br>
-                        <Form onSubmit={this.toggleCodeControl}>
+                        <Form onSubmit={this.toggleFullScreen}>
                                 <Button
                                     color={'success'}
                                     style={{

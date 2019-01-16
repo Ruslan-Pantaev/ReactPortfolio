@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { bubble as Menu } from 'react-burger-menu';
 // import { Tween } from 'react-gsap';
 import { Link } from 'react-router-dom';
-import Unity, { UnityContent } from "react-unity-webgl";
-import { Form, Button } from 'reactstrap';
+// import Unity, { UnityContent } from "react-unity-webgl";
+// import { Form, Button } from 'reactstrap';
 import Iframe from 'react-iframe';
 import ReactPlayer from 'react-player';
 import Gist from 'react-gist';
@@ -12,36 +12,36 @@ import './Footer.css';
 
 
 class Projects extends Component {
-    constructor(props) {
-        super(props);
-        this.unityContent = new UnityContent(
-          "/assets/unityWebGL/CodeControl_3_1/Build/CodeControl_3_1.json",
-          "/assets/unityWebGL/CodeControl_3_1/Build/UnityLoader.js",
-          { adjustOnWindowResize: true }
-        );
-        this.state = {
-            loadCodeControl: false,
-            codeControlBtnColor: 'success',
-            codeControlText: 'Load Game'
-        }
-        this.toggleCodeControl = this.toggleCodeControl.bind(this)
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.unityContent = new UnityContent(
+    //       "/assets/unityWebGL/CodeControl_3_1/Build/CodeControl_3_1.json",
+    //       "/assets/unityWebGL/CodeControl_3_1/Build/UnityLoader.js",
+    //       { adjustOnWindowResize: true }
+    //     );
+    //     this.state = {
+    //         loadCodeControl: false,
+    //         codeControlBtnColor: 'success',
+    //         codeControlText: 'Load Game'
+    //     }
+    //     this.toggleCodeControl = this.toggleCodeControl.bind(this)
+    // }
 
-    toggleCodeControl(e) {
-        this.setState(prevState => ({
-            loadCodeControl: !prevState.loadCodeControl
-        }))
-        if (this.state.codeControlBtnColor === 'success') {
-            this.setState({ codeControlBtnColor: 'danger' })
-        }
-        if (this.state.codeControlText === 'Load Game') {
-            this.setState({ codeControlText: 'Exit Game (restart game progress)' })
-        }
-        if (this.state.codeControlBtnColor === 'danger') {
-            window.location.reload();
-        }
-        e.preventDefault()
-    }
+    // toggleCodeControl(e) {
+    //     this.setState(prevState => ({
+    //         loadCodeControl: !prevState.loadCodeControl
+    //     }))
+    //     if (this.state.codeControlBtnColor === 'success') {
+    //         this.setState({ codeControlBtnColor: 'danger' })
+    //     }
+    //     if (this.state.codeControlText === 'Load Game') {
+    //         this.setState({ codeControlText: 'Exit Game (restart game progress)' })
+    //     }
+    //     if (this.state.codeControlBtnColor === 'danger') {
+    //         window.location.reload();
+    //     }
+    //     e.preventDefault()
+    // }
   
     render() {
         // window.document.getElementById('root').muted = true;
