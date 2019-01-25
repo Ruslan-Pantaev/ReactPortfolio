@@ -139,8 +139,8 @@ class CodeControl2019 extends Component {
                                 textAlign: "center",
                                 overflow: "hidden",
                                 // maxWidth: "960px", //h:600
-                                width: "70%",
-                                height: "45vw",
+                                width: "95%",
+                                height: "40vw",
                                 top: 0,
                                 bottom: 0,
                                 left: 0,
