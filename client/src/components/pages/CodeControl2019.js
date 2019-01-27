@@ -134,12 +134,16 @@ class CodeControl2019 extends Component {
                         <br></br>
                         <h1>Code Control 2019 rev1.0.6</h1>
                         <br></br>
-                        <p>Welcome! Thanks for trying out this game! :)</p>
+                        <h5>Welcome! Thanks for trying out this game! :)</h5>
                         <br></br>
-                        <p>This is a large 3D game so downloading all resources takes time.</p>
+                        <p>This is a large 3D game, so downloading all the resources takes time.</p>
+                        <p>Please use the latest stable version of Google Chrome.</p>
                         <p>Depending on network speeds, expect 3-8 minutes of load time.</p>
                         <br></br>
-                        <p>Please use the latest stable version of Firefox</p>
+                        <p>For better performance or if your browser is not compatible, download the game below:</p>
+                        <a href="https://drive.google.com/open?id=1GZTsmEgCz3yeb4qMAjFSFwio7mvLuHdw" target="_blank" rel="noopener noreferrer">Download 64-bit OSX build</a>
+                        <a href="https://drive.google.com/open?id=10i9_RapIzxdjmHNAl65duz3wx8XuMGzY" target="_blank" rel="noopener noreferrer">Download 64-bit Windows build</a>
+                        <a href="https://drive.google.com/open?id=1be2VgqAJbaFVzO3FtcvRamONAgmx0r9y" target="_blank" rel="noopener noreferrer">Download 64-bit Linux build</a>
                         <br></br>
                         <p>Have fun!</p>
                         <br></br>
