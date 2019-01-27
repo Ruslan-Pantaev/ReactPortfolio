@@ -134,6 +134,15 @@ class CodeControl2019 extends Component {
                         <br></br>
                         <h1>Code Control 2019 rev1.0.6</h1>
                         <br></br>
+                        <p>Welcome! Thanks for trying out this game! :)</p>
+                        <br></br>
+                        <p>This is a large 3D game so downloading all resources takes time.</p>
+                        <p>Depending on network speeds, expect 3-8 minutes of load time.</p>
+                        <br></br>
+                        <p>Please use the latest stable version of Firefox</p>
+                        <br></br>
+                        <p>Have fun!</p>
+                        <br></br>
                         <div style={{
                                 position: "relative",
                                 textAlign: "center",
