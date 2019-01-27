@@ -132,7 +132,7 @@ class CodeControl2019 extends Component {
                         <br></br>
                         <br></br>
                         <br></br>
-                        <h1>Code Control 2019 rev1.0.5</h1>
+                        <h1>Code Control 2019 rev1.0.6</h1>
                         <br></br>
                         <div style={{
                                 position: "relative",
