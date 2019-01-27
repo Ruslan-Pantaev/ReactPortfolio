@@ -141,11 +141,11 @@ class CodeControl2019 extends Component {
                         <p>Depending on network speeds, expect 3-8 minutes of load time.</p>
                         <br></br>
                         <p>For better performance or if your browser is not compatible, download the game below:</p>
-                        <a href="https://drive.google.com/open?id=1GZTsmEgCz3yeb4qMAjFSFwio7mvLuHdw" target="_blank" rel="noopener noreferrer">Download 64-bit OSX build</a>
+                        <a style={{color: "green"}} href="https://drive.google.com/open?id=1GZTsmEgCz3yeb4qMAjFSFwio7mvLuHdw" target="_blank" rel="noopener noreferrer">Download 64-bit OSX build</a>
                         <br></br>
-                        <a href="https://drive.google.com/open?id=10i9_RapIzxdjmHNAl65duz3wx8XuMGzY" target="_blank" rel="noopener noreferrer">Download 64-bit Windows build</a>
+                        <a style={{color: "green"}} href="https://drive.google.com/open?id=10i9_RapIzxdjmHNAl65duz3wx8XuMGzY" target="_blank" rel="noopener noreferrer">Download 64-bit Windows build</a>
                         <br></br>
-                        <a href="https://drive.google.com/open?id=1be2VgqAJbaFVzO3FtcvRamONAgmx0r9y" target="_blank" rel="noopener noreferrer">Download 64-bit Linux build</a>
+                        <a style={{color: "green"}} href="https://drive.google.com/open?id=1be2VgqAJbaFVzO3FtcvRamONAgmx0r9y" target="_blank" rel="noopener noreferrer">Download 64-bit Linux build</a>
                         <br></br>
                         <br></br>
                         <p>Have fun!</p>
