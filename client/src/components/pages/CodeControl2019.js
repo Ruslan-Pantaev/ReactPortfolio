@@ -157,7 +157,7 @@ class CodeControl2019 extends Component {
                         <p>l to activate <B>flashlight</B></p>
                         <p>left-ctrl+l to <B>dance</B></p>
                         <p>mouse-scroll to <B>zoom</B></p>
-                        <p>mouse-click to <B>activate elevator</B></p>
+                        <p>select floor and mouse-click to <B>activate elevator</B></p>
                         <br></br>
                         <p>Have fun!</p>
                         <br></br>
