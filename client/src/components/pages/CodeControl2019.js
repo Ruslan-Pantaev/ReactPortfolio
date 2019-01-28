@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bubble as Menu } from 'react-burger-menu';
 // import { Link } from 'react-router-dom';
 import Unity, { UnityContent } from "react-unity-webgl";
-import ReactGA from 'react-ga';
+// import ReactGA from 'react-ga';
 import { Form, Button } from 'reactstrap';
 import './Menu.css';
 import './Footer.css';
@@ -13,11 +13,13 @@ let unityContent = new UnityContent(
     { adjustOnWindowResize: true }
 );
 
+const B = (props) => <p style={{fontWeight: 'bold'}}>{props.children}</p>
+
 class CodeControl2019 extends Component {
-    componentDidMount() {
-        ReactGA.initialize('UA-87922163-1');
-        ReactGA.pageview('/codecontrol2019');
-    }
+    // componentDidMount() {
+    //     ReactGA.initialize('UA-87922163-1');
+    //     ReactGA.pageview('/codecontrol2019');
+    // }
 
     toggleFullScreen(e) {
         unityContent.setFullscreen(true);
@@ -147,6 +149,15 @@ class CodeControl2019 extends Component {
                         <br></br>
                         <a style={{color: "green"}} href="https://drive.google.com/open?id=1be2VgqAJbaFVzO3FtcvRamONAgmx0r9y" target="_blank" rel="noopener noreferrer">Download 64-bit Linux build</a>
                         <br></br>
+                        <br></br>
+                        <h5>Controls</h5>
+                        <p>w,a,s,d or arrow-keys to <B>move</B></p>
+                        <p>spacebar to <B>jump</B></p>
+                        <p>g,h,j,k to make <B>hand signals</B></p>
+                        <p>l to activate <B>flashlight</B></p>
+                        <p>left-ctrl+l to <B>dance</B></p>
+                        <p>mouse-scroll to <B>zoom</B></p>
+                        <p>mouse-click to <B>activate elevator</B></p>
                         <br></br>
                         <p>Have fun!</p>
                         <br></br>
