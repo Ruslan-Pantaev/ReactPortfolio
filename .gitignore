@@ -2,7 +2,7 @@ src/config.js
 
 package-lock.json
 client/package-lock.json
-client/public/assets/unityWebGL/CodeControl_2019_1_0_5
+client/public/assets/unityWebGL/
 .DS_Store
 client/.DS_Store
 

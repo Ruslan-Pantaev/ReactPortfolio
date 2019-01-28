@@ -142,14 +142,14 @@ class CodeControl2019 extends Component {
                         <p>Please use the latest stable version of Google Chrome.</p>
                         <p>Depending on network speeds, expect 3-8 minutes of load time.</p>
                         <br></br>
-                        <p>For better performance or if your browser is not compatible, download the game below:</p>
+                        {/* <p>For better performance or if your browser is not compatible, download the game below:</p>
                         <a style={{color: "green"}} href="https://drive.google.com/open?id=1GZTsmEgCz3yeb4qMAjFSFwio7mvLuHdw" target="_blank" rel="noopener noreferrer">Download 64-bit OSX build</a>
                         <br></br>
                         <a style={{color: "green"}} href="https://drive.google.com/open?id=10i9_RapIzxdjmHNAl65duz3wx8XuMGzY" target="_blank" rel="noopener noreferrer">Download 64-bit Windows build</a>
                         <br></br>
                         <a style={{color: "green"}} href="https://drive.google.com/open?id=1be2VgqAJbaFVzO3FtcvRamONAgmx0r9y" target="_blank" rel="noopener noreferrer">Download 64-bit Linux build</a>
                         <br></br>
-                        <br></br>
+                        <br></br> */}
                         <h5>Controls</h5>
                         <p>w,a,s,d or arrow-keys to <B>move</B></p>
                         <p>spacebar to <B>jump</B></p>
@@ -168,7 +168,7 @@ class CodeControl2019 extends Component {
                                 textAlign: "center",
                                 overflow: "hidden",
                                 // maxWidth: "960px", //h:600
-                                width: "95%",
+                                width: "90%",
                                 height: "40vw",
                                 top: 0,
                                 bottom: 0,
