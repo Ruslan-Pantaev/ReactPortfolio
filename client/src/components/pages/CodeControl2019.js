@@ -13,8 +13,8 @@ let unityContent = new UnityContent(
     { adjustOnWindowResize: true }
 );
 
-const B = (props) => <text style={{fontWeight: 'bold'}}>{props.children}</text>
-const SPACING = (props) => <text style={{color: "green", fontWeight: 'bold'}}> | </text>
+const B = (props) => <span style={{fontWeight: 'bold'}}>{props.children}</span>
+const SPACING = (props) => <span style={{color: "green", fontWeight: 'bold'}}> | </span>
 
 class CodeControl2019 extends Component {
     // componentDidMount() {
