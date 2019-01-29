@@ -183,7 +183,107 @@ class Projects extends Component {
                                 }}
                             >
                                 <h3>Title:</h3>
-                                <p>Code Control: A Game for Teaching Introductory Programming</p>
+                                <p>Code Control 2019 3D Beta: A Game for Teaching Introductory Programming</p>
+                                <h3>Authors:</h3>
+                                <p>Inspired by Kwan Holloway's and Mike Williams' original Code Control project</p>
+                                <p>(In alphabetical order): Devorah Kletenik, Ruslan Pantaev (Lead Developer) and Deborah Sturm</p>
+                                {/* <a
+                                    href='https://github.com/Ruslan-Pantaev/CodeControl_clean'
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ color: "#666" }}
+                                >
+                                    <h6 style={{
+                                        color: "#666",
+                                        width: "200px",
+                                        textAlign: "center",
+                                        borderStyle: "outset",
+                                        borderWidth: "5px",
+                                        borderColor: "#999",
+                                        borderRadius: "8px",
+                                        padding: "10px",
+                                        top: 0,
+                                        bottom: 0,
+                                        left: 0,
+                                        right: 0,
+                                        margin: "auto"
+                                    }}>Git Repo Link</h6>
+                                </a> */}
+                                <br></br>
+                                <h3>Compatibility:</h3>
+                                <p>Currently not supported on mobile platforms</p>
+                                <p>Requires Latest Stable Release of Google Chrome and webGL 2.0 compliant GPUs</p>
+                                <br></br>
+                                <br></br>
+                                <a href="/codecontrol2019" target="_blank" rel="noopener noreferrer">
+                                    <h3 style={{
+                                        color: "#000",
+                                        width: "200px",
+                                        textAlign: "center",
+                                        borderStyle: "outset",
+                                        borderWidth: "5px",
+                                        borderColor: "#999",
+                                        borderRadius: "8px",
+                                        padding: "10px",
+                                        top: 0,
+                                        bottom: 0,
+                                        left: 0,
+                                        right: 0,
+                                        margin: "auto"
+                                    }}>
+                                        Launch Code Control 2019 3D
+                                    </h3>
+                                </a>
+                                <br></br>
+                                <br></br>
+                            </section>
+                        </div>
+                        <br></br>
+                        <br></br>
+                        <div style={{
+                                position: "relative",
+                                textAlign: "center",
+                                overflow: "hidden",
+                                width: "95%",
+                                top: 0,
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                margin: "auto",
+                                borderStyle: "solid",
+                                borderWidth: "1px",
+                                borderColor: "#999",
+                                borderRadius: "8px",
+                                padding: "10px"
+                            }}
+                        >
+                            <section 
+                                style={{
+                                    // width:"100%",
+                                    position: "relative",
+                                    color: "#000",
+                                    textAlign: "center",
+                                    // textAlignVertical: "center",
+                                    // display: "block",
+                                    // maxHeight: "80%",
+                                    maxWidth: 600,
+                                    width: "auto/9",
+                                    height: "auto",
+                                    top: 0,
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    margin: "auto",
+                                    borderStyle: "solid",
+                                    borderWidth: "1px",
+                                    borderColor: "#999",
+                                    borderRadius: "8px",
+                                    padding: "10px",
+                                    backgroundColor: "rgba(181, 183, 183, 0.1)"
+                                }}
+                            >
+                                <h3>Title:</h3>
+                                <p>Code Control 2D: A Game for Teaching Introductory Programming</p>
                                 <h3>Authors:</h3>
                                 <p>(In alphabetical order): Kwan Holloway, Devorah Kletenik, Ruslan Pantaev, Deborah Sturm, and Mike Williams</p>
                                 <h3>Abstract:</h3>
@@ -250,11 +350,11 @@ class Projects extends Component {
                                         right: 0,
                                         margin: "auto"
                                     }}>
-                                        Launch Code Control
+                                        Launch Code Control 2D
                                     </h3>
                                 </a>
                                 <br></br>
-                                <br></br>                            
+                                <br></br>
                             </section>
                             {/* <br></br>
                             <img
