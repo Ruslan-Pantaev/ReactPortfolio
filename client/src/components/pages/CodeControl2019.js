@@ -8,12 +8,13 @@ import './Menu.css';
 import './Footer.css';
 
 let unityContent = new UnityContent(
-    "/assets/unityWebGL/CodeControl_2019_1_0_5/Build/CodeControl_2019_1_0_5.json",
-    "/assets/unityWebGL/CodeControl_2019_1_0_5/Build/UnityLoader.js",
+    "/assets/unityWebGL/CodeControl_2019_1_0_7/Build/CodeControl_2019_1_0_7.json",
+    "/assets/unityWebGL/CodeControl_2019_1_0_7/Build/UnityLoader.js",
     { adjustOnWindowResize: true }
 );
 
-const B = (props) => <p style={{fontWeight: 'bold'}}>{props.children}</p>
+const B = (props) => <text style={{fontWeight: 'bold'}}>{props.children}</text>
+const SPACING = (props) => <text style={{color: "green", fontWeight: 'bold'}}> | </text>
 
 class CodeControl2019 extends Component {
     // componentDidMount() {
@@ -151,9 +152,11 @@ class CodeControl2019 extends Component {
                         <br></br>
                         <br></br> */}
                         <h5>Controls</h5>
-                        <p>w,a,s,d or arrow-keys to <B>move</B> spacebar to <B>jump</B> c to <B>crouch</B> hold left-shift to <B>walk slowly</B></p>
-                        <p>g,h,j,k to make <B>hand signals</B> l to activate <B>flashlight</B> left-ctrl+l to <B>dance</B></p>
-                        <p>mouse-scroll to <B>zoom</B> select floor and mouse-click to <B>activate elevator</B></p>
+                        <p>w,a,s,d or arrow-keys to <B>move</B><SPACING></SPACING>spacebar to <B>jump</B><SPACING></SPACING>
+                        c to <B>crouch</B><SPACING></SPACING>hold left-shift to <B>walk slowly</B></p>
+                        <p>g,h,j,k to make <B>hand signals</B><SPACING></SPACING>l to activate <B>flashlight</B><SPACING></SPACING>
+                        left-ctrl+l to <B>dance</B></p>
+                        <p>mouse-scroll to <B>zoom</B><SPACING></SPACING>select floor and mouse-click to <B>activate elevator</B></p>
                         <br></br>
                         <p>Have fun!</p>
                         <br></br>
