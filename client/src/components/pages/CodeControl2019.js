@@ -8,8 +8,8 @@ import './Menu.css';
 import './Footer.css';
 
 let unityContent = new UnityContent(
-    "/assets/unityWebGL/CodeControl_2019_1_0_8/Build/CodeControl_2019_1_0_8.json",
-    "/assets/unityWebGL/CodeControl_2019_1_0_8/Build/UnityLoader.js",
+    "/assets/unityWebGL/CodeControl_2019_1_0_8/Build/b4bf17a310dca316d9bb3f8f4a5c69c3.json",
+    "/assets/unityWebGL/CodeControl_2019_1_0_8/Build/3544178c924aac8c5129f2d974d60dd7.js",
     { adjustOnWindowResize: true }
 );
 
