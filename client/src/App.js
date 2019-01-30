@@ -9,10 +9,10 @@ import CodeControl2019 from './components/pages/CodeControl2019';
 import Contact from './components/pages/Contact';
 import NotFound from './components/pages/NotFound';
 import { Router, Route, Switch } from 'react-router-dom';
-// import createHistory from 'history/createBrowserHistory'
-// import ReactGA from 'react-ga';
+import createHistory from 'history/createBrowserHistory'
+import ReactGA from 'react-ga';
 
-// const history = createHistory();
+const history = createHistory();
 // ReactGA.initialize('UA-87922163-1');
 // history.listen((location, action) => {
 //   ReactGA.pageview(location.pathname + location.search);
@@ -28,8 +28,7 @@ class App extends Component {
   
   render() {
     return (
-      // <Router history={history}>
-      <Router>
+      <Router history={history}>
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/about" component={About} />
