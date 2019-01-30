@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bubble as Menu } from 'react-burger-menu';
 // import { Link } from 'react-router-dom';
 import Unity, { UnityContent } from "react-unity-webgl";
-import ReactGA from 'react-ga';
+// import ReactGA from 'react-ga';
 import { Form, Button } from 'reactstrap';
 import './Menu.css';
 import './Footer.css';
@@ -14,10 +14,10 @@ let unityContent = new UnityContent(
 );
 
 class CV extends Component {
-    componentDidMount() {
-        ReactGA.initialize('UA-87922163-1');
-        ReactGA.pageview('/codecontrol');
-    }
+    // componentDidMount() {
+    //     ReactGA.initialize('UA-87922163-1');
+    //     ReactGA.pageview('/codecontrol');
+    // }
 
     toggleFullScreen(e) {
         unityContent.setFullscreen(true);

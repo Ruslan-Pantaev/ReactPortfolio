@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bubble as Menu } from 'react-burger-menu';
 // import { Link } from 'react-router-dom';
 import Unity, { UnityContent } from "react-unity-webgl";
-import ReactGA from 'react-ga';
+// import ReactGA from 'react-ga';
 import { Form, Button } from 'reactstrap';
 import './Menu.css';
 import './Footer.css';
@@ -17,10 +17,10 @@ const B = (props) => <span style={{fontWeight: 'bold'}}>{props.children}</span>
 const SPACING = (props) => <span style={{color: "green", fontWeight: 'bold'}}> | </span>
 
 class CodeControl2019 extends Component {
-    componentDidMount() {
-        ReactGA.initialize('UA-87922163-1');
-        ReactGA.pageview('/codecontrol2019');
-    }
+    // componentDidMount() {
+    //     ReactGA.initialize('UA-87922163-1');
+    //     ReactGA.pageview('/codecontrol2019');
+    // }
 
     toggleFullScreen(e) {
         unityContent.setFullscreen(true);
