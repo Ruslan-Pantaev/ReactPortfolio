@@ -301,8 +301,8 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
 
 ```sh
 {
-	"_id"       : ObjectId("xxxxxxxxxxxxxxxxxxxxxxxx"),
-	"created"   : DateTime,
+	"_id"             : ObjectId("xxxxxxxxxxxxxxxxxxxxxxxx"),
+	"dateTimeCreated" : DateTime,
 	"firstName" : "first name value",
 	"lastName"  : "last name value",
 	"gender"    : "prefer not to say | m | f | other(string)",
