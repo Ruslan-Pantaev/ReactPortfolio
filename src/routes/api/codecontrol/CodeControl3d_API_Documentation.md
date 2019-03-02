@@ -349,7 +349,8 @@ The dynamic problem sets / challenges API is complete, but needs further thought
 | 1 | https://rpantaev.com/api/codecontrol/players/register | POST x-www-form-urlencoded Body [apiKey, username, password] |
 | 2 | https://rpantaev.com/api/codecontrol/sessionsCounter/update | GET key-value pairs Header [apiKey, username] |
 | 3 | https://rpantaev.com/api/codecontrol/sessions/save | POST x-www-form-urlencoded Body [apiKey, username] **call to sessionsCounter for sessionNum made internally |
-| 4 | https://rpantaev.com/api/codecontrol/stats/save | POST x-www-form-urlencoded Body [apiKey, username, sessionNum] |
+| 4 | https://rpantaev.com/api/codecontrol/sessionsCounter | GET key-value pairs Header [apiKey, username] **this will give you your latest/current sessionNum to pass to step 5 |
+| 5 | https://rpantaev.com/api/codecontrol/stats/save | POST x-www-form-urlencoded Body [apiKey, username, sessionNum] |
 | Log In, Load | | |
 | 1 | https://rpantaev.com/api/codecontrol/players/login | POST x-www-form-urlencoded Body [apiKey, username, password] |
 | 2 | https://rpantaev.com/api/codecontrol/sessionsCounter | GET key-value pairs Header [apiKey, username] **this will give you your latest/current sessionNum, from which you can specify the range of available sessions and stats to load |
