@@ -25,137 +25,137 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
 ### API Routes
 - players
   - @route       GET api/codecontrol/players/test
-  - @description test players route
-  - @access      Public
+    @description test players route
+    @access      Public
 
   - @route       GET api/codecontrol/players/findAll
-  - @description list all players using apiKey query param
-  - @access      Public
+    @description list all players using apiKey query param
+    @access      Public
 
   - @route       GET api/codecontrol/players/findOne
-  - @description find specific player using username and apiKey query params
-  - @access      Public
+    @description find specific player using username and apiKey query params
+    @access      Public
 
   - @route       POST api/codecontrol/players/register
-  - @description salt + hash pw & insert new player using player obj and apiKey in body
-  - @access      Public
+    @description salt + hash pw & insert new player using player obj and apiKey in body
+    @access      Public
 
   - @route       POST api/codecontrol/players/login
-  - @description decrypt pw & login player using player obj and apiKey in body
-  - @access      Public
+    @description decrypt pw & login player using player obj and apiKey in body
+    @access      Public
 
 - sessionsCounter
   - @route       GET api/codecontrol/sessionsCounter/test
-  - @description test sessionsCounter route using apiKey query param
-  - @access      Public
+    @description test sessionsCounter route using apiKey query param
+    @access      Public
 
   - @route       GET api/codecontrol/sessionsCounter/update
-  - @description get atomic sessionNum and increment using username and apiKey query params
+    @description get atomic sessionNum and increment using username and apiKey query params
     for a new player, the mongodb upsert flag will create a new sessionsCounter obj
-  - @access      Public
+    @access      Public
 
   - @route       GET api/codecontrol/sessionsCounter/
-  - @description get latest/current sessionNum using username and apiKey query params
+    @description get latest/current sessionNum using username and apiKey query params
     useful for listing how many sessions a user can choose to load from
-  - @access      Public
+    @access      Public
 
 - sessions
   - @route       GET api/codecontrol/sessions/test
-  - @description test sessions route
-  - @access      Public
+    @description test sessions route
+    @access      Public
 
   - @route       POST api/codecontrol/sessions/save
-  - @description create/insert new session based on username and apiKey query params
-  - @access      Public
+    @description create/insert new session based on username and apiKey query params
+    @access      Public
 
   - @route       GET api/codecontrol/sessions/
-  - @description find all sessions for the player so that the player can choose 
+    @description find all sessions for the player so that the player can choose 
     session based on fields like 'dateTimeCreated' and 'timeElapsed'
     based on username and apiKey query params
-  - @access      Public
+    @access      Public
 
   - @route       GET api/codecontrol/sessions/load
-  - @description get session based on username, sessionNum and apiKey query params
+    @description get session based on username, sessionNum and apiKey query params
     this will allow players to load any previous sessions
-  - @access      Public
+    @access      Public
  
 - stats
   - @route       GET api/codecontrol/stats/test
-  - @description test stats route
-  - @access      Public
+    @description test stats route
+    @access      Public
 
   - @route       POST api/codecontrol/stats/save
-  - @description create/insert new stats based on username, sessionNum and apiKey query params
+    @description create/insert new stats based on username, sessionNum and apiKey query params
     stats obj has a session_id field that references stats to a particular session
-  - @access      Public
+    @access      Public
 
   - @route       GET api/codecontrol/stats/
-  - @description find all stats for the player based on username and apiKey query params
-  - @access      Public
+    @description find all stats for the player based on username and apiKey query params
+    @access      Public
 
   - @route       GET api/codecontrol/stats/load
-  - @description get stats based on username, sessionNum and apiKey query params
+    @description get stats based on username, sessionNum and apiKey query params
     stats are referenced to the correct player and session
-  - @access      Public
+    @access      Public
 
 - instructors
   - @route       GET api/codecontrol/instructors/test
-  - @description test instructors route
-  - @access      Public
+    @description test instructors route
+    @access      Public
 
   - @route       GET api/codecontrol/instructors/findAll
-  - @description list all instructors using apiKey query param
-  - @access      Public
+    @description list all instructors using apiKey query param
+    @access      Public
 
   - @route       GET api/codecontrol/instructors/findOne
-  - @description find a specific instructor using username and apiKey query params
-  - @access      Public
+    @description find a specific instructor using username and apiKey query params
+    @access      Public
 
   - @route       POST api/codecontrol/instructors/register
-  - @description salt + hash pw & insert new instructor using instructors obj and apiKey in body
-  - @access      Public
+    @description salt + hash pw & insert new instructor using instructors obj and apiKey in body
+    @access      Public
 
   - @route       POST api/codecontrol/instructors/login
-  - @description decrypt pw & login instructor using instructors obj and apiKey in body
-  - @access      Public
+    @description decrypt pw & login instructor using instructors obj and apiKey in body
+    @access      Public
 
 - problemSetsCounter
   - @route       GET api/codecontrol/problemSetsCounter/test
-  - @description test problemSetsCounter route
-  - @access      Public
+    @description test problemSetsCounter route
+    @access      Public
 
   - @route       GET api/codecontrol/problemSetsCounter/update
-  - @description get atomic problemSetsNum and increment using username and apiKey query params
+    @description get atomic problemSetsNum and increment using username and apiKey query params
     for a new instructor, the mongodb upsert flag will create a new problemSetsCounter obj
-  - @access      Public
+    @access      Public
 
   - @route       GET api/codecontrol/problemSetsCounter/
-  - @description get latest/current problemSetsNum using username and apiKey query params
+    @description get latest/current problemSetsNum using username and apiKey query params
     useful for listing how many problem sets a user can choose to load from
-  - @access      Public
+    @access      Public
 
 - problemSets
   - @route       GET api/codecontrol/problemSets/test
-  - @description test problemSets route
-  - @access      Public
+    @description test problemSets route
+    @access      Public
 
   - @route       POST api/codecontrol/problemSets/save
-  - @description create/insert new problem set based on username and apiKey query params
-  - @access      Public
+    @description create/insert new problem set based on username and apiKey query params
+    @access      Public
 
   - @route       GET api/codecontrol/problemSets/
-  - @description find all problem sets for the instructor based on username and apiKey query params
-  - @access      Public
+    @description find all problem sets for the instructor based on username and apiKey query params
+    @access      Public
 
   - @route       GET api/codecontrol/problemSets/load
-  - @description get problem set based on username, problemSetsNum and apiKey query params
+    @description get problem set based on username, problemSetsNum and apiKey query params
                  this will allow users to load any previous problem sets
-  - @access      Public
+    @access      Public
 
   - @route       GET api/codecontrol/problemSets/delete
-  - @description get problem set based on username, problemSetsNum and apiKey query params and delete it
+    @description get problem set based on username, problemSetsNum and apiKey query params and delete it
                  using get request since we have to look up instructor first
-  - @access      Public
+    @access      Public
 
 
 
