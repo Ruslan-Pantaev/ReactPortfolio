@@ -37,10 +37,10 @@ router.post('/save', (req, res) => {
               req.body.sessionNum = sessionsCounter.sessionNum
 
               // inserting new session
-              db.collection('sessions').insertOne(req.body, function(err, res) {
+              db.collection('sessions').insertOne(req.body, function(err, res2) {
                 assert.equal(err, null);
                 console.log("success: new session inserted for: " + req.body.username);
-                return res.status(200).json(res);
+                return res.status(200).json(res2);
               });
             } else {
               var errMsg = 'error: sessionsCounter does not yet exist, ' +

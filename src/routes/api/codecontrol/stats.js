@@ -29,7 +29,7 @@ router.post('/save', (req, res) => {
         // player._id is the player's unique Mongo ObjectID
         db.collection('sessions').findOne({ player_id: player._id, sessionNum: req.body.sessionNum })
           .then(session => {
-            if (sessions != null) {
+            if (session != null) {
 
               // update req.body with player_id field (player._id)
               req.body.player_id = player._id
@@ -37,10 +37,10 @@ router.post('/save', (req, res) => {
               req.body.session_id = session._id
 
               // inserting new stats obj
-              db.collection('stats').insertOne(req.body, function(err, res) {
+              db.collection('stats').insertOne(req.body, function(err, res2) {
                 assert.equal(err, null);
                 console.log("success: new stats inserted for: " + req.body.username);
-                return res.status(200).json(res);
+                return res.status(200).json(res2);
               });
             } else {
               var errMsg = 'error: session not found';
