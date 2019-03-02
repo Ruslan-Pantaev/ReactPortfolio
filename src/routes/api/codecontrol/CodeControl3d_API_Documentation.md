@@ -25,137 +25,137 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
 ### API Routes
 - players
   - @route       GET api/codecontrol/players/test
-    @description test players route
-    @access      Public
+  - @description test players route
+  - @access      Public
 
   - @route       GET api/codecontrol/players/findAll
-    @description list all players using apiKey query param
-    @access      Public
+  - @description list all players using apiKey query param
+  - @access      Public
 
   - @route       GET api/codecontrol/players/findOne
-    @description find specific player using username and apiKey query params
-    @access      Public
+  - @description find specific player using username and apiKey query params
+  - @access      Public
 
   - @route       POST api/codecontrol/players/register
-    @description salt + hash pw & insert new player using player obj and apiKey in body
-    @access      Public
+  - @description salt + hash pw & insert new player using player obj and apiKey in body
+  - @access      Public
 
   - @route       POST api/codecontrol/players/login
-    @description decrypt pw & login player using player obj and apiKey in body
-    @access      Public
+  - @description decrypt pw & login player using player obj and apiKey in body
+  - @access      Public
 
 - sessionsCounter
   - @route       GET api/codecontrol/sessionsCounter/test
-    @description test sessionsCounter route using apiKey query param
-    @access      Public
+  - @description test sessionsCounter route using apiKey query param
+  - @access      Public
 
   - @route       GET api/codecontrol/sessionsCounter/update
-    @description get atomic sessionNum and increment using username and apiKey query params
+  - @description get atomic sessionNum and increment using username and apiKey query params
     for a new player, the mongodb upsert flag will create a new sessionsCounter obj
-    @access      Public
+  - @access      Public
 
   - @route       GET api/codecontrol/sessionsCounter/
-    @description get latest/current sessionNum using username and apiKey query params
+  - @description get latest/current sessionNum using username and apiKey query params
     useful for listing how many sessions a user can choose to load from
-    @access      Public
+  - @access      Public
 
 - sessions
   - @route       GET api/codecontrol/sessions/test
-    @description test sessions route
-    @access      Public
+  - @description test sessions route
+  - @access      Public
 
   - @route       POST api/codecontrol/sessions/save
-    @description create/insert new session based on username and apiKey query params
-    @access      Public
+  - @description create/insert new session based on username and apiKey query params
+  - @access      Public
 
   - @route       GET api/codecontrol/sessions/
-    @description find all sessions for the player so that the player can choose 
+  - @description find all sessions for the player so that the player can choose 
     session based on fields like 'dateTimeCreated' and 'timeElapsed'
     based on username and apiKey query params
-    @access      Public
+  - @access      Public
 
   - @route       GET api/codecontrol/sessions/load
-    @description get session based on username, sessionNum and apiKey query params
+  - @description get session based on username, sessionNum and apiKey query params
     this will allow players to load any previous sessions
-    @access      Public
+  - @access      Public
  
 - stats
   - @route       GET api/codecontrol/stats/test
-    @description test stats route
-    @access      Public
+  - @description test stats route
+  - @access      Public
 
   - @route       POST api/codecontrol/stats/save
-    @description create/insert new stats based on username, sessionNum and apiKey query params
+  - @description create/insert new stats based on username, sessionNum and apiKey query params
     stats obj has a session_id field that references stats to a particular session
-    @access      Public
+  - @access      Public
 
   - @route       GET api/codecontrol/stats/
-    @description find all stats for the player based on username and apiKey query params
-    @access      Public
+  - @description find all stats for the player based on username and apiKey query params
+  - @access      Public
 
   - @route       GET api/codecontrol/stats/load
-    @description get stats based on username, sessionNum and apiKey query params
+  - @description get stats based on username, sessionNum and apiKey query params
     stats are referenced to the correct player and session
-    @access      Public
+  - @access      Public
 
 - instructors
   - @route       GET api/codecontrol/instructors/test
-    @description test instructors route
-    @access      Public
+  - @description test instructors route
+  - @access      Public
 
   - @route       GET api/codecontrol/instructors/findAll
-    @description list all instructors using apiKey query param
-    @access      Public
+  - @description list all instructors using apiKey query param
+  - @access      Public
 
   - @route       GET api/codecontrol/instructors/findOne
-    @description find a specific instructor using username and apiKey query params
-    @access      Public
+  - @description find a specific instructor using username and apiKey query params
+  - @access      Public
 
   - @route       POST api/codecontrol/instructors/register
-    @description salt + hash pw & insert new instructor using instructors obj and apiKey in body
-    @access      Public
+  - @description salt + hash pw & insert new instructor using instructors obj and apiKey in body
+  - @access      Public
 
   - @route       POST api/codecontrol/instructors/login
-    @description decrypt pw & login instructor using instructors obj and apiKey in body
-    @access      Public
+  - @description decrypt pw & login instructor using instructors obj and apiKey in body
+  - @access      Public
 
 - problemSetsCounter
   - @route       GET api/codecontrol/problemSetsCounter/test
-    @description test problemSetsCounter route
-    @access      Public
+  - @description test problemSetsCounter route
+  - @access      Public
 
   - @route       GET api/codecontrol/problemSetsCounter/update
-    @description get atomic problemSetsNum and increment using username and apiKey query params
+  - @description get atomic problemSetsNum and increment using username and apiKey query params
     for a new instructor, the mongodb upsert flag will create a new problemSetsCounter obj
-    @access      Public
+  - @access      Public
 
   - @route       GET api/codecontrol/problemSetsCounter/
-    @description get latest/current problemSetsNum using username and apiKey query params
+  - @description get latest/current problemSetsNum using username and apiKey query params
     useful for listing how many problem sets a user can choose to load from
-    @access      Public
+  - @access      Public
 
 - problemSets
   - @route       GET api/codecontrol/problemSets/test
-    @description test problemSets route
-    @access      Public
+  - @description test problemSets route
+  - @access      Public
 
   - @route       POST api/codecontrol/problemSets/save
-    @description create/insert new problem set based on username and apiKey query params
-    @access      Public
+  - @description create/insert new problem set based on username and apiKey query params
+  - @access      Public
 
   - @route       GET api/codecontrol/problemSets/
-    @description find all problem sets for the instructor based on username and apiKey query params
-    @access      Public
+  - @description find all problem sets for the instructor based on username and apiKey query params
+  - @access      Public
 
   - @route       GET api/codecontrol/problemSets/load
-    @description get problem set based on username, problemSetsNum and apiKey query params
+  - @description get problem set based on username, problemSetsNum and apiKey query params
                  this will allow users to load any previous problem sets
-    @access      Public
+  - @access      Public
 
   - @route       GET api/codecontrol/problemSets/delete
-    @description get problem set based on username, problemSetsNum and apiKey query params and delete it
+  - @description get problem set based on username, problemSetsNum and apiKey query params and delete it
                  using get request since we have to look up instructor first
-    @access      Public
+  - @access      Public
 
 
 
@@ -163,7 +163,7 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
 
 ```sh
 {
-	"_id"       : ObjectId("xxxxxxxxxxxxxxxxxxxxxxxx"),
+	"_id"               : ObjectId("xxxxxxxxxxxxxxxxxxxxxxxx"),
 	"dateTimeCreated"   : DateTime,
 	"firstName" : "first name value",
 	"lastName"  : "last name value",
@@ -172,12 +172,12 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
 	"collegeName"          : "college name value | n/a",
 	"collegeMajor"         : "college major value | n/a",
 	"courseYear"           : "course year value | graduate | phD | n/a",
-    "courseSectionNumber"  : "course section and number value | n/a",
-    "instructorFirstName" : "course instructor first name value | n/a",
-    "instructorLastName"  : "course instructor last name value | n/a",
-    "instructor_id"       : ObjectId("xxxxxxxxxxxxxxxxxxxxxxxx")  ref to instructor,
-    "username" : "username value [REQUIRED]",
-    "password" : "$2a$10$/HEaqmhFpn/5pkhRoH2g5.G4onXXm.UkuUbhNb45yYv8vRFh7jZCi [REQUIRED]"
+	"courseSectionNumber"  : "course section and number value | n/a",
+	"instructorFirstName"  : "course instructor first name value | n/a",
+	"instructorLastName"   : "course instructor last name value | n/a",
+	"instructor_id"        : ObjectId("xxxxxxxxxxxxxxxxxxxxxxxx")  ref to instructor,
+	"username" : "username value [REQUIRED]",
+	"password" : "$2a$10$/HEaqmhFpn/5pkhRoH2g5.G4onXXm.UkuUbhNb45yYv8vRFh7jZCi [REQUIRED]"
 }
 ```
 
@@ -195,16 +195,16 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
 
 ```sh
 {
-	"_id"         : ObjectId("xxxxxxxxxxxxxxxxxxxxxxxx"),
-	"player_id"   : ObjectId("xxxxxxxxxxxxxxxxxxxxxxxx") ref to player [REQUIRED],
-	"sessionNum"  : "(int) updated from sessionsCounter collection upon new sessions [REQUIRED]",
-	"dateTimeCreated"     : DateTime,
-	"fxVolume"    : (float),
-	"musicVolume" : (float),
+	"_id"             : ObjectId("xxxxxxxxxxxxxxxxxxxxxxxx"),
+	"player_id"       : ObjectId("xxxxxxxxxxxxxxxxxxxxxxxx") ref to player [REQUIRED],
+	"sessionNum"      : "(int) updated from sessionsCounter collection upon new sessions [REQUIRED]",
+	"dateTimeCreated" : DateTime,
+	"fxVolume"        : (float),
+	"musicVolume"     : (float),
 	"position" : {
-	    playerTransformPositionX : (float),
-	    playerTransformPositionY : (float),
-	    playerTransformPositionZ : (float)
+		playerTransformPositionX : (float),
+		playerTransformPositionY : (float),
+		playerTransformPositionZ : (float)
 	}
 }
 ```
@@ -213,29 +213,29 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
 
 ```sh
 {
-	"_id"         : ObjectId("xxxxxxxxxxxxxxxxxxxxxxxx"),
-	"player_id"   : ObjectId("xxxxxxxxxxxxxxxxxxxxxxxx") ref to player [REQUIRED],
-	"session_id"  : ObjectId("xxxxxxxxxxxxxxxxxxxxxxxx") ref to session [REQUIRED],
-	"sessionNum"  : "(int) [REQUIRED]",
-	"dateTimeCreated"     : DateTime,
-	"timeElapsed" : (float),
-	"score"       : (int),
+	"_id"             : ObjectId("xxxxxxxxxxxxxxxxxxxxxxxx"),
+	"player_id"       : ObjectId("xxxxxxxxxxxxxxxxxxxxxxxx") ref to player [REQUIRED],
+	"session_id"      : ObjectId("xxxxxxxxxxxxxxxxxxxxxxxx") ref to session [REQUIRED],
+	"sessionNum"      : "(int) [REQUIRED]",
+	"dateTimeCreated" : DateTime,
+	"timeElapsed"     : (float),
+	"score"           : (int),
 	"challengesTotal"     : (int),
 	"challengesComplete"  : (int),
 	"challengesRemaining" : (int),
 	"challengesRemaining" : (int),
 	"challengeEvents" : [
-        { "event"   : (what type of stat is this? Ex: "IDE"),
-          "action" : (what did the player do? Ex: "Run Code", "Ask for help"),
-          "value"  : (string) | (Number) | n/a
-        }
-    ],
-    "movementEvents" : [
-        { "event"   : (what type of stat is this? Ex: "Player died"),
-          "action" : (what did the player do? Ex: "Jump", "Turn Left"),
-          "value"  : (string) | (Number) | n/a
-        }
-    ]
+		{ "event"   : (what type of stat is this? Ex: "IDE"),
+			"action" : (what did the player do? Ex: "Run Code", "Ask for help"),
+			"value"  : (string) | (Number) | n/a
+		}
+	],
+	"movementEvents" : [
+		{ "event"   : (what type of stat is this? Ex: "Player died"),
+			"action" : (what did the player do? Ex: "Jump", "Turn Left"),
+			"value"  : (string) | (Number) | n/a
+		}
+	]
 }
 ```
 
@@ -249,12 +249,12 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
 	"lastName"  : "last name value",
 	"gender"    : "prefer not to say | m | f | other(string)",
 	"age"       : "prefer not to say | (int)",
-	"collegeName"          : "college name value | n/a",
+	"collegeName"         : "college name value | n/a",
 	"collegeDept"         : "college dept value | n/a",
-	"courseLevel"           : "undergraduate | graduate | phD | n/a",
-    "courseSectionNumber"  : "course section and number value | n/a",
-    "username" : "username value [REQUIRED]",
-    "password" : "$2a$10$/HEaqmhFpn/5pkhRoH2g5.G4onXXm.UkuUbhNb45yYv8vRFh7jZCi [REQUIRED]"
+	"courseLevel"         : "undergraduate | graduate | phD | n/a",
+	"courseSectionNumber" : "course section and number value | n/a",
+	"username" : "username value [REQUIRED]",
+	"password" : "$2a$10$/HEaqmhFpn/5pkhRoH2g5.G4onXXm.UkuUbhNb45yYv8vRFh7jZCi [REQUIRED]"
 }
 ```
 
