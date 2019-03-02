@@ -25,6 +25,7 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
 ### API Routes
 - players
   - @route       GET api/codecontrol/players/test
+  
     @description test players route
     @access      Public
 
