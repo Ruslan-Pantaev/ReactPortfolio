@@ -231,8 +231,7 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
 	"collegeMajor"         : "college major value | n/a",
 	"courseYear"           : "course year value | graduate | phD | n/a",
 	"courseSectionNumber"  : "course section and number value | n/a",
-	"instructorFirstName"  : "course instructor first name value | n/a",
-	"instructorLastName"   : "course instructor last name value | n/a",
+	"instructorFullName"  : "course instructor full name value | n/a",
 	"instructor_id"        : ObjectId("xxxxxxxxxxxxxxxxxxxxxxxx")  ref to instructor,
 	"username" : "username value [REQUIRED]",
 	"password" : "$2a$10$/HEaqmhFpn/5pkhRoH2g5.G4onXXm.UkuUbhNb45yYv8vRFh7jZCi [REQUIRED]"
