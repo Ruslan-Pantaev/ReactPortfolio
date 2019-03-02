@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const assert = require('assert');
 const bcrypt = require('bcryptjs');
+const codeControlApi = require('../../../validation/codeControlApi');
 
 // TODO
 // Create http PATCH method to add / change instructor_id field
@@ -12,9 +13,15 @@ const bcrypt = require('bcryptjs');
 router.get('/test', (req, res) => res.json({msg: "players works"}));
 
 // @route       GET api/codecontrol/players/findAll
-// @description list all players without any query params
+// @description list all players with apiKey query param
 // @access      Public
 router.get('/findAll', (req, res) => {
+  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
+    delete req.query.apiKey
+  } else {
+    return res.status(400).json({msg: codeControlApi.err});
+  }
+
   const db = req.app.locals.db;
 
   db.collection('players').find().toArray( (err, players) => {
@@ -22,16 +29,22 @@ router.get('/findAll', (req, res) => {
     if (err) {
       return res.status(400).json(err);
     }
-    var succesMsg = "Found the following players: " + players;
+    var successMsg = "Found the following players: " + players;
     console.log(successMsg);
     return res.status(200).json(players)
   });
 });
 
 // @route       GET api/codecontrol/players/findOne
-// @description find a specific player using username as query param
+// @description find a specific player using username and apiKey query params
 // @access      Public
 router.get('/findOne', (req, res) => {
+  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
+    delete req.query.apiKey
+  } else {
+    return res.status(400).json({msg: codeControlApi.err});
+  }
+
   const db = req.app.locals.db;
 
   db.collection('players').findOne({ username: req.query.username })
@@ -49,9 +62,15 @@ router.get('/findOne', (req, res) => {
 });
 
 // @route       POST api/codecontrol/players/register
-// @description salt + hash pw & insert new player using player obj in body
+// @description salt + hash pw & insert new player using player obj and apiKey in body
 // @access      Public
 router.post('/register', (req, res) => {
+  if (codeControlApi.isValidApiCall(req.body.apiKey)) {
+    delete req.body.apiKey
+  } else {
+    return res.status(400).json({msg: codeControlApi.err});
+  }
+
   const db = req.app.locals.db;
 
   // this ensures we only have unique usernames
@@ -82,9 +101,15 @@ router.post('/register', (req, res) => {
 });
 
 // @route       POST api/codecontrol/players/login
-// @description decrypt pw & login player using player obj in body
+// @description decrypt pw & login player using player obj and apiKey in body
 // @access      Public
 router.post('/login', (req, res) => {
+  if (codeControlApi.isValidApiCall(req.body.apiKey)) {
+    delete req.body.apiKey
+  } else {
+    return res.status(400).json({msg: codeControlApi.err});
+  }
+  
   const db = req.app.locals.db;
 
   db.collection('players').findOne({ username: req.body.username })

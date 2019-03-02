@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const assert = require('assert');
+const codeControlApi = require('../../../validation/codeControlApi');
+
 
 // @route       GET api/stats/test
 // @description test stats route
@@ -8,10 +10,16 @@ const assert = require('assert');
 router.get('/test', (req, res) => res.json({msg: "stats works"}));
 
 // @route       POST api/codecontrol/stats/save
-// @description create/insert new stats based on username and sessionNum query param
+// @description create/insert new stats based on username, sessionNum and apiKey query params
 //              stats obj has a session_id field that references stats to a particular session
 // @access      Public
 router.post('/save', (req, res) => {
+  if (codeControlApi.isValidApiCall(req.body.apiKey)) {
+    delete req.body.apiKey
+  } else {
+    return res.status(400).json({msg: codeControlApi.err});
+  }
+
   const db = req.app.locals.db;
 
   db.collection('players').findOne({ username: req.body.username })
@@ -49,9 +57,15 @@ router.post('/save', (req, res) => {
 });
 
 // @route       GET api/codecontrol/stats/
-// @description find all stats for the player based on username query param
+// @description find all stats for the player based on username and apiKey query params
 // @access      Public
 router.get('/', (req, res) => {
+  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
+    delete req.query.apiKey
+  } else {
+    return res.status(400).json({msg: codeControlApi.err});
+  }
+
   const db = req.app.locals.db;
 
   // first lookup player by atomic/unique username
@@ -81,10 +95,16 @@ router.get('/', (req, res) => {
 });
 
 // @route       GET api/codecontrol/stats/load
-// @description get stats based on username and sessionNum query params
+// @description get stats based on username, sessionNum and apiKey query params
 //              stats are referenced to the correct player and session
 // @access      Public
 router.get('/load', (req, res) => {
+  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
+    delete req.query.apiKey
+  } else {
+    return res.status(400).json({msg: codeControlApi.err});
+  }
+
   const db = req.app.locals.db;
 
   // first lookup player by atomic/unique username

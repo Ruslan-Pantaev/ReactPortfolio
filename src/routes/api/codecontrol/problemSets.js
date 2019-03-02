@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const assert = require('assert');
+const codeControlApi = require('../../../validation/codeControlApi');
 
-// TODO
-// create http DELETE method to rm a problemSet
 
 // @route       GET api/codecontrol/problemSets/test
 // @description test problemSets route
@@ -11,9 +10,15 @@ const assert = require('assert');
 router.get('/test', (req, res) => res.json({msg: "problemSets works"}));
 
 // @route       POST api/codecontrol/problemSets/save
-// @description create/insert new problem set based on username query param
+// @description create/insert new problem set based on username and apiKey query params
 // @access      Public
 router.post('/save', (req, res) => {
+  if (codeControlApi.isValidApiCall(req.body.apiKey)) {
+    delete req.body.apiKey
+  } else {
+    return res.status(400).json({msg: codeControlApi.err});
+  }
+
   const db = req.app.locals.db;
 
   db.collection('instructors').findOne({ username: req.body.username })
@@ -53,9 +58,15 @@ router.post('/save', (req, res) => {
 });
 
 // @route       GET api/codecontrol/problemSets/
-// @description find all problem sets for the instructor based on username query param
+// @description find all problem sets for the instructor based on username and apiKey query params
 // @access      Public
 router.get('/', (req, res) => {
+  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
+    delete req.query.apiKey
+  } else {
+    return res.status(400).json({msg: codeControlApi.err});
+  }
+
   const db = req.app.locals.db;
 
   // first lookup instructor by atomic/unique username
@@ -85,10 +96,16 @@ router.get('/', (req, res) => {
 });
 
 // @route       GET api/codecontrol/problemSets/load
-// @description get problem set based on username and problemSetsNum query params
+// @description get problem set based on username, problemSetsNum and apiKey query params
 //              this will allow users to load any previous problem sets
 // @access      Public
 router.get('/load', (req, res) => {
+  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
+    delete req.query.apiKey
+  } else {
+    return res.status(400).json({msg: codeControlApi.err});
+  }
+
   const db = req.app.locals.db;
 
   // first lookup instructor by atomic/unique username
@@ -125,9 +142,16 @@ router.get('/load', (req, res) => {
 });
 
 // @route       GET api/codecontrol/problemSets/delete
-// @description get problem set based on username and problemSetsNum query params and delete it
+// @description get problem set based on username, problemSetsNum and apiKey query params and delete it
+//              using get request since we have to look up instructor first
 // @access      Public
 router.get('/delete', (req, res) => {
+  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
+    delete req.query.apiKey
+  } else {
+    return res.status(400).json({msg: codeControlApi.err});
+  }
+
   const db = req.app.locals.db;
 
   db.collection('instructors').findOne({ username: req.query.username })

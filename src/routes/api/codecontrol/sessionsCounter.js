@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const assert = require('assert');
+const codeControlApi = require('../../../validation/codeControlApi');
+
 
 // @route       GET api/codecontrol/sessionsCounter/test
 // @description test sessionCounter route
@@ -8,10 +10,16 @@ const assert = require('assert');
 router.get('/test', (req, res) => res.json({msg: "sessionsCounter works"}));
 
 // @route       GET api/codecontrol/sessionsCounter/update
-// @description get atomic sessionNum and increment using username as query param
+// @description get atomic sessionNum and increment using username and apiKey query params
 //              for a new player, the mongodb upsert flag will create a new sessionsCounter obj
 // @access      Public
 router.get('/update', (req, res) => {
+  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
+    delete req.query.apiKey
+  } else {
+    return res.status(400).json({msg: codeControlApi.err});
+  }
+
   const db = req.app.locals.db;
 
   // first lookup player by atomic/unique username
@@ -49,10 +57,16 @@ router.get('/update', (req, res) => {
 });
 
 // @route       GET api/codecontrol/sessionsCounter/
-// @description get latest/current sessionNum using username as query param
+// @description get latest/current sessionNum using username and apiKey query params
 //              useful for listing how many sessions a user can choose to load from
 // @access      Public
 router.get('/', (req, res) => {
+  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
+    delete req.query.apiKey
+  } else {
+    return res.status(400).json({msg: codeControlApi.err});
+  }
+
   const db = req.app.locals.db;
 
   // first lookup player by atomic/unique username

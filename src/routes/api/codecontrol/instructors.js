@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const assert = require('assert');
 const bcrypt = require('bcryptjs');
+const codeControlApi = require('../../../validation/codeControlApi');
+
 
 // @route       GET api/codecontrol/instructors/test
 // @description test instructors route
@@ -9,9 +11,15 @@ const bcrypt = require('bcryptjs');
 router.get('/test', (req, res) => res.json({msg: "instructors works"}));
 
 // @route       GET api/codecontrol/instructors/findAll
-// @description list all instructors without any query params
+// @description list all instructors using apiKey query param
 // @access      Public
 router.get('/findAll', (req, res) => {
+  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
+    delete req.query.apiKey
+  } else {
+    return res.status(400).json({msg: codeControlApi.err});
+  }
+
   const db = req.app.locals.db;
 
   db.collection('instructors').find().toArray( (err, instructors) => {
@@ -26,9 +34,15 @@ router.get('/findAll', (req, res) => {
 });
 
 // @route       GET api/codecontrol/instructors/findOne
-// @description find a specific instructor using username as query param
+// @description find a specific instructor using username and apiKey query params
 // @access      Public
 router.get('/findOne', (req, res) => {
+  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
+    delete req.query.apiKey
+  } else {
+    return res.status(400).json({msg: codeControlApi.err});
+  }
+
   const db = req.app.locals.db;
 
   db.collection('instructors').findOne({ username: req.query.username })
@@ -46,9 +60,15 @@ router.get('/findOne', (req, res) => {
 });
 
 // @route       POST api/codecontrol/instructors/register
-// @description salt + hash pw & insert new instructor using instructors obj in body
+// @description salt + hash pw & insert new instructor using instructors obj and apiKey in body
 // @access      Public
 router.post('/register', (req, res) => {
+  if (codeControlApi.isValidApiCall(req.body.apiKey)) {
+    delete req.body.apiKey
+  } else {
+    return res.status(400).json({msg: codeControlApi.err});
+  }
+
   const db = req.app.locals.db;
 
   // this ensures we only have unique usernames
@@ -79,9 +99,15 @@ router.post('/register', (req, res) => {
 });
 
 // @route       POST api/codecontrol/instructors/login
-// @description decrypt pw & login instructor using instructors obj in body
+// @description decrypt pw & login instructor using instructors obj and apiKey in body
 // @access      Public
 router.post('/login', (req, res) => {
+  if (codeControlApi.isValidApiCall(req.body.apiKey)) {
+    delete req.body.apiKey
+  } else {
+    return res.status(400).json({msg: codeControlApi.err});
+  }
+
   const db = req.app.locals.db;
 
   db.collection('instructors').findOne({ username: req.body.username })

@@ -11,13 +11,14 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
   - NGINX
 
 ### Notes
- - Passwords are not stored in plain text on our database. They are salted and hashed using the bcrypt hashing   function (https://en.wikipedia.org/wiki/Bcrypt).
- - All API routes are PUBLIC but the database is securely username and password protected with only the minimum   required privileges granted.
+ - Passwords are not stored in plain text on our database. They are salted and hashed using the bcrypt hashing function (https://en.wikipedia.org/wiki/Bcrypt).
+ - All API routes are PUBLIC but the database is securely username and password protected with only the minimum required privileges granted. All calls (except /test), are apiKey validated as well.
 
 ### Authors
-> Inspired by Kwan Holloway's and Mike Williams' original 2D Code Control project.
+> Inspired by the original 2D Code Control project.
 
-(In alphabetical order): Devorah Kletenik, Ruslan Pantaev (Lead Developer) and Deborah Sturm
+(In alphabetical order): Kwan Holloway, Devorah Kletenik, Ruslan Pantaev (Lead Dev), Deborah Sturm, and Mike Williams
+
 
 ---
 
@@ -28,33 +29,33 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
     @access      Public
 
   - @route       GET api/codecontrol/players/findAll
-    @description list all players without any query params
+    @description list all players using apiKey query param
     @access      Public
 
   - @route       GET api/codecontrol/players/findOne
-    @description find specific player using username as query param
+    @description find specific player using username and apiKey query params
     @access      Public
 
   - @route       POST api/codecontrol/players/register
-    @description salt + hash pw & insert new player using player obj in body
+    @description salt + hash pw & insert new player using player obj and apiKey in body
     @access      Public
 
   - @route       POST api/codecontrol/players/login
-    @description decrypt pw & login player using player obj in body
+    @description decrypt pw & login player using player obj and apiKey in body
     @access      Public
 
 - sessionsCounter
   - @route       GET api/codecontrol/sessionsCounter/test
-    @description test sessionsCounter route
+    @description test sessionsCounter route using apiKey query param
     @access      Public
 
   - @route       GET api/codecontrol/sessionsCounter/update
-    @description get atomic sessionNum and increment using username as query param
+    @description get atomic sessionNum and increment using username and apiKey query params
     for a new player, the mongodb upsert flag will create a new sessionsCounter obj
     @access      Public
 
   - @route       GET api/codecontrol/sessionsCounter/
-    @description get latest/current sessionNum using username as query param
+    @description get latest/current sessionNum using username and apiKey query params
     useful for listing how many sessions a user can choose to load from
     @access      Public
 
@@ -64,17 +65,17 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
     @access      Public
 
   - @route       POST api/codecontrol/sessions/save
-    @description create/insert new session based on username query param
+    @description create/insert new session based on username and apiKey query params
     @access      Public
 
   - @route       GET api/codecontrol/sessions/
     @description find all sessions for the player so that the player can choose 
     session based on fields like 'dateTimeCreated' and 'timeElapsed'
-    based on username query param
+    based on username and apiKey query params
     @access      Public
 
   - @route       GET api/codecontrol/sessions/load
-    @description get session based on username and sessionNum query params
+    @description get session based on username, sessionNum and apiKey query params
     this will allow players to load any previous sessions
     @access      Public
  
@@ -84,16 +85,16 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
     @access      Public
 
   - @route       POST api/codecontrol/stats/save
-    @description create/insert new stats based on username and sessionNum query param
+    @description create/insert new stats based on username, sessionNum and apiKey query params
     stats obj has a session_id field that references stats to a particular session
     @access      Public
 
   - @route       GET api/codecontrol/stats/
-    @description find all stats for the player based on username query param
+    @description find all stats for the player based on username and apiKey query params
     @access      Public
 
   - @route       GET api/codecontrol/stats/load
-    @description get stats based on username and sessionNum query params
+    @description get stats based on username, sessionNum and apiKey query params
     stats are referenced to the correct player and session
     @access      Public
 
@@ -103,19 +104,19 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
     @access      Public
 
   - @route       GET api/codecontrol/instructors/findAll
-    @description list all instructors without any query params
+    @description list all instructors using apiKey query param
     @access      Public
 
   - @route       GET api/codecontrol/instructors/findOne
-    @description find a specific instructor using username as query param
+    @description find a specific instructor using username and apiKey query params
     @access      Public
 
   - @route       POST api/codecontrol/instructors/register
-    @description salt + hash pw & insert new instructor using instructors obj in body
+    @description salt + hash pw & insert new instructor using instructors obj and apiKey in body
     @access      Public
 
   - @route       POST api/codecontrol/instructors/login
-    @description decrypt pw & login instructor using instructors obj in body
+    @description decrypt pw & login instructor using instructors obj and apiKey in body
     @access      Public
 
 - problemSetsCounter
@@ -124,12 +125,12 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
     @access      Public
 
   - @route       GET api/codecontrol/problemSetsCounter/update
-    @description get atomic problemSetsNum and increment using username as query param
+    @description get atomic problemSetsNum and increment using username and apiKey query params
     for a new instructor, the mongodb upsert flag will create a new problemSetsCounter obj
     @access      Public
 
   - @route       GET api/codecontrol/problemSetsCounter/
-    @description get latest/current problemSetsNum using username as query param
+    @description get latest/current problemSetsNum using username and apiKey query params
     useful for listing how many problem sets a user can choose to load from
     @access      Public
 
@@ -139,20 +140,20 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
     @access      Public
 
   - @route       POST api/codecontrol/problemSets/save
-    @description create/insert new problem set based on username query param
+    @description create/insert new problem set based on username and apiKey query params
     @access      Public
 
   - @route       GET api/codecontrol/problemSets/
-    @description find all problem sets for the instructor based on username query param
+    @description find all problem sets for the instructor based on username and apiKey query params
     @access      Public
 
   - @route       GET api/codecontrol/problemSets/load
-    @description get problem set based on username and problemSetsNum query params
+    @description get problem set based on username, problemSetsNum and apiKey query params
                  this will allow users to load any previous problem sets
     @access      Public
 
   - @route       GET api/codecontrol/problemSets/delete
-    @description get problem set based on username and problemSetsNum query params and delete it
+    @description get problem set based on username, problemSetsNum and apiKey query params and delete it
                  using get request since we have to look up instructor first
     @access      Public
 
@@ -288,15 +289,15 @@ The dynamic problem sets / challenges API is complete, but needs further thought
 | Step | API Call | Params |
 | ------ | ------ | ------ |
 | Register, Play, Save | | |
-| 1 | https://rpantaev.com/api/codecontrol/players/register | POST x-www-form-urlencoded Body [username, password] |
-| 2 | https://rpantaev.com/api/codecontrol/sessionsCounter/update | GET key-value pairs Header [username] |
-| 3 | https://rpantaev.com/api/codecontrol/sessions/save | POST x-www-form-urlencoded Body [username] **call to sessionsCounter for sessionNum made internally |
-| 4 | https://rpantaev.com/api/codecontrol/stats/save | POST x-www-form-urlencoded Body [username, sessionNum] |
+| 1 | https://rpantaev.com/api/codecontrol/players/register | POST x-www-form-urlencoded Body [apiKey, username, password] |
+| 2 | https://rpantaev.com/api/codecontrol/sessionsCounter/update | GET key-value pairs Header [apiKey, username] |
+| 3 | https://rpantaev.com/api/codecontrol/sessions/save | POST x-www-form-urlencoded Body [apiKey, username] **call to sessionsCounter for sessionNum made internally |
+| 4 | https://rpantaev.com/api/codecontrol/stats/save | POST x-www-form-urlencoded Body [apiKey, username, sessionNum] |
 | Log In, Load | | |
-| 1 | https://rpantaev.com/api/codecontrol/players/login | POST x-www-form-urlencoded Body [username, password] |
-| 2 | https://rpantaev.com/api/codecontrol/sessionsCounter | GET key-value pairs Header [username] **this will give you your latest/current sessionNum, from which you can specify the range of available sessions and stats to load |
-| 3 | https://rpantaev.com/api/codecontrol/sessions/load | GET key-value pairs Header [username, sessionNum] |
-| 4 | https://rpantaev.com/api/codecontrol/stats/load | GET key-value pairs Header [username, sessionNum] |
+| 1 | https://rpantaev.com/api/codecontrol/players/login | POST x-www-form-urlencoded Body [apiKey, username, password] |
+| 2 | https://rpantaev.com/api/codecontrol/sessionsCounter | GET key-value pairs Header [apiKey, username] **this will give you your latest/current sessionNum, from which you can specify the range of available sessions and stats to load |
+| 3 | https://rpantaev.com/api/codecontrol/sessions/load | GET key-value pairs Header [apiKey, username, sessionNum] |
+| 4 | https://rpantaev.com/api/codecontrol/stats/load | GET key-value pairs Header [apiKey, username, sessionNum] |
 ---
 
 ### Development
@@ -306,8 +307,13 @@ Want to contribute? Great!
 This is a CUNY Brooklyn College Project with some funding from SIGCSE.
 Reach out to kletenik@sci.brooklyn.cuny.edu for more info.
 
-### Latest Update
+### Updates
+**2019-3-2**
+- update authors
+- protect all routes/calls with a secret apiKey
+
 **2019-2-27**
+- init
 
 License
 ----
