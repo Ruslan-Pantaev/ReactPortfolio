@@ -280,7 +280,6 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
 	"challengesTotal"     : (int),
 	"challengesComplete"  : (int),
 	"challengesRemaining" : (int),
-	"challengesRemaining" : (int),
 	"challengeEvents" : [
 		{ "event"   : (what type of stat is this? Ex: "IDE"),
 			"action" : (what did the player do? Ex: "Run Code", "Ask for help"),
