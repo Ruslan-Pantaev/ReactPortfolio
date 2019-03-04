@@ -14,8 +14,8 @@ router.get('/test', (req, res) => res.json({msg: "sessionsCounter works"}));
 //              for a new player, the mongodb upsert flag will create a new sessionsCounter obj
 // @access      Public
 router.get('/update', (req, res) => {
-  console.log("req.headers: " + req.headers.temp)
-  console.log("req.query: " + req.query.temp)
+  // console.log("req.headers: " + req.headers.temp)
+  // console.log("req.query: " + req.query.temp)
 
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp

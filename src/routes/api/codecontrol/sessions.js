@@ -95,8 +95,9 @@ router.get('/load', (req, res) => {
 
   const db = req.app.locals.db;
 
-  console.log(req.headers.temp2)
-  console.log(req.headers.temp3)
+  // bug fix - on aws linux server, req.headers.sessionNum is undefined...
+  console.log(req.headers.temp2) // username
+  console.log(req.headers.temp3) // sessionNum
 
   // first lookup player by atomic/unique username
   // retrieve player's _id ObjectId field and ref to session's player_id field
@@ -111,11 +112,11 @@ router.get('/load', (req, res) => {
         
         // we need to make a call to the latest/current session to see
         // how many sessions the user can choose from
-        db.collection('sessions').findOne({ username: req.headers.username, sessionNum: req.headers.session_num })
+        db.collection('sessions').findOne({ username: req.headers.temp2, sessionNum: req.headers.temp3 })
           .then(session => {
-            console.log(req.headers.session_num);
+            // console.log(req.headers.session_num);
             if (session != null) {
-              var succesMsg = 'success: session found for: ' + req.headers.username;
+              var succesMsg = 'success: session found for: ' + req.headers.temp2;
               console.log(succesMsg);
               return res.status(200).json(session);
             } else {
