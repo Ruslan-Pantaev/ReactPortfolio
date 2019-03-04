@@ -282,14 +282,14 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
 	"challengesRemaining" : (int),
 	"challengeEvents" : [
 		{ "event"   : (what type of stat is this? Ex: "IDE"),
-			"action" : (what did the player do? Ex: "Run Code", "Ask for help"),
-			"value"  : (string) | (Number) | n/a
+		  "action"  : (what did the player do? Ex: "Run Code", "Ask for help"),
+		  "value"   : (string) | (Number) | n/a
 		}
 	],
 	"movementEvents" : [
-		{ "event"   : (what type of stat is this? Ex: "Player died"),
-			"action" : (what did the player do? Ex: "Jump", "Turn Left"),
-			"value"  : (string) | (Number) | n/a
+		{ "event"  : (what type of stat is this? Ex: "Player died"),
+		  "action" : (what did the player do? Ex: "Jump", "Turn Left"),
+		  "value"  : (string) | (Number) | n/a
 		}
 	]
 }
