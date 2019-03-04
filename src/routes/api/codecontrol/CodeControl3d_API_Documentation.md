@@ -281,17 +281,16 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
 	"challengesTotal"     : (int),
 	"challengesComplete"  : (int),
 	"challengesRemaining" : (int),
-	"challengesRemaining" : (int),
 	"challengeEvents" : [
 		{ "event"   : (what type of stat is this? Ex: "IDE"),
-			"action" : (what did the player do? Ex: "Run Code", "Ask for help"),
-			"value"  : (string) | (Number) | n/a
+		  "action"  : (what did the player do? Ex: "Run Code", "Ask for help"),
+		  "value"   : (string) | (Number) | n/a
 		}
 	],
 	"movementEvents" : [
-		{ "event"   : (what type of stat is this? Ex: "Player died"),
-			"action" : (what did the player do? Ex: "Jump", "Turn Left"),
-			"value"  : (string) | (Number) | n/a
+		{ "event"  : (what type of stat is this? Ex: "Player died"),
+		  "action" : (what did the player do? Ex: "Jump", "Turn Left"),
+		  "value"  : (string) | (Number) | n/a
 		}
 	]
 }
@@ -350,7 +349,8 @@ The dynamic problem sets / challenges API is complete, but needs further thought
 | 1 | https://rpantaev.com/api/codecontrol/players/register | POST x-www-form-urlencoded Body [apiKey, username, password] |
 | 2 | https://rpantaev.com/api/codecontrol/sessionsCounter/update | GET key-value pairs Header [apiKey, username] |
 | 3 | https://rpantaev.com/api/codecontrol/sessions/save | POST x-www-form-urlencoded Body [apiKey, username] **call to sessionsCounter for sessionNum made internally |
-| 4 | https://rpantaev.com/api/codecontrol/stats/save | POST x-www-form-urlencoded Body [apiKey, username, sessionNum] |
+| 4 | https://rpantaev.com/api/codecontrol/sessionsCounter | GET key-value pairs Header [apiKey, username] **this will give you your latest/current sessionNum to pass to step 5 |
+| 5 | https://rpantaev.com/api/codecontrol/stats/save | POST x-www-form-urlencoded Body [apiKey, username, sessionNum] |
 | Log In, Load | | |
 | 1 | https://rpantaev.com/api/codecontrol/players/login | POST x-www-form-urlencoded Body [apiKey, username, password] |
 | 2 | https://rpantaev.com/api/codecontrol/sessionsCounter | GET key-value pairs Header [apiKey, username] **this will give you your latest/current sessionNum, from which you can specify the range of available sessions and stats to load |
