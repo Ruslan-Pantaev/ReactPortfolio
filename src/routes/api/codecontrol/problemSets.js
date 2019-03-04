@@ -58,11 +58,11 @@ router.post('/save', (req, res) => {
 });
 
 // @route       GET api/codecontrol/problemSets/
-// @description find all problem sets for the instructor based on username and apiKey query params
+// @description find all problem sets for the instructor using username and apiKey [temp] request-header
 // @access      Public
 router.get('/', (req, res) => {
-  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
-    delete req.query.apiKey
+  if (codeControlApi.isValidApiCall(req.headers.temp)) {
+    delete req.headers.temp
   } else {
     return res.status(400).json({msg: codeControlApi.err});
   }
@@ -72,7 +72,7 @@ router.get('/', (req, res) => {
   // first lookup instructor by atomic/unique username
   // retrieve instructor's _id ObjectId field and ref to problem set's instructor_id field
   // this will reference the correct instructor to the correct problem set
-  db.collection('instructors').findOne({ username: req.query.username })
+  db.collection('instructors').findOne({ username: req.headers.username })
     .then(instructor => {
       if (instructor != null) {
         
@@ -96,12 +96,12 @@ router.get('/', (req, res) => {
 });
 
 // @route       GET api/codecontrol/problemSets/load
-// @description get problem set based on username, problemSetsNum and apiKey query params
+// @description get problem set based on using username, problemSetsNum and apiKey [temp] request-header
 //              this will allow users to load any previous problem sets
 // @access      Public
 router.get('/load', (req, res) => {
-  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
-    delete req.query.apiKey
+  if (codeControlApi.isValidApiCall(req.headers.temp)) {
+    delete req.headers.temp
   } else {
     return res.status(400).json({msg: codeControlApi.err});
   }
@@ -111,7 +111,7 @@ router.get('/load', (req, res) => {
   // first lookup instructor by atomic/unique username
   // retrieve instructor's _id ObjectId field and ref to problem sets's instructor_id field
   // this will reference the correct instructor to the correct problem set
-  db.collection('instructors').findOne({ username: req.query.username })
+  db.collection('instructors').findOne({ username: req.headers.username })
     .then(instructor => {
       if (instructor != null) {
 
@@ -121,10 +121,10 @@ router.get('/load', (req, res) => {
         
         // we need to make a call to the latest/current problem set to see
         // how many problem sets the user can choose from
-        db.collection('problemSets').findOne({ instructor_id: instructor._id, problemSetsNum: req.query.problemSetsNum })
+        db.collection('problemSets').findOne({ instructor_id: instructor._id, problemSetsNum: req.headers.problemSetsNum })
           .then(problemSet => {
             if (problemSet != null) {
-              var succesMsg = 'success: problem set found for: ' + req.query.username;
+              var succesMsg = 'success: problem set found for: ' + req.headers.username;
               console.log(succesMsg);
               return res.status(200).json(problemSet);
             } else {
@@ -142,26 +142,26 @@ router.get('/load', (req, res) => {
 });
 
 // @route       GET api/codecontrol/problemSets/delete
-// @description get problem set based on username, problemSetsNum and apiKey query params and delete it
+// @description get problem set using username, problemSetsNum and apiKey [temp] request-header
 //              using get request since we have to look up instructor first
 // @access      Public
 router.get('/delete', (req, res) => {
-  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
-    delete req.query.apiKey
+  if (codeControlApi.isValidApiCall(req.headers.temp)) {
+    delete req.headers.temp
   } else {
     return res.status(400).json({msg: codeControlApi.err});
   }
 
   const db = req.app.locals.db;
 
-  db.collection('instructors').findOne({ username: req.query.username })
+  db.collection('instructors').findOne({ username: req.headers.username })
     .then(instructor => {
       if (instructor != null) {
 
-        db.collection('problemSets').deleteOne({ instructor_id: instructor._id, sessionNum: req.query.sessionNum })
+        db.collection('problemSets').deleteOne({ instructor_id: instructor._id, sessionNum: req.headers.sessionNum })
           .then(problemSet => {
             if (problemSet != null) {
-              var succesMsg = 'success: problem set deleted for: ' + req.query.username;
+              var succesMsg = 'success: problem set deleted for: ' + req.headers.username;
               console.log(succesMsg);
               return res.status(200).json(problemSet);
             } else {

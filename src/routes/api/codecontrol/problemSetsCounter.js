@@ -10,12 +10,12 @@ const codeControlApi = require('../../../validation/codeControlApi');
 router.get('/test', (req, res) => res.json({msg: "problemSetsCounter works"}));
 
 // @route       GET api/codecontrol/problemSetsCounter/update
-// @description get atomic ProblemSetsNum and increment using username and apiKey query params
+// @description get atomic ProblemSetsNum and increment using username and apiKey [temp] request-header
 //              for a new instructor, the mongodb upsert flag will create a new problemSetsCounter obj
 // @access      Public
 router.get('/update', (req, res) => {
-  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
-    delete req.query.apiKey
+  if (codeControlApi.isValidApiCall(req.headers.temp)) {
+    delete req.headers.temp
   } else {
     return res.status(400).json({msg: codeControlApi.err});
   }
@@ -28,7 +28,7 @@ router.get('/update', (req, res) => {
 
   // if a problemSetsCounter obj doesn't exist yet for a new instructor,
   // the upsert flag will insert/create a new one
-  db.collection('instructors').findOne({ username: req.query.username })
+  db.collection('instructors').findOne({ username: req.headers.username })
   .then(instructor => {
     if (instructor != null) {
 
@@ -57,12 +57,12 @@ router.get('/update', (req, res) => {
 });
 
 // @route       GET api/codecontrol/problemSetsCounter/
-// @description get latest/current problemSetsNum using username and apiKey query params
+// @description get latest/current problemSetsNum using username and apiKey [temp] request-header
 //              useful for listing how many problem sets a user can choose to load from
 // @access      Public
 router.get('/', (req, res) => {
-  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
-    delete req.query.apiKey
+  if (codeControlApi.isValidApiCall(req.headers.temp)) {
+    delete req.headers.temp
   } else {
     return res.status(400).json({msg: codeControlApi.err});
   }
@@ -72,7 +72,7 @@ router.get('/', (req, res) => {
   // first lookup player by atomic/unique username
   // retrieve instructor's _id ObjectId field and ref to problemSetsCounter's instructor_id field
   // this will reference the correct instructor to the correct problemSetsNum
-  db.collection('instructors').findOne({ username: req.query.username })
+  db.collection('instructors').findOne({ username: req.headers.username })
     .then(instructor => {
       if (instructor != null) {
 

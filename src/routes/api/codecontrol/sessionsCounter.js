@@ -10,12 +10,12 @@ const codeControlApi = require('../../../validation/codeControlApi');
 router.get('/test', (req, res) => res.json({msg: "sessionsCounter works"}));
 
 // @route       GET api/codecontrol/sessionsCounter/update
-// @description get atomic sessionNum and increment using username and apiKey query params
+// @description get atomic sessionNum and increment using username and apiKey [temp] request-header
 //              for a new player, the mongodb upsert flag will create a new sessionsCounter obj
 // @access      Public
 router.get('/update', (req, res) => {
-  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
-    delete req.query.apiKey
+  if (codeControlApi.isValidApiCall(req.headers.temp)) {
+    delete req.headers.temp
   } else {
     return res.status(400).json({msg: codeControlApi.err});
   }
@@ -28,13 +28,15 @@ router.get('/update', (req, res) => {
 
   // if a sessionCounter obj doesn't exist yet for a new player,
   // the upsert flag will insert/create a new one
-  db.collection('players').findOne({ username: req.query.username })
+  db.collection('players').findOne({ username: req.headers.username })
   .then(player => {
     if (player != null) {
 
       // player exists so find correct sessionCounter ref (based on player_id) and increment sessionNum
       db.collection('sessionsCounter').findOneAndUpdate(
-        { "player_id": player._id }, // player._id is the player's unique Mongo ObjectID
+        { "username": req.headers.username,
+          "player_id": player._id
+        }, // player._id is the player's unique Mongo ObjectID
         { "$inc": { "sessionNum": 1 } },
         { "upsert": true, "returnOriginal": false, "sort": [] }, // options
         (err, sessionsCounter) => {
@@ -57,12 +59,12 @@ router.get('/update', (req, res) => {
 });
 
 // @route       GET api/codecontrol/sessionsCounter/
-// @description get latest/current sessionNum using username and apiKey query params
+// @description get latest/current sessionNum using username and apiKey [temp] request-header
 //              useful for listing how many sessions a user can choose to load from
 // @access      Public
 router.get('/', (req, res) => {
-  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
-    delete req.query.apiKey
+  if (codeControlApi.isValidApiCall(req.headers.temp)) {
+    delete req.headers.temp
   } else {
     return res.status(400).json({msg: codeControlApi.err});
   }
@@ -72,7 +74,7 @@ router.get('/', (req, res) => {
   // first lookup player by atomic/unique username
   // retrieve player's _id ObjectId field and ref to sessionCounter's player_id field
   // this will reference the correct player to the correct sessionNum
-  db.collection('players').findOne({ username: req.query.username })
+  db.collection('players').findOne({ username: req.headers.username })
     .then(player => {
       if (player != null) {
 

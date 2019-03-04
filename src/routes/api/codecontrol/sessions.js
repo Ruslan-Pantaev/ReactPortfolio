@@ -24,31 +24,15 @@ router.post('/save', (req, res) => {
   db.collection('players').findOne({ username: req.body.username })
     .then(player => {
       if (player != null) {
+        // update player_id to correct MongoDB Bson Object
+        req.body.player_id = player._id;
 
-        // player exists so find sessionNum
-        // player._id is the player's unique Mongo ObjectID
-        db.collection('sessionsCounter').findOne({ player_id: player._id })
-          .then(sessionsCounter => {
-            if (sessionsCounter != null) {
-
-              // update req.body with player_id field (player._id)
-              req.body.player_id = player._id
-              // update req.body with sessionNum field (sessionsCounter.sessionNum)
-              req.body.sessionNum = sessionsCounter.sessionNum
-
-              // inserting new session
-              db.collection('sessions').insertOne(req.body, function(err, res2) {
-                assert.equal(err, null);
-                console.log("success: new session inserted for: " + req.body.username);
-                return res.status(200).json(res2);
-              });
-            } else {
-              var errMsg = 'error: sessionsCounter does not yet exist, ' +
-                'please make a call to rpantaev.com/api/sessionsCounter/update';
-              console.log(errMsg);
-              return res.status(400).json({msg: errMsg});
-            }
-          }).catch(err => console.log(err));
+        // inserting new session
+        db.collection('sessions').insertOne(req.body, function(err, res2) {
+          assert.equal(err, null);
+          console.log("success: new session inserted for: " + req.body.username);
+          return res.status(200).json(res2);
+        });
       } else {
         var errMsg = 'error: username not found';
         console.log(errMsg);
@@ -60,11 +44,11 @@ router.post('/save', (req, res) => {
 // @route       GET api/codecontrol/sessions/
 // @description find all sessions for the player so that the player can choose 
 //              session based on fields like 'dateTimeCreated' and 'timeElapsed'
-//              based on username and apiKey query params
+//              using username and apiKey [temp] request-header
 // @access      Public
 router.get('/', (req, res) => {
-  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
-    delete req.query.apiKey
+  if (codeControlApi.isValidApiCall(req.headers.temp)) {
+    delete req.headers.temp
   } else {
     return res.status(400).json({msg: codeControlApi.err});
   }
@@ -74,7 +58,7 @@ router.get('/', (req, res) => {
   // first lookup player by atomic/unique username
   // retrieve player's _id ObjectId field and ref to session's player_id field
   // this will reference the correct player to the correct session
-  db.collection('players').findOne({ username: req.query.username })
+  db.collection('players').findOne({ username: req.headers.username })
     .then(player => {
       if (player != null) {
         
@@ -99,12 +83,12 @@ router.get('/', (req, res) => {
 });
 
 // @route       GET api/codecontrol/sessions/load
-// @description get session based on username, sessionNum and apiKey query params
+// @description get session using username, sessionNum and apiKey [temp] request-header
 //              this will allow players to load any previous sessions
 // @access      Public
 router.get('/load', (req, res) => {
-  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
-    delete req.query.apiKey
+  if (codeControlApi.isValidApiCall(req.headers.temp)) {
+    delete req.headers.temp
   } else {
     return res.status(400).json({msg: codeControlApi.err});
   }
@@ -114,7 +98,7 @@ router.get('/load', (req, res) => {
   // first lookup player by atomic/unique username
   // retrieve player's _id ObjectId field and ref to session's player_id field
   // this will reference the correct player to the correct session
-  db.collection('players').findOne({ username: req.query.username })
+  db.collection('players').findOne({ username: req.headers.username })
     .then(player => {
       if (player != null) {
 
@@ -124,10 +108,11 @@ router.get('/load', (req, res) => {
         
         // we need to make a call to the latest/current session to see
         // how many sessions the user can choose from
-        db.collection('sessions').findOne({ player_id: player._id, sessionNum: req.query.sessionNum })
+        db.collection('sessions').findOne({ username: req.headers.username, sessionNum: req.headers.session_num })
           .then(session => {
+            console.log(req.headers.session_num);
             if (session != null) {
-              var succesMsg = 'success: session found for: ' + req.query.username;
+              var succesMsg = 'success: session found for: ' + req.headers.username;
               console.log(succesMsg);
               return res.status(200).json(session);
             } else {

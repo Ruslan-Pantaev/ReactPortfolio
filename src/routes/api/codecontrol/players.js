@@ -13,11 +13,11 @@ const codeControlApi = require('../../../validation/codeControlApi');
 router.get('/test', (req, res) => res.json({msg: "players works"}));
 
 // @route       GET api/codecontrol/players/findAll
-// @description list all players with apiKey query param
+// @description list all players using apiKey [temp] request-header
 // @access      Public
 router.get('/findAll', (req, res) => {
-  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
-    delete req.query.apiKey
+  if (codeControlApi.isValidApiCall(req.headers.temp)) {
+    delete req.headers.temp
   } else {
     return res.status(400).json({msg: codeControlApi.err});
   }
@@ -36,18 +36,18 @@ router.get('/findAll', (req, res) => {
 });
 
 // @route       GET api/codecontrol/players/findOne
-// @description find a specific player using username and apiKey query params
+// @description find a specific player using username and apiKey [temp] request-header
 // @access      Public
 router.get('/findOne', (req, res) => {
-  if (codeControlApi.isValidApiCall(req.query.apiKey)) {
-    delete req.query.apiKey
+  if (codeControlApi.isValidApiCall(req.headers.temp)) {
+    delete req.headers.temp
   } else {
     return res.status(400).json({msg: codeControlApi.err});
   }
 
   const db = req.app.locals.db;
 
-  db.collection('players').findOne({ username: req.query.username })
+  db.collection('players').findOne({ username: req.headers.username })
     .then(player => {
       if (player != null) {
         console.log('success: username found');
@@ -109,7 +109,7 @@ router.post('/login', (req, res) => {
   } else {
     return res.status(400).json({msg: codeControlApi.err});
   }
-  
+
   const db = req.app.locals.db;
 
   db.collection('players').findOne({ username: req.body.username })

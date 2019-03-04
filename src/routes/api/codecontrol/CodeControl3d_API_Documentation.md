@@ -13,6 +13,7 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
 ### Notes
  - Passwords are not stored in plain text on our database. They are salted and hashed using the bcrypt hashing function (https://en.wikipedia.org/wiki/Bcrypt).
  - All API routes are PUBLIC but the database is securely username and password protected with only the minimum required privileges granted. All calls (except /test), are apiKey validated as well.
+ - For setting the header in all GET requests, rename the "apiKey" field to "temp"
 
 ### Authors
 > Inspired by the original 2D Code Control project.
