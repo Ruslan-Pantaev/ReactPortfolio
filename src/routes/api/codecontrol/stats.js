@@ -196,17 +196,21 @@ router.get('/load', (req, res) => {
 
   const db = req.app.locals.db;
 
+    // bug fix - on aws linux server, req.headers.sessionNum is undefined...
+    console.log(req.headers.temp2) // username
+    console.log(req.headers.temp3) // sessionNum
+
   // first lookup player by atomic/unique username
   // retrieve player's _id ObjectId field and ref to stats's player_id field
   // also query the session_id
   // this will reference the stats to the correct player and session
-  db.collection('players').findOne({ username: req.headers.username })
+  db.collection('players').findOne({ username: req.headers.temp2 })
     .then(player => {
       if (player != null) {
 
         // player exists
         // we have a choice here => load based on sessionNum or session_id
-        db.collection('gameStats').findOne({ player_id: player._id, sessionNum: req.headers.session_num })
+        db.collection('gameStats').findOne({ username: req.headers.temp2, sessionNum: req.headers.temp3 })
           .then(stats => {
             if (stats != null) {
               var succesMsg = 'success: stats found for session: ' + stats.session_id;
