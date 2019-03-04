@@ -95,10 +95,13 @@ router.get('/load', (req, res) => {
 
   const db = req.app.locals.db;
 
+  console.log(req.headers.temp2)
+  console.log(req.headers.temp3)
+
   // first lookup player by atomic/unique username
   // retrieve player's _id ObjectId field and ref to session's player_id field
   // this will reference the correct player to the correct session
-  db.collection('players').findOne({ username: req.headers.username })
+  db.collection('players').findOne({ username: req.headers.temp2 })
     .then(player => {
       if (player != null) {
 
