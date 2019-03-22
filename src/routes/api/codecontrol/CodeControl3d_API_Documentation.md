@@ -333,7 +333,10 @@ The backend runs on an AWS EC2 Linux 16.04 t2.medium instance. It is built with 
 	"instructor_id"   : ObjectId("xxxxxxxxxxxxxxxxxxxxxxxx") ref to instructor [REQUIRED],
 	"problemSetsNum"  : "(int) updated from problemSetsCounter collection upon new problem sets [REQUIRED]",
 	"dateTimeCreated" : DateTime,
-	"TODO"            : (?)
+	"selectedLang"    : "(string) Java, Cpp, etc",
+	"instructions"    : "(string) describe problem and offer hints",
+	"template"        : "(string) code template goes here for players to modify",
+	"expectedOutput"  : "(string) expected print results from running code"
 }
 ```
 
