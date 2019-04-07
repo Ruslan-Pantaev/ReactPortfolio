@@ -98,7 +98,7 @@ router.get('/', (req, res) => {
   // first lookup instructor by atomic/unique username
   // retrieve instructor's _id ObjectId field and ref to problem set's instructor_id field
   // this will reference the correct instructor to the correct problem set
-  db.collection('instructors').findOne({ username: req.headers.instructorUsername })
+  db.collection('instructors').findOne({ username: req.headers.temp2 })
     .then(instructor => {
       if (instructor != null) {
         
