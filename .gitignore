@@ -1,5 +1,7 @@
 src/config.js
 
+nginx.rtf
+
 package-lock.json
 client/package-lock.json
 client/public/assets/unityWebGL/
