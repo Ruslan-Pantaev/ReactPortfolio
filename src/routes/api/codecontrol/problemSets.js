@@ -44,7 +44,7 @@ router.post('/newLessonSet', (req, res) => {
 // @route       POST api/codecontrol/problemSets/save
 // @description create/insert new problem set based on username and apiKey query params
 // @access      Public
-router.post('/save', (req, res) => {
+router.post('/pushProblemSet', (req, res) => {
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -98,20 +98,18 @@ router.get('/', (req, res) => {
   // first lookup instructor by atomic/unique username
   // retrieve instructor's _id ObjectId field and ref to problem set's instructor_id field
   // this will reference the correct instructor to the correct problem set
-  db.collection('instructors').findOne({ username: req.headers.username })
+  db.collection('instructors').findOne({ username: req.headers.instructorUsername })
     .then(instructor => {
       if (instructor != null) {
         
-        // here we are finding all problem sets for the instructor
-        // instructor._id is the instructor's unique Mongo ObjectID
-        db.collection('problemSets').find({ instructor_id: instructor._id }).toArray( (err, problemSets) => {
+        db.collection('lessonSets').find({ instructorUsername: instructor.username }).toArray( (err, lessonSets) => {
           // assert.equal(err, null);
           if (err) {
             return res.status(400).json(err);
           }
-          var successMsg = "Found the following problem sets: " + problemSets;
+          var successMsg = "Found the following problem sets: " + lessonSets;
           console.log(successMsg);
-          return res.status(200).json(problemSets)
+          return res.status(200).json(lessonSets)
         });
       } else {
         var errMsg = 'error: username not found';
@@ -134,20 +132,11 @@ router.get('/load', (req, res) => {
 
   const db = req.app.locals.db;
 
-  // first lookup instructor by atomic/unique username
-  // retrieve instructor's _id ObjectId field and ref to problem sets's instructor_id field
-  // this will reference the correct instructor to the correct problem set
-  db.collection('instructors').findOne({ _id: ObjectId(req.headers.instructor_id) })
+  db.collection('instructors').findOne({ username: req.headers.instructorUsername })
     .then(instructor => {
       if (instructor != null) {
 
-        // instructor exists so find problem set based on problemSetsNum
-        // instructor._id is the instructor's unique Mongo ObjectID
-        // req.query.problemSetsNum lets users load any problem set :)
-        
-        // we need to make a call to the latest/current problem set to see
-        // how many problem sets the user can choose from
-        db.collection('problemSets').findOne({ instructor_id: instructor._id, problemSetsNum: req.headers.problemSetsNum })
+        db.collection('lessonSets').findOne({ instructorUsername: instructor.username, courseSectionNum: req.headers.courseSectionNum })
           .then(problemSet => {
             if (problemSet != null) {
               var succesMsg = 'success: problem set found for: ' + req.headers.username;
@@ -166,48 +155,6 @@ router.get('/load', (req, res) => {
       }
     }).catch(err => console.log(err));
 });
-
-// router.get('/load', (req, res) => {
-//   if (codeControlApi.isValidApiCall(req.headers.temp)) {
-//     delete req.headers.temp
-//   } else {
-//     return res.status(400).json({msg: codeControlApi.err});
-//   }
-
-//   const db = req.app.locals.db;
-
-//   // first lookup instructor by atomic/unique username
-//   // retrieve instructor's _id ObjectId field and ref to problem sets's instructor_id field
-//   // this will reference the correct instructor to the correct problem set
-//   db.collection('instructors').findOne({ username: req.headers.username })
-//     .then(instructor => {
-//       if (instructor != null) {
-
-//         // instructor exists so find problem set based on problemSetsNum
-//         // instructor._id is the instructor's unique Mongo ObjectID
-//         // req.query.problemSetsNum lets users load any problem set :)
-        
-//         // we need to make a call to the latest/current problem set to see
-//         // how many problem sets the user can choose from
-//         db.collection('problemSets').findOne({ instructor_id: instructor._id, problemSetsNum: req.headers.problemSetsNum })
-//           .then(problemSet => {
-//             if (problemSet != null) {
-//               var succesMsg = 'success: problem set found for: ' + req.headers.username;
-//               console.log(succesMsg);
-//               return res.status(200).json(problemSet);
-//             } else {
-//               var errMsg = 'error: problem set not found';
-//               console.log(errMsg);
-//               return res.status(400).json({msg: errMsg});
-//             }
-//           }).catch(err => console.log(err));
-//       } else {
-//         var errMsg = 'error: username not found';
-//         console.log(errMsg);
-//         return res.status(400).json({msg: errMsg});
-//       }
-//     }).catch(err => console.log(err));
-// });
 
 // @route       GET api/codecontrol/problemSets/delete
 // @description get problem set using username, problemSetsNum and apiKey [temp] request-header
