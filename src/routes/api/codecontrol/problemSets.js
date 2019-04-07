@@ -10,13 +10,6 @@ const codeControlApi = require('../../../validation/codeControlApi');
 // @access      Public
 router.get('/test', (req, res) => res.json({msg: "problemSets works"}));
 
-form.AddField("apiKey", apiKey);
-form.AddField("dateTimeCreated", pset.dateTimeCreated);
-form.AddField("instructorUsername", pset.instructorUsername);
-form.AddField("instructorFullName", pset.instructorFullName);
-form.AddField("courseSectionNum", pset.courseSectionNum);
-form.AddField("term", pset.term);
-
 // @route       POST api/codecontrol/problemSets/save
 // @description create/insert new problem set based on username and apiKey query params
 // @access      Public
