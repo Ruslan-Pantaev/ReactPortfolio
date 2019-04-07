@@ -63,11 +63,11 @@ router.get('/findOne', (req, res) => {
 // @description salt + hash pw & insert new instructor using instructors obj and apiKey in body
 // @access      Public
 router.post('/register', (req, res) => {
-  if (codeControlApi.isValidApiCall(req.body.apiKey)) {
-    delete req.body.apiKey
-  } else {
-    return res.status(400).json({msg: codeControlApi.err});
-  }
+  // if (codeControlApi.isValidApiCall(req.body.apiKey)) {
+  //   delete req.body.apiKey
+  // } else {
+  //   return res.status(400).json({msg: codeControlApi.err});
+  // }
 
   const db = req.app.locals.db;
 
@@ -93,6 +93,11 @@ router.post('/register', (req, res) => {
       } else {
         var errMsg = 'error: username already exists';
         console.log(errMsg);
+
+        // TODO
+        // get rid of status 400 for easier message displays in Unity's Console
+        // return res.json({msg: errMsg});
+        
         return res.status(400).json({msg: errMsg});
       }
     }).catch(err => console.log(err));
