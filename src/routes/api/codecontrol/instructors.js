@@ -120,7 +120,7 @@ router.post('/login', (req, res) => {
               var successMsg = 'success: instructor logged in';
               console.log(successMsg)
               // return res.status(200).json({msg: successMsg});
-              return instructor;
+              return res.status(200).json(instructor);
             } else {
               var errMsg = 'error: password incorrect';
               console.log(errMsg);
