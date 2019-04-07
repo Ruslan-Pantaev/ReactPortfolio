@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const assert = require('assert');
+const {ObjectId} = require('mongodb');
 const codeControlApi = require('../../../validation/codeControlApi');
 
 
@@ -111,7 +112,7 @@ router.get('/load', (req, res) => {
   // first lookup instructor by atomic/unique username
   // retrieve instructor's _id ObjectId field and ref to problem sets's instructor_id field
   // this will reference the correct instructor to the correct problem set
-  db.collection('instructors').findOne({ username: req.headers.username })
+  db.collection('instructors').findOne({ _id: ObjectId(req.headers.instructor_id) })
     .then(instructor => {
       if (instructor != null) {
 
@@ -140,6 +141,48 @@ router.get('/load', (req, res) => {
       }
     }).catch(err => console.log(err));
 });
+
+// router.get('/load', (req, res) => {
+//   if (codeControlApi.isValidApiCall(req.headers.temp)) {
+//     delete req.headers.temp
+//   } else {
+//     return res.status(400).json({msg: codeControlApi.err});
+//   }
+
+//   const db = req.app.locals.db;
+
+//   // first lookup instructor by atomic/unique username
+//   // retrieve instructor's _id ObjectId field and ref to problem sets's instructor_id field
+//   // this will reference the correct instructor to the correct problem set
+//   db.collection('instructors').findOne({ username: req.headers.username })
+//     .then(instructor => {
+//       if (instructor != null) {
+
+//         // instructor exists so find problem set based on problemSetsNum
+//         // instructor._id is the instructor's unique Mongo ObjectID
+//         // req.query.problemSetsNum lets users load any problem set :)
+        
+//         // we need to make a call to the latest/current problem set to see
+//         // how many problem sets the user can choose from
+//         db.collection('problemSets').findOne({ instructor_id: instructor._id, problemSetsNum: req.headers.problemSetsNum })
+//           .then(problemSet => {
+//             if (problemSet != null) {
+//               var succesMsg = 'success: problem set found for: ' + req.headers.username;
+//               console.log(succesMsg);
+//               return res.status(200).json(problemSet);
+//             } else {
+//               var errMsg = 'error: problem set not found';
+//               console.log(errMsg);
+//               return res.status(400).json({msg: errMsg});
+//             }
+//           }).catch(err => console.log(err));
+//       } else {
+//         var errMsg = 'error: username not found';
+//         console.log(errMsg);
+//         return res.status(400).json({msg: errMsg});
+//       }
+//     }).catch(err => console.log(err));
+// });
 
 // @route       GET api/codecontrol/problemSets/delete
 // @description get problem set using username, problemSetsNum and apiKey [temp] request-header
