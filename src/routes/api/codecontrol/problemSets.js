@@ -22,34 +22,41 @@ router.post('/save', (req, res) => {
 
   const db = req.app.locals.db;
 
-  db.collection('instructors').findOne({ username: req.body.username })
+  db.collection('instructors').findOne({ username: req.body.instructorUsername })
     .then(instructor => {
       if (instructor != null) {
 
-        // instructor exists so find problemSetsNum
-        // instructor._id is the instructor's unique Mongo ObjectID
-        db.collection('problemSetsCounter').findOne({ instructor_id: instructor._id })
-          .then(problemSetsCounter => {
-            if (problemSetsCounter != null) {
+        // inserting new problem set
+        db.collection('problemSets').insertOne(req.body, function(err, res) {
+          assert.equal(err, null);
+          console.log("success: new problem set inserted for: " + req.body.instructorUsername);
+          return res.status(200).json(res);
+        });
+        
+        // // instructor exists so find problemSetsNum
+        // // instructor._id is the instructor's unique Mongo ObjectID
+        // db.collection('problemSetsCounter').findOne({ instructor_id: instructor._id })
+        //   .then(problemSetsCounter => {
+        //     if (problemSetsCounter != null) {
 
-              // update req.body with instructor_id field (instructor._id)
-              req.body.instructor_id = instructor._id
-              // update req.body with problemSetsNum field (problemSetsCounter.problemSetsNum)
-              req.body.problemSetsNum = problemSetsCounter.problemSetsNum
+        //       // update req.body with instructor_id field (instructor._id)
+        //       req.body.instructor_id = instructor._id
+        //       // update req.body with problemSetsNum field (problemSetsCounter.problemSetsNum)
+        //       req.body.problemSetsNum = problemSetsCounter.problemSetsNum
 
-              // inserting new problem set
-              db.collection('problemSets').insertOne(req.body, function(err, res) {
-                assert.equal(err, null);
-                console.log("success: new problem set inserted for: " + req.body.username);
-                return res.status(200).json(res);
-              });
-            } else {
-              var errMsg = 'error: problemSetsCounter does not yet exist, ' +
-                'please make a call to rpantaev.com/api/problemSetsCounter/update';
-              console.log(errMsg);
-              return res.status(400).json({msg: errMsg});
-            }
-          }).catch(err => console.log(err));
+        //       // inserting new problem set
+        //       db.collection('problemSets').insertOne(req.body, function(err, res) {
+        //         assert.equal(err, null);
+        //         console.log("success: new problem set inserted for: " + req.body.instructorUsername);
+        //         return res.status(200).json(res);
+        //       });
+        //     } else {
+        //       var errMsg = 'error: problemSetsCounter does not yet exist, ' +
+        //         'please make a call to rpantaev.com/api/problemSetsCounter/update';
+        //       console.log(errMsg);
+        //       return res.status(400).json({msg: errMsg});
+        //     }
+        //   }).catch(err => console.log(err));
       } else {
         var errMsg = 'error: username not found';
         console.log(errMsg);
