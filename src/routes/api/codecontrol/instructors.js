@@ -114,7 +114,7 @@ router.post('/login', (req, res) => {
     .then(instructor => {
       if (instructor != null) {
         // decrypt & validate/compare password
-        bcrypt.compare(req.body.password, instructors.password)
+        bcrypt.compare(req.body.password, instructor.password)
           .then(isMatch => {
             if (isMatch) {
               var successMsg = 'success: instructor logged in';

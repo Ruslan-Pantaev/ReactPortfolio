@@ -1,0 +1,173 @@
+
+> portfolio@1.0.0 start /var/www/ReactPortfolio
+> node src/server.js
+
+Server listening on port 5000
+
+> portfolio@1.0.0 start /var/www/ReactPortfolio
+> node src/server.js
+
+Server listening on port 5000
+
+> portfolio@1.0.0 start /var/www/ReactPortfolio
+> node src/server.js
+
+Server listening on port 5000
+
+> portfolio@1.0.0 start /var/www/ReactPortfolio
+> node src/server.js
+
+Server listening on port 5000
+
+> portfolio@1.0.0 start /var/www/ReactPortfolio
+> node src/server.js
+
+Server listening on port 5000
+
+> portfolio@1.0.0 start /var/www/ReactPortfolio
+> node src/server.js
+
+
+> portfolio@1.0.0 start /var/www/ReactPortfolio
+> node src/server.js
+
+Server listening on port 5000
+{ name: 'Ruslan Pantaev',
+  email: 'rpantaev@gmail.com',
+  message: 'd' }
+Message sent: <7d37a709-fa38-4ab2-02b0-35fc8d2f235f@rpantaev.com>
+{ name: 'Ruslan Pantaev',
+  email: 'rpantaev@gmail.com',
+  message: 'official email working from production! <3' }
+Message sent: <a4288986-091c-27a7-9063-be22665772ad@rpantaev.com>
+{}
+Message sent: <c2625afe-2613-9662-e9da-852a34e1d949@rpantaev.com>
+{ name: 'Ruslan Pantaev',
+  email: 'rpantaev@gmail.com',
+  message: 'official email working from production! <3 -2' }
+Message sent: <0523aacb-4e8a-9595-37e7-91c5605e4d83@rpantaev.com>
+{}
+Message sent: <3e0c6401-bb9a-5db8-044c-413085c9cf27@rpantaev.com>
+{ name: '', email: '', message: '' }
+Message sent: <a675d1f9-c636-8d34-1774-487041cf80e2@rpantaev.com>
+{ name: 'Ruslan Pantaev',
+  email: 'rpantaev@gmail.com',
+  message: 'https setup and running! <3' }
+Message sent: <7e94ec83-2e95-4a73-74a5-5c17a8066fed@rpantaev.com>
+{ name: 'Ruslan Pantaev',
+  email: 'balto4@gmail.com',
+  message: 'yay :) ! =p ;p' }
+Message sent: <3666b21c-c4c0-496a-6675-c063f67d9b38@rpantaev.com>
+{ name: 'Ruslan Pantaev',
+  email: 'rpantaev@gmail.com',
+  message:
+   `"don't think too much about other people's opinions" -franci` }
+Message sent: <33bf85ea-b8d6-2323-b13e-f4b0abaffb84@rpantaev.com>
+{ name: '', email: '', message: '' }
+Message sent: <4092cd05-dbd9-178c-f314-1faed617356d@rpantaev.com>
+{ name: '', email: '', message: '' }
+Message sent: <ff91093b-08ff-4d70-bfec-fad95f5ff3d6@rpantaev.com>
+{ name: 'Ruslan Pantaev',
+  email: 'rpantaev@gmail.com',
+  message: 'is it working?' }
+Message sent: <86b7a459-24fe-5b70-9945-bae6d1096bbc@rpantaev.com>
+{ name: 'Ruslan Pantaev',
+  email: 'rpantaev@gmail.com',
+  message: 'Ios <3 ❤️🐻' }
+Message sent: <e47c5a09-7d7b-c039-ea38-dc05a791356e@rpantaev.com>
+{ name: '', email: '', message: '' }
+Message sent: <e8ca25dc-37a7-9405-e5b1-46f7808104ca@rpantaev.com>
+{ name: '', email: '', message: '' }
+Message sent: <e30d6c63-7a3f-dec7-3f74-e91c7ca46435@rpantaev.com>
+{ name: '', email: '', message: 'asc' }
+Message sent: <2cd7a4a9-2984-eb23-7826-58864472cd41@rpantaev.com>
+{ name: '', email: '', message: 'asd' }
+Message sent: <acd52635-df28-54fc-0f1d-1a15d83991a6@rpantaev.com>
+{ name: '', email: '', message: 'asd' }
+Message sent: <7cbb5b20-9d32-c5d9-a7f4-5bdba373e40d@rpantaev.com>
+{ name: 'Irina P. ',
+  email: 'irinapantaeva108@gmail.com',
+  message:
+   'Hello Ruslan,\nCongrats with your new website. It’s beautiful and well designed!!! Thank you for sharing all your accomplishments so far. Very proud and happy for you. \nI. P. ' }
+Message sent: <721c4643-8ca6-d82f-a8f0-61de165a94a3@rpantaev.com>
+{ name: 'Irina P. ',
+  email: 'irinapantaeva108@gmail.com',
+  message:
+   'Hello Ruslan,\nCongrats with your new website. It’s beautiful and well designed!!! Thank you for sharing all your accomplishments so far. Very proud and happy for you. \nI. P. ' }
+{ name: 'Irina P. ',
+  email: 'irinapantaeva108@gmail.com',
+  message:
+   'Hello Ruslan,\nCongrats with your new website. It’s beautiful and well designed!!! Thank you for sharing all your accomplishments so far. Very proud and happy for you. \nI. P. ' }
+Message sent: <84f17fbb-b20a-37e8-9b87-85651d68e4eb@rpantaev.com>
+{ name: 'Irina P. ',
+  email: 'irinapantaeva108@gmail.com',
+  message:
+   'Hello Ruslan,\nCongrats with your new website. It’s beautiful and well designed!!! Thank you for sharing all your accomplishments so far. Very proud and happy for you. \nI. P. ' }
+Message sent: <f22c8369-8ae8-c26d-c0ba-32eb418f6ecd@rpantaev.com>
+Message sent: <307f1d22-faed-ab02-3413-82e82a68d85a@rpantaev.com>
+{ name: 'Ruslan Pantaev',
+  email: 'rpantaev@gmail.com',
+  message: 'test without const form' }
+Message sent: <30fc3d2f-d614-c705-cb8b-b71660b48254@rpantaev.com>
+
+> portfolio@1.0.0 start /var/www/ReactPortfolio
+> node src/server.js
+
+Server listening on port 5000
+Successfully connected to MongoDB
+success: API Call Validated
+success: logged in
+
+> portfolio@1.0.0 start /var/www/ReactPortfolio
+> node src/server.js
+
+
+> portfolio@1.0.0 start /var/www/ReactPortfolio
+> node src/server.js
+
+Server listening on port 5000
+Successfully connected to MongoDB
+success: API Call Validated
+success: logged in
+success: API Call Validated
+success: API Call Validated
+success: username found
+{ _id: 5c7bef6772f0adb7f1ece6bd,
+  dateTimeCreated: '3/3/2019 5:14:46 AM',
+  firstName: 'Bob',
+  lastName: 'Jones',
+  gender: 'n/a',
+  age: 'prefer not to say',
+  collegeName: 'n/a',
+  collegeMajor: 'n/a',
+  courseYear: 'Junior',
+  courseSectionNumber: 'Default',
+  instructorFullName: 'Default',
+  instructor_id: '',
+  username: 'b',
+  password:
+   '$2a$10$x4AzvFFyiBgElnmMLALeHeLIThvX62IYQi.Sr.O0RK7pXk7Izl6fW' }
+session num: 1
+success: API Call Validated
+success: new session inserted for: b
+success: API Call Validated
+success: new stats inserted for: b
+success: API Call Validated
+success: API Call Validated
+b
+1
+success: session found for: b
+success: API Call Validated
+b
+1
+success: stats found for session: 5c99077db052b130453c89f0
+success: API Call Validated
+success: API Call Validated
+successs: pushed a new movement event
+success: API Call Validated
+success: API Call Validated
+successs: pushed a new movement event
+success: API Call Validated
+success: logged in
+success: API Call Validated
+success: logged in
