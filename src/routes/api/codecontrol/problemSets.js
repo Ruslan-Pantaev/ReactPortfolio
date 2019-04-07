@@ -27,12 +27,13 @@ router.post('/save', (req, res) => {
       if (instructor != null) {
 
         // inserting new problem set
-        db.collection('problemSets').insertOne(req.body, function(err, res) {
+        db.collection('problemSets').insertOne(req.body, function(err, res2) {
           assert.equal(err, null);
-          console.log("success: new problem set inserted for: " + req.body.instructorUsername);
-          return res.status(200).json(res);
+          var msg = "success: new problem set inserted for: " + req.body.instructorUsername;
+          console.log(msg);
+          return res.status(200).json({msg: msg});
         });
-        
+
         // // instructor exists so find problemSetsNum
         // // instructor._id is the instructor's unique Mongo ObjectID
         // db.collection('problemSetsCounter').findOne({ instructor_id: instructor._id })
