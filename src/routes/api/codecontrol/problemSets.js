@@ -10,6 +10,44 @@ const codeControlApi = require('../../../validation/codeControlApi');
 // @access      Public
 router.get('/test', (req, res) => res.json({msg: "problemSets works"}));
 
+form.AddField("apiKey", apiKey);
+form.AddField("dateTimeCreated", pset.dateTimeCreated);
+form.AddField("instructorUsername", pset.instructorUsername);
+form.AddField("instructorFullName", pset.instructorFullName);
+form.AddField("courseSectionNum", pset.courseSectionNum);
+form.AddField("term", pset.term);
+
+// @route       POST api/codecontrol/problemSets/save
+// @description create/insert new problem set based on username and apiKey query params
+// @access      Public
+router.post('/newLessonSet', (req, res) => {
+  if (codeControlApi.isValidApiCall(req.body.apiKey)) {
+    delete req.body.apiKey
+  } else {
+    return res.status(400).json({msg: codeControlApi.err});
+  }
+
+  const db = req.app.locals.db;
+
+  db.collection('instructors').findOne({ username: req.body.instructorUsername })
+    .then(instructor => {
+      if (instructor != null) {
+
+        // inserting new problem set
+        db.collection('lessonSets').insertOne(req.body, function(err, res2) {
+          assert.equal(err, null);
+          var msg = "success: new lesson set inserted for: " + req.body.instructorUsername;
+          console.log(msg);
+          return res.status(200).json({msg: msg});
+        });
+      } else {
+        var errMsg = 'error: username not found';
+        console.log(errMsg);
+        return res.status(400).json({msg: errMsg});
+      }
+    }).catch(err => console.log(err));
+});
+
 // @route       POST api/codecontrol/problemSets/save
 // @description create/insert new problem set based on username and apiKey query params
 // @access      Public
@@ -26,38 +64,24 @@ router.post('/save', (req, res) => {
     .then(instructor => {
       if (instructor != null) {
 
-        // inserting new problem set
-        db.collection('problemSets').insertOne(req.body, function(err, res2) {
-          assert.equal(err, null);
-          var msg = "success: new problem set inserted for: " + req.body.instructorUsername;
-          console.log(msg);
-          return res.status(200).json({msg: msg});
-        });
-
-        // // instructor exists so find problemSetsNum
-        // // instructor._id is the instructor's unique Mongo ObjectID
-        // db.collection('problemSetsCounter').findOne({ instructor_id: instructor._id })
-        //   .then(problemSetsCounter => {
-        //     if (problemSetsCounter != null) {
-
-        //       // update req.body with instructor_id field (instructor._id)
-        //       req.body.instructor_id = instructor._id
-        //       // update req.body with problemSetsNum field (problemSetsCounter.problemSetsNum)
-        //       req.body.problemSetsNum = problemSetsCounter.problemSetsNum
-
-        //       // inserting new problem set
-        //       db.collection('problemSets').insertOne(req.body, function(err, res) {
-        //         assert.equal(err, null);
-        //         console.log("success: new problem set inserted for: " + req.body.instructorUsername);
-        //         return res.status(200).json(res);
-        //       });
-        //     } else {
-        //       var errMsg = 'error: problemSetsCounter does not yet exist, ' +
-        //         'please make a call to rpantaev.com/api/problemSetsCounter/update';
-        //       console.log(errMsg);
-        //       return res.status(400).json({msg: errMsg});
-        //     }
-        //   }).catch(err => console.log(err));
+        db.collection('lessonSets').findOneAndUpdate(
+          { "username": req.body.instructorIsername,
+            "courseSectionNum": req.body.courseSectionNum,
+            "term": req.body.term
+          },
+          { "$push": { "problemSets": req.body } },
+          { "upsert": false, "multi": true, "sort": [] }, // options
+          (err, stats) => {
+            if (err) {
+              var errMsg = 'error: lessonSet not found';
+              return res.status(400).json({msg: errMsg});
+            } else {
+              var successMsg = "successs: pushed a new problemSet";
+              console.log(successMsg);
+              return res.status(200).json({msg: successMsg});
+            }
+          }
+        );
       } else {
         var errMsg = 'error: username not found';
         console.log(errMsg);
