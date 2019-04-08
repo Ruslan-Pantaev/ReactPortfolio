@@ -27,7 +27,7 @@ router.get('/findAll', (req, res) => {
     if (err) {
       return res.status(400).json(err);
     }
-    var succesMsg = "Found the following instructors: " + instructors;
+    var successMsg = "Found the following instructors: " + instructors;
     console.log(successMsg);
     return res.status(200).json(instructors)
   });
