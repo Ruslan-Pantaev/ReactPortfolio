@@ -135,4 +135,40 @@ router.post('/login', (req, res) => {
     }).catch(err => console.log(err));
 });
 
+// @route       GET api/codecontrol/instructors/loadAllCourses
+// @description find all problem sets for the instructor using first [temp2] and last [temp3] names and apiKey [temp] request-header
+// @access      Public
+router.get('/loadAllCourses', (req, res) => {
+  if (codeControlApi.isValidApiCall(req.headers.temp)) {
+    delete req.headers.temp
+  } else {
+    return res.status(400).json({msg: codeControlApi.err});
+  }
+
+  const db = req.app.locals.db;
+
+  // first lookup instructor by atomic/unique username
+  // retrieve instructor's _id ObjectId field and ref to problem set's instructor_id field
+  // this will reference the correct instructor to the correct problem set
+  db.collection('instructors').findOne({ firstName: req.headers.temp2, lastName: req.headers.temp3, })
+    .then(instructor => {
+      if (instructor != null) {
+        
+        db.collection('lessonSets').find({ instructorUsername: instructor.username }).toArray( (err, lessonSets) => {
+          // assert.equal(err, null);
+          if (err) {
+            return res.status(400).json(err);
+          }
+          var successMsg = "Found the following problem sets: " + lessonSets;
+          console.log(successMsg);
+          return res.status(200).json(lessonSets)
+        });
+      } else {
+        var errMsg = 'error: username not found';
+        console.log(errMsg);
+        return res.status(400).json({msg: errMsg});
+      }
+    }).catch(err => console.log(err));
+});
+
 module.exports = router;
