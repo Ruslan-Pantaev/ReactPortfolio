@@ -24,7 +24,7 @@ router.get('/findAll', (req, res) => {
 
   const db = req.app.locals.db;
 
-  db.collection('players').find().toArray( (err, players) => {
+  db.collection('players').find({}).toArray( (err, players) => {
     // assert.equal(err, null);
     if (err) {
       return res.status(400).json(err);
