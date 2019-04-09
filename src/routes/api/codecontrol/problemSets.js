@@ -63,7 +63,7 @@ router.post('/pushProblemSet', (req, res) => {
             "term": req.body.term
           },
           { "$push": { "problemSets": req.body } },
-          { "upsert": false, "multi": true, "sort": [] }, // options
+          { "upsert": true, "multi": true, "sort": [] }, // options
           (err, stats) => {
             if (err) {
               var errMsg = 'error: lessonSet not found';
