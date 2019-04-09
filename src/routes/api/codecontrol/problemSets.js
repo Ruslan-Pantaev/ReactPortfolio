@@ -67,12 +67,14 @@ router.post('/pushProblemSet', (req, res) => {
           { "upsert": false, "multi": true, "sort": [] }, // options
           (err, res) => {
             if (err) {
-              var errMsg = 'error: lessonSet not found';
-              return res.status(400).json({msg: errMsg});
+              console.log(err)
+              // var errMsg = 'error: lessonSet not found';
+              // return res.status(400).json({msg: errMsg});
             } else {
-              var successMsg = "successs: removed old problemSet";
-              console.log(successMsg);
-              return res.status(200).json({msg: successMsg});
+              console.log(res)
+              // var successMsg = "successs: removed old problemSet";
+              // console.log(successMsg);
+              // return res.status(200).json({msg: successMsg});
             }
           }
         );
