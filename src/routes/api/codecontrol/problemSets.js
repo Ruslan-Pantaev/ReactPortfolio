@@ -41,10 +41,10 @@ router.post('/newLessonSet', (req, res) => {
     }).catch(err => console.log(err));
 });
 
-// @route       POST api/codecontrol/problemSets/save
-// @description create/insert new problem set based on username and apiKey query params
+// @route       POST api/codecontrol/problemSets/clear
+// @description removes all problem sets based on username and apiKey query params
 // @access      Public
-router.post('/pushProblemSet', (req, res) => {
+router.post('/clear', (req, res) => {
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -65,20 +65,42 @@ router.post('/pushProblemSet', (req, res) => {
           },
           { "$pull": { "problemSets": { "instructorUsername": req.body.instructorUsername } } },
           { "upsert": false, "multi": true, "sort": [] }, // options
-          (err, res) => {
+          (err, data) => {
             if (err) {
-              console.log(err)
-              // var errMsg = 'error: lessonSet not found';
-              // return res.status(400).json({msg: errMsg});
+              // console.log(err)
+              var errMsg = 'error: lessonSet not found';
+              return res.status(400).json({msg: errMsg});
             } else {
-              console.log(res)
-              // var successMsg = "successs: removed old problemSet";
-              // console.log(successMsg);
-              // return res.status(200).json({msg: successMsg});
+              // console.log(res)
+              var successMsg = "successs: removed old problemSet";
+              console.log(successMsg);
+              return res.status(200).json({msg: successMsg});
             }
           }
         );
+      } else {
+        var errMsg = 'error: username not found';
+        console.log(errMsg);
+        return res.status(400).json({msg: errMsg});
+      }
+    }).catch(err => console.log(err));
+});
 
+// @route       POST api/codecontrol/problemSets/save
+// @description create/insert new problem set based on username and apiKey query params
+// @access      Public
+router.post('/pushProblemSet', (req, res) => {
+  if (codeControlApi.isValidApiCall(req.body.apiKey)) {
+    delete req.body.apiKey
+  } else {
+    return res.status(400).json({msg: codeControlApi.err});
+  }
+
+  const db = req.app.locals.db;
+
+  db.collection('instructors').findOne({ username: req.body.instructorUsername })
+    .then(instructor => {
+      if (instructor != null) {
         // insert new psets
         db.collection('lessonSets').findOneAndUpdate(
           { "username": req.body.instructorIsername,
@@ -87,7 +109,7 @@ router.post('/pushProblemSet', (req, res) => {
           },
           { "$push": { "problemSets": req.body } },
           { "upsert": false, "multi": true, "sort": [] }, // options
-          (err2, res2) => {
+          (err2, data) => {
             if (err2) {
               var errMsg = 'error: lessonSet not found';
               return res.status(400).json({msg: errMsg});
