@@ -56,14 +56,35 @@ router.post('/pushProblemSet', (req, res) => {
   db.collection('instructors').findOne({ username: req.body.instructorUsername })
     .then(instructor => {
       if (instructor != null) {
+        
+        // remove old psets first
+        db.collection('lessonSets').findOneAndUpdate(
+          { "username": req.body.instructorIsername,
+            "courseSectionNum": req.body.courseSectionNum,
+            "term": req.body.term
+          },
+          { "$pull": { "problemSets": { "instructorUsername": req.body.instructorUsername } } },
+          { "upsert": false, "multi": true, "sort": [] }, // options
+          (err, stats) => {
+            if (err) {
+              var errMsg = 'error: lessonSet not found';
+              return res.status(400).json({msg: errMsg});
+            } else {
+              var successMsg = "successs: removed old problemSets";
+              console.log(successMsg);
+              return res.status(200).json({msg: successMsg});
+            }
+          }
+        );
 
+        // insert new psets
         db.collection('lessonSets').findOneAndUpdate(
           { "username": req.body.instructorIsername,
             "courseSectionNum": req.body.courseSectionNum,
             "term": req.body.term
           },
           { "$push": { "problemSets": req.body } },
-          { "upsert": true, "multi": true, "sort": [] }, // options
+          { "upsert": false, "multi": true, "sort": [] }, // options
           (err, stats) => {
             if (err) {
               var errMsg = 'error: lessonSet not found';
