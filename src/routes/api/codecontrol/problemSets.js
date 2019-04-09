@@ -65,12 +65,12 @@ router.post('/pushProblemSet', (req, res) => {
           },
           { "$pull": { "problemSets": { "instructorUsername": req.body.instructorUsername } } },
           { "upsert": false, "multi": true, "sort": [] }, // options
-          (err, stats) => {
+          (err, res) => {
             if (err) {
               var errMsg = 'error: lessonSet not found';
               return res.status(400).json({msg: errMsg});
             } else {
-              var successMsg = "successs: removed old problemSets";
+              var successMsg = "successs: removed old problemSet";
               console.log(successMsg);
               return res.status(200).json({msg: successMsg});
             }
@@ -85,8 +85,8 @@ router.post('/pushProblemSet', (req, res) => {
           },
           { "$push": { "problemSets": req.body } },
           { "upsert": false, "multi": true, "sort": [] }, // options
-          (err, stats) => {
-            if (err) {
+          (err2, res2) => {
+            if (err2) {
               var errMsg = 'error: lessonSet not found';
               return res.status(400).json({msg: errMsg});
             } else {
