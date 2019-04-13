@@ -121,7 +121,7 @@ router.post('/login', (req, res) => {
             if (isMatch) {
               var successMsg = 'success: logged in';
               console.log(successMsg)
-              return res.status(200).json({msg: successMsg});
+              return res.status(200).json(player);
             } else {
               var errMsg = 'error: password incorrect';
               console.log(errMsg);
