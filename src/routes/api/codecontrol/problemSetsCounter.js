@@ -1,3 +1,6 @@
+// TODO
+// remove this route since it is not being used
+
 const express = require('express');
 const router = express.Router();
 const assert = require('assert');
