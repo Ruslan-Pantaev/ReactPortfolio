@@ -164,11 +164,11 @@ router.get('/', (req, res) => {
     }).catch(err => console.log(err));
 });
 
-// @route       GET api/codecontrol/problemSets/load
-// @description get problem set based on using username, problemSetsNum and apiKey [temp] request-header
-//              this will allow users to load any previous problem sets
+// @route       GET api/codecontrol/problemSets/findOne
+// @description get lesson set based on instructor's first name [temp2], last names [temp3], courseSectionNum [temp4], term [temp5] and apiKey [temp] request-header
+//              this will load the correct lesson set for player on log in
 // @access      Public
-router.get('/load', (req, res) => {
+router.get('/findOne', (req, res) => {
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
@@ -177,18 +177,18 @@ router.get('/load', (req, res) => {
 
   const db = req.app.locals.db;
 
-  db.collection('instructors').findOne({ username: req.headers.instructorUsername })
+  db.collection('instructors').findOne({ firstName: req.headers.temp2, lastName: req.headers.temp3 })
     .then(instructor => {
       if (instructor != null) {
 
-        db.collection('lessonSets').findOne({ instructorUsername: instructor.username, courseSectionNum: req.headers.courseSectionNum })
-          .then(problemSet => {
+        db.collection('lessonSets').findOne({ instructorUsername: instructor.username, courseSectionNum: req.headers.temp4, term: req.headers.tmep5 })
+          .then(lessonSet => {
             if (problemSet != null) {
               var succesMsg = 'success: problem set found for: ' + req.headers.username;
               console.log(succesMsg);
-              return res.status(200).json(problemSet);
+              return res.status(200).json(lessonSet);
             } else {
-              var errMsg = 'error: problem set not found';
+              var errMsg = 'error: lesson set not found';
               console.log(errMsg);
               return res.status(400).json({msg: errMsg});
             }
