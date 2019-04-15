@@ -181,10 +181,10 @@ router.get('/findOne', (req, res) => {
     .then(instructor => {
       if (instructor != null) {
 
-        db.collection('lessonSets').findOne({ instructorUsername: instructor.username, courseSectionNum: req.headers.temp4, term: req.headers.tmep5 })
+        db.collection('lessonSets').findOne({ instructorUsername: instructor.username, courseSectionNum: req.headers.temp4, term: req.headers.temp5 })
           .then(lessonSet => {
-            if (problemSet != null) {
-              var succesMsg = 'success: problem set found for: ' + req.headers.username;
+            if (lessonSet != null) {
+              var succesMsg = 'success: lesson set found for: ' + req.headers.username;
               console.log(succesMsg);
               return res.status(200).json(lessonSet);
             } else {
