@@ -8,8 +8,8 @@ import './Menu.css';
 import './Footer.css';
 
 let unityContent = new UnityContent(
-    "/assets/unityWebGL/CodeControl_2019_1_0_8/Build/CodeControl_2019_1_0_8.json",
-    "/assets/unityWebGL/CodeControl_2019_1_0_8/Build/UnityLoader.js",
+    "/assets/unityWebGL/CodeControl_2019_1_0_9/Build/CodeControl_2019_1_0_8.json",
+    "/assets/unityWebGL/CodeControl_2019_1_0_9/Build/UnityLoader.js",
     { adjustOnWindowResize: true }
 );
 
@@ -135,13 +135,12 @@ class CodeControl2019 extends Component {
                         <br></br>
                         <br></br>
                         <br></br>
-                        <h1>Code Control 2019 rev1.0.7</h1>
+                        <h1>Code Control 2019 rev1.0.9</h1>
                         <br></br>
                         <h5>Welcome! Thanks for trying out this game! :)</h5>
                         <br></br>
-                        <p>This is a large 3D game, so downloading all the resources takes time.</p>
                         <p>Please use the latest stable version of Google Chrome.</p>
-                        <p>Depending on network speeds, expect 2-5 minutes of load time.</p>
+                        <p>Depending on network speeds, load times may vary. Please do not refresh the page.</p>
                         <br></br>
                         {/* <p>For better performance or if your browser is not compatible, download the game below:</p>
                         <a style={{color: "green"}} href="https://drive.google.com/open?id=1GZTsmEgCz3yeb4qMAjFSFwio7mvLuHdw" target="_blank" rel="noopener noreferrer">Download 64-bit OSX build</a>
