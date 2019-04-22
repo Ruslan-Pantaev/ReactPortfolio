@@ -155,11 +155,11 @@ class CodeControl2019 extends Component {
                         c to <B>crouch</B><SPACING></SPACING>hold left-shift to <B>walk slowly</B></p>
                         <p>g,h,j,k to make <B>hand signals</B><SPACING></SPACING>l to activate <B>flashlight</B><SPACING></SPACING>
                         left-ctrl+l to <B>dance</B></p>
-                        <p>mouse-scroll to <B>zoom</B><SPACING></SPACING>select floor and mouse-click to <B>activate elevator</B></p>
+                        <p>mouse-scroll to <B>zoom</B></p>
                         <br></br>
                         <p>Have fun!</p>
                         <br></br>
-                        <div style={{
+                        <div id="gameContainer" style={{
                                 position: "relative",
                                 textAlign: "center",
                                 overflow: "hidden",
