@@ -181,22 +181,22 @@ class CodeControl2019 extends Component {
                             <Unity unityContent={unityContent} />
                         </div>
                         <br></br>
-                        <Form onSubmit={this.toggleFullScreen}>
-                                <Button
-                                    color={'success'}
-                                    style={{
-                                        position: "relative",
-                                        textAlign: "center",
-                                        top: 0,
-                                        bottom: 0,
-                                        left: 0,
-                                        right: 0,
-                                        margin: "auto"
-                                    }}
-                                >
-                                    Full Screen
-                                </Button>
-                            </Form>
+                        {/* <Form onSubmit={this.toggleFullScreen}>
+                            <Button
+                                color={'success'}
+                                style={{
+                                    position: "relative",
+                                    textAlign: "center",
+                                    top: 0,
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    margin: "auto"
+                                }}
+                            >
+                                Full Screen
+                            </Button>
+                        </Form> */}
                     </div>
                     <br></br>
                     <br></br>
