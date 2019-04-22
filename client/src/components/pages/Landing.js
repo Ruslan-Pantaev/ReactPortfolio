@@ -32,7 +32,7 @@ class Landing extends Component {
             <div id="outer-container" style={{ overflow: "hidden" }}>
                 <Menu
                     right
-                    customBurgerIcon={ <img src={require("../../assets/menu/thin_burger_light.png")} alt={""} /> }
+                    customBurgerIcon={ <img src={require("../../assets/menu/thin_burger.png")} alt={""} /> }
                     customCrossIcon={ <img src={require("../../assets/menu/round_cross.png")} alt={""} /> }
                     pageWrapId={ "page-wrap" }
                     outerContainerId={ "outer-container" }
@@ -51,8 +51,8 @@ class Landing extends Component {
                     style={{
                         height:"100vh",
                         position: "relative",
-                        // backgroundColor: "#666"
-                        backgroundImage: "radial-gradient(circle, #bebebe, #a4a4a4, #8b8b8b, #737373, #5c5c5c, #4d4d4d, #3f3f3f, #313131, #272727, #1d1d1d, #141414, #060606)"
+                        backgroundColor: "#fff"
+                        // backgroundImage: "radial-gradient(circle, #bebebe, #a4a4a4, #8b8b8b, #737373, #5c5c5c, #4d4d4d, #3f3f3f, #313131, #272727, #1d1d1d, #141414, #060606)"
                     }}
                 >
                     {/* <span style={{
@@ -121,10 +121,12 @@ class Landing extends Component {
                             {/* <path fill="#666" stroke="#999" strokeWidth="1" d="M 100 300 A 50 50 0 1 1 400 100 A 50 50 0 1 1 700 300 L 400 600 L 100 300" /> */}
 
                             {/* rp */}
-                            <path fill="none" stroke="#777" /*"#be1a1a"*/ strokeWidth="3" d="M 250 400 L 300 300 A 100 50 0 1 1 300 150 L 350 450 L 450 450 L 500 150 A 100 50 0 1 1 500 300" />
+                            <path fill="none" stroke="#000" /*"#be1a1a"*/ strokeWidth="3" d="M 250 400 L 300 300 A 100 50 0 1 1 300 150 L 350 450 L 450 450 L 500 150 A 100 50 0 1 1 500 300" />
                         </Tween>
                     </span>
-                    <Tween
+
+                    {/* uncomment for the sphere */}
+                    {/* <Tween
                         from={{ x: '0px', rotation: 0, scale: 0.1, opacity: 0 }}
                         to={{ x: '0px', rotation: 0, scale: 1, opacity: 1 }}
                         // stagger={1}
@@ -153,7 +155,7 @@ class Landing extends Component {
                                 opacity: 1
                             }}
                         />
-                    </Tween>
+                    </Tween> */}
                     <Tween
                         from={{ x: '0px', rotation: -5, scale: 0.1, opacity: 0 }}
                         to={{ x: '0px', rotation: 0, scale: 1, opacity: 1 }}
@@ -170,7 +172,7 @@ class Landing extends Component {
                                 // fps_limit: 28,
                                 particles: {
                                     color: {
-                                        value: "#fff"
+                                        value: "#111"
                                     },
                                     number: {
                                         value: this.state.width/8 + this.state.height/12,
@@ -192,10 +194,11 @@ class Landing extends Component {
                                     },
                                     line_linked: {
                                         enable: true,
-                                        distance: 65,
+                                        distance: 75,
                                         opacity: 1,
+                                        color: "#999"
                                         // color: "#be1a1a" //red
-                                        color: "#09aaed" //blue
+                                        // color: "#09aaed" //blue
                                     }
                                 },
                                 interactivity: {
