@@ -8,8 +8,8 @@ import './Menu.css';
 import './Footer.css';
 
 let unityContent = new UnityContent(
-    "/assets/unityWebGL/CodeControl_2019_1_0_9/Build/CodeControl_2019_1_0_9.json",
-    "/assets/unityWebGL/CodeControl_2019_1_0_9/Build/UnityLoader.js",
+    "/assets/unityWebGL/CodeControl_2019_1_1_0/Build/CodeControl_2019_1_1_0.json",
+    "/assets/unityWebGL/CodeControl_2019_1_1_0/Build/UnityLoader.js",
     { adjustOnWindowResize: true }
 );
 
@@ -135,7 +135,7 @@ class CodeControl2019 extends Component {
                         <br></br>
                         <br></br>
                         <br></br>
-                        <h1>Code Control 2019 rev1.0.9</h1>
+                        <h1>Code Control 2019 rev1.1.0</h1>
                         <br></br>
                         <h5>Welcome! Thanks for trying out this game! :)</h5>
                         <br></br>
