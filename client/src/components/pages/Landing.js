@@ -26,26 +26,46 @@ class Landing extends Component {
         this.setState({ width: window.innerWidth, height: window.innerHeight });
     }
 
+    renderMenu() {
+      if (this.state.width < 600) {
+        return (
+          <Menu
+            right
+            customBurgerIcon={ <img src={require("../../assets/menu/thin_burger_light.png")} alt={""} /> }
+            customCrossIcon={ <img src={require("../../assets/menu/round_cross.png")} alt={""} /> }
+            pageWrapId={ "page-wrap" }
+            outerContainerId={ "outer-container" }
+            style={{ outline: "none" }}
+          >
+              <ul style={{ outline: "none", listStyle: "none" }}>
+                  <li><a style={{color: '#aaeaff'}} href="/">Home</a></li>
+                  <li><a style={{color: '#fff'}} href="/about">About</a></li>
+                  <li><a style={{color: '#fff'}} href="/cv">CV</a></li>
+                  <li><a style={{color: '#fff'}} href="/projects">Projects</a></li>
+                  <li><a style={{color: '#fff'}} href="/contact">Contact</a></li>
+              </ul>
+          </Menu>
+        );
+      } else {
+        return (
+          <div style={{ display: "inlineBlock", padding: "10px", outline: "none", position: "fixed", zIndex: 10, left: "50%", transform: "translateX(-50%)" }}>
+            <Link style={{ color: '#000', marginRight: "20px" }} to="/">Home</Link>
+            <Link style={{ color: '#666', marginRight: "20px"}} to="/about">About</Link>
+            <Link style={{ color: '#666', marginRight: "20px"}} to="/cv">CV</Link>
+            <Link style={{ color: '#666', marginRight: "20px"}} to="/projects">Projects</Link>
+            <Link style={{ color: '#666', marginRight: "0px"}} to="/contact">Contact</Link>
+          </div>
+        );
+      }
+    }
+
     render() {
         // console.log(this.state.width)
+        
+
         return (
             <div id="outer-container" style={{ overflow: "hidden" }}>
-                <Menu
-                    right
-                    customBurgerIcon={ <img src={require("../../assets/menu/thin_burger.png")} alt={""} /> }
-                    customCrossIcon={ <img src={require("../../assets/menu/round_cross.png")} alt={""} /> }
-                    pageWrapId={ "page-wrap" }
-                    outerContainerId={ "outer-container" }
-                    style={{ outline: "none" }}
-                >
-                    <ul style={{ outline: "none" }}>
-                        <li><Link style={{color: '#fff'}} to="/">Home</Link></li>
-                        <li><Link style={{color: '#aaeaff'}} to="/about">About</Link></li>
-                        <li><Link style={{color: '#aaeaff'}} to="/cv">CV</Link></li>
-                        <li><Link style={{color: '#aaeaff'}} to="/projects">Projects</Link></li>
-                        <li><Link style={{color: '#aaeaff'}} to="/contact">Contact</Link></li>
-                    </ul>
-                </Menu>
+                { this.renderMenu() }
                 <div
                     id="page-wrap"
                     style={{
