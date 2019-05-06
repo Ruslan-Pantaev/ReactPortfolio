@@ -135,30 +135,54 @@ class CodeControl2019 extends Component {
                         <br></br>
                         <br></br>
                         <br></br>
-                        <h1>Code Control 2019 rev2.0.0</h1>
-                        <br></br>
-                        <h5>Welcome. Thank you for trying out this game.</h5>
-                        <br></br>
-                        <p>Use the latest stable version of Google Chrome. Safari, Firefox, and IE/Edge are NOT supported.</p>
-                        <p>Please do not refresh the page.</p>
-                        <br></br>
-                        {/* <p>For better performance or if your browser is not compatible, download the game below:</p>
-                        <a style={{color: "green"}} href="https://drive.google.com/open?id=1GZTsmEgCz3yeb4qMAjFSFwio7mvLuHdw" target="_blank" rel="noopener noreferrer">Download 64-bit OSX build</a>
-                        <br></br>
-                        <a style={{color: "green"}} href="https://drive.google.com/open?id=10i9_RapIzxdjmHNAl65duz3wx8XuMGzY" target="_blank" rel="noopener noreferrer">Download 64-bit Windows build</a>
-                        <br></br>
-                        <a style={{color: "green"}} href="https://drive.google.com/open?id=1be2VgqAJbaFVzO3FtcvRamONAgmx0r9y" target="_blank" rel="noopener noreferrer">Download 64-bit Linux build</a>
-                        <br></br>
-                        <br></br> */}
-                        <h5>Controls</h5>
-                        <p>w,a,s,d or arrow-keys to <B>move</B><SPACING></SPACING>spacebar to <B>jump</B><SPACING></SPACING>
-                        {/* c to <B>crouch</B><SPACING></SPACING>hold left-shift to <B>walk slowly</B></p>
-                        <p>g,h,j,k to make <B>hand signals</B><SPACING></SPACING>l to activate <B>flashlight</B><SPACING></SPACING>
-                        left-ctrl+l to <B>dance</B>*/}
-                        </p>
-                        {/* <p>mouse-scroll to <B>zoom</B></p> */}
-                        <br></br>
-                        <p>Have fun!</p>
+                        <div
+                          style={{
+                            position: "relative",
+                            textAlign: "center",
+                            // maxHeight: "100%",
+                            maxWidth: "600px",
+                            width: "100%",
+                            height: "auto",
+                            top: 0,
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            margin: "auto",
+                            // display: "block",
+                            // opacity: 1
+                          }}>
+                            <h1>Code Control 2019 rev2.0.0</h1>
+                            <br></br>
+                            <h5>***Use the latest stable version of Google Chrome***</h5>
+                            <p>Safari, Firefox, Opera, and IE/Edge are NOT supported. 
+                            Please do not refresh the page until the game loads. 
+                            In the event an old version of the game persists, clear your cache.</p>
+                            <br></br>
+                            {/* <p>For better performance or if your browser is not compatible, download the game below:</p>
+                            <a style={{color: "green"}} href="https://drive.google.com/open?id=1GZTsmEgCz3yeb4qMAjFSFwio7mvLuHdw" target="_blank" rel="noopener noreferrer">Download 64-bit OSX build</a>
+                            <br></br>
+                            <a style={{color: "green"}} href="https://drive.google.com/open?id=10i9_RapIzxdjmHNAl65duz3wx8XuMGzY" target="_blank" rel="noopener noreferrer">Download 64-bit Windows build</a>
+                            <br></br>
+                            <a style={{color: "green"}} href="https://drive.google.com/open?id=1be2VgqAJbaFVzO3FtcvRamONAgmx0r9y" target="_blank" rel="noopener noreferrer">Download 64-bit Linux build</a>
+                            <br></br>
+                            <br></br> */}
+                            <h5>Controls</h5>
+                            <p>w,a,s,d or arrow-keys to <B>move</B><SPACING></SPACING>spacebar to <B>jump</B><SPACING></SPACING>
+                            {/* c to <B>crouch</B><SPACING></SPACING>hold left-shift to <B>walk slowly</B></p>
+                            <p>g,h,j,k to make <B>hand signals</B><SPACING></SPACING>l to activate <B>flashlight</B><SPACING></SPACING>
+                            left-ctrl+l to <B>dance</B>*/}
+                            </p>
+                            {/* <p>mouse-scroll to <B>zoom</B></p> */}
+                            <br></br>
+                            <h5>Game Play</h5>
+                            <p>You are a fresh Computer Science graduate and you just landed your dream job as a Software Engineer at a hot Tech Startup called 'ENIGMA'.
+                              'ENIGMA' provides real-time Cryptocurrency Market Analysis and custom Automated Trading Scripts for its clients.
+                              The catch is, you are on an evaluation period until you prove yourself.
+                              Greenleaf Schwarz is your team leader and will guide you along the way.
+                              Remember to invest smart and cover your living expenses.
+                              To the moon!
+                            </p>
+                        </div>
                         <br></br>
                         <div id="gameContainer" style={{
                                 position: "relative",
