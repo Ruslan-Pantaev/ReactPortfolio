@@ -8,8 +8,8 @@ import './Menu.css';
 import './Footer.css';
 
 let unityContent = new UnityContent(
-    "/assets/unityWebGL/CodeControl_2019_1_1_0/Build/CodeControl_2019_1_1_0.json",
-    "/assets/unityWebGL/CodeControl_2019_1_1_0/Build/UnityLoader.js",
+    "/assets/unityWebGL/CodeControl_2019_2_0_0/Build/CodeControl_2019_2_0_0.json",
+    "/assets/unityWebGL/CodeControl_2019_2_0_0/Build/UnityLoader.js",
     { adjustOnWindowResize: true }
 );
 
@@ -29,7 +29,7 @@ class CodeControl2019 extends Component {
   
     render() {
         return (
-            <div id="outer-container" style={{ overflow: "hidden" }}>
+              <div id="outer-container" style={{ overflow: "hidden" }}>
                 <Menu
                     right
                     customBurgerIcon={ <img src={require("../../assets/menu/thin_burger_light.png")} alt={""} /> }
@@ -135,12 +135,12 @@ class CodeControl2019 extends Component {
                         <br></br>
                         <br></br>
                         <br></br>
-                        <h1>Code Control 2019 rev1.1.0</h1>
+                        <h1>Code Control 2019 rev2.0.0</h1>
                         <br></br>
-                        <h5>Welcome! Thanks for trying out this game! :)</h5>
+                        <h5>Welcome. Thank you for trying out this game.</h5>
                         <br></br>
-                        <p>Please use the latest stable version of Google Chrome.</p>
-                        <p>Depending on network speeds, load times may vary. Please do not refresh the page.</p>
+                        <p>Use the latest stable version of Google Chrome. Safari, Firefox, and IE/Edge are NOT supported.</p>
+                        <p>Please do not refresh the page.</p>
                         <br></br>
                         {/* <p>For better performance or if your browser is not compatible, download the game below:</p>
                         <a style={{color: "green"}} href="https://drive.google.com/open?id=1GZTsmEgCz3yeb4qMAjFSFwio7mvLuHdw" target="_blank" rel="noopener noreferrer">Download 64-bit OSX build</a>
@@ -152,10 +152,11 @@ class CodeControl2019 extends Component {
                         <br></br> */}
                         <h5>Controls</h5>
                         <p>w,a,s,d or arrow-keys to <B>move</B><SPACING></SPACING>spacebar to <B>jump</B><SPACING></SPACING>
-                        c to <B>crouch</B><SPACING></SPACING>hold left-shift to <B>walk slowly</B></p>
+                        {/* c to <B>crouch</B><SPACING></SPACING>hold left-shift to <B>walk slowly</B></p>
                         <p>g,h,j,k to make <B>hand signals</B><SPACING></SPACING>l to activate <B>flashlight</B><SPACING></SPACING>
-                        left-ctrl+l to <B>dance</B></p>
-                        <p>mouse-scroll to <B>zoom</B></p>
+                        left-ctrl+l to <B>dance</B>*/}
+                        </p>
+                        {/* <p>mouse-scroll to <B>zoom</B></p> */}
                         <br></br>
                         <p>Have fun!</p>
                         <br></br>
