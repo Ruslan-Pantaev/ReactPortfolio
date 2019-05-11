@@ -13,6 +13,12 @@ let unityContent = new UnityContent(
     { adjustOnWindowResize: true }
 );
 
+let unityContent2 = new UnityContent(
+  "/assets/unityWebGL/CodeControl_2019_TTS_test1/Build/CodeControl_2019_TTS_test1.json",
+  "/assets/unityWebGL/CodeControl_2019_TTS_test1/Build/UnityLoader.js",
+  { adjustOnWindowResize: true }
+);
+
 const B = (props) => <span style={{fontWeight: 'bold'}}>{props.children}</span>
 const SPACING = (props) => <span style={{color: "green", fontWeight: 'bold'}}> | </span>
 
@@ -204,6 +210,28 @@ class CodeControl2019 extends Component {
                             }}
                         >
                             <Unity unityContent={unityContent} />
+                        </div>
+                        <br></br>
+                        <div id="gameContainer" style={{
+                                position: "relative",
+                                textAlign: "center",
+                                overflow: "hidden",
+                                // maxWidth: "960px", //h:600
+                                width: "90%",
+                                height: "40vw",
+                                top: 0,
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                margin: "auto",
+                                // display: "inline-block",
+                                borderStyle: "double",
+                                borderWidth: "5px",
+                                borderColor: "#333",
+                                borderRadius: "8px"
+                            }}
+                        >
+                            <Unity unityContent={unityContent2} />
                         </div>
                         <br></br>
                         {/* <Form onSubmit={this.toggleFullScreen}>
