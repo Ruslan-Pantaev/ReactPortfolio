@@ -8,8 +8,8 @@ import './Menu.css';
 import './Footer.css';
 
 let unityContent = new UnityContent(
-    "/assets/unityWebGL/CodeControl_2019_2_0_0_SIZE_Test1/Build/CodeControl_2019_2_0_0_SIZE_Test1.json",
-    "/assets/unityWebGL/CodeControl_2019_2_0_0_SIZE_Test1/Build/UnityLoader.js",
+    "/assets/unityWebGL/CodeControl_2019_2_0_2/Build/CodeControl_2019_2_0_2.json",
+    "/assets/unityWebGL/CodeControl_2019_2_0_2/Build/UnityLoader.js",
     { adjustOnWindowResize: true }
 );
 
@@ -151,7 +151,7 @@ class CodeControl2019 extends Component {
                             // display: "block",
                             // opacity: 1
                           }}>
-                            <h1>Code Control 2019 rev2.0.0</h1>
+                            <h1>Code Control 2019 rev2.0.1</h1>
                             <br></br>
                             <h5>***Use the latest stable version of Google Chrome***</h5>
                             <p>Safari, Firefox, Opera, and IE/Edge are NOT supported. 
@@ -175,12 +175,16 @@ class CodeControl2019 extends Component {
                             {/* <p>mouse-scroll to <B>zoom</B></p> */}
                             <br></br>
                             <h5>Game Play</h5>
-                            <p>You are a fresh Computer Science graduate and you just landed your dream job as a Software Engineer at a hot Tech Startup called 'ENIGMA'.
-                              'ENIGMA' provides real-time Cryptocurrency Market Analysis and custom Automated Trading Scripts for its clients.
-                              The catch is, you are on an evaluation period until you prove yourself.
-                              Greenleaf Schwarz is your team leader and will guide you along the way.
-                              Remember to invest smart and cover your living expenses.
-                              To the moon!
+                            <p>Welcome to Code Control.  Allow me to quickly brief you on your objective.  This city needs you.
+
+                              A power outage brought the city to a standstill and a collection of animals escaped from their rescue shelters.  The outage also corrupted the Digital-ID-Tags worn by countless animals and pets in the city.  These tags are the key to helping reunite the poor roaming sweeties with their beloved caregivers.  Here is where your coding prowess and problem solving skills come into play...  Each ID tag will contain a coding challenge that you must solve to restore the tag and save the animal.  Watch out for the bad guys, they will decrease your stamina, however saving an animal will boost you back up.
+
+                              1.  Find the lost animals in the city.
+                              2.  Bring them home.
+                              3.  Access the coding challenge through your home computer.
+                              4.  Solve the challenge and save the animal in need!
+
+                              Now get out there and make a difference!
                             </p>
                         </div>
                         <br></br>
