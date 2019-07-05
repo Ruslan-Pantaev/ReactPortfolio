@@ -151,12 +151,11 @@ class CodeControl2019 extends Component {
                             // display: "block",
                             // opacity: 1
                           }}>
-                            <h1>Code Control 2019 rev2.0.1</h1>
+                            <h1>Code Control 2019 rev2.0.2</h1>
                             <br></br>
                             <h5>***Use the latest stable version of Google Chrome***</h5>
                             <p>Safari, Firefox, Opera, and IE/Edge are NOT supported. 
-                            Please do not refresh the page until the game loads. 
-                            In the event an old version of the game persists, clear your cache.</p>
+                            Please do not refresh the page until the game loads.</p>
                             <br></br>
                             {/* <p>For better performance or if your browser is not compatible, download the game below:</p>
                             <a style={{color: "green"}} href="https://drive.google.com/open?id=1GZTsmEgCz3yeb4qMAjFSFwio7mvLuHdw" target="_blank" rel="noopener noreferrer">Download 64-bit OSX build</a>
@@ -175,15 +174,18 @@ class CodeControl2019 extends Component {
                             {/* <p>mouse-scroll to <B>zoom</B></p> */}
                             <br></br>
                             <h5>Game Play</h5>
-                            <p>Welcome to Code Control.  Allow me to quickly brief you on your objective.  This city needs you.
-
-                              A power outage brought the city to a standstill and a collection of animals escaped from their rescue shelters.  The outage also corrupted the Digital-ID-Tags worn by countless animals and pets in the city.  These tags are the key to helping reunite the poor roaming sweeties with their beloved caregivers.  Here is where your coding prowess and problem solving skills come into play...  Each ID tag will contain a coding challenge that you must solve to restore the tag and save the animal.  Watch out for the bad guys, they will decrease your stamina, however saving an animal will boost you back up.
-
-                              1.  Find the lost animals in the city.
-                              2.  Bring them home.
-                              3.  Access the coding challenge through your home computer.
-                              4.  Solve the challenge and save the animal in need!
-
+                            <p>
+                              Welcome to Code Control.  Allow me to quickly brief you on your objective.  This city needs you.
+                              A data center power outage corrupted the Digital-ID-Tags worn by foster animals in the city, causing them to run loose.
+                              Here is where your coding prowess and problem solving skills come into play.
+                              Each Digital-ID-Tag will contain a coding challenge that you must solve to save the animal.
+                              Once you solve a challenge, the animal will safely return to the foster animal shelter.
+                              Watch out for the cars, they will decrease your stamina, however returning home via the subway will boost you back up!
+                
+                              1.  Once you're in the city, open the 'Challenge Picker' via the game play menu icon on the left and select your challenge.
+                              2.  Find the animal (hint: it will be the one with the floating particles).
+                              3.  Solve the challenge and repeat!
+                
                               Now get out there and make a difference!
                             </p>
                         </div>
