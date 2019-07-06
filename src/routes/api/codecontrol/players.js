@@ -1,8 +1,13 @@
 const express = require('express');
+const cors = require('cors');
 const router = express.Router();
 const assert = require('assert');
 const bcrypt = require('bcryptjs');
 const codeControlApi = require('../../../validation/codeControlApi');
+
+
+// enabling cors
+router.all('*', cors());
 
 // TODO
 // Create http PATCH method to add / change instructor_id field
