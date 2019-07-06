@@ -31,7 +31,10 @@ router.get('/findAll', (req, res) => {
     }
     var successMsg = "Found the following players: " + players;
     console.log(successMsg);
-    return res.status(200).json(players)
+    return res.status(200).json(players);
+  
+    //   ("Access-Control-Allow-Origin", "*");
+    // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   });
 });
 

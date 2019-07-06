@@ -29,7 +29,7 @@ router.get('/findAll', (req, res) => {
     }
     var successMsg = "Found the following instructors: " + instructors;
     console.log(successMsg);
-    return res.status(200).json(instructors)
+    return res.status(200).json(instructors);
   });
 });
 
