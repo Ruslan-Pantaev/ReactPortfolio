@@ -2,10 +2,14 @@
 // remove this route since it is not being used
 
 const express = require('express');
+const cors = require('cors');
 const router = express.Router();
 const assert = require('assert');
 const codeControlApi = require('../../../validation/codeControlApi');
 
+
+// enabling cors
+router.all('*', cors());
 
 // @route       GET api/codecontrol/problemSetsCounter/test
 // @description test problemSetsCounter route
