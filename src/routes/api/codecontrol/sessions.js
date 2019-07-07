@@ -1,22 +1,22 @@
 const express = require('express');
-const cors = require('cors');
+// const cors = require('cors');
 const router = express.Router();
 const assert = require('assert');
 const codeControlApi = require('../../../validation/codeControlApi');
 
 
 // enabling cors
-router.all('*', cors());
+// router.all('*', cors());
 
 // @route       GET api/codecontrol/sessions/test
 // @description test sessions route
 // @access      Public
-router.get('/test', cors(), (req, res) => res.json({msg: "sessions works"}));
+router.get('/test', (req, res) => res.json({msg: "sessions works"}));
 
 // @route       POST api/codecontrol/sessions/save
 // @description create/insert new session based on username and apiKey query params
 // @access      Public
-router.post('/save', cors(), (req, res) => {
+router.post('/save', (req, res) => {
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -50,7 +50,7 @@ router.post('/save', cors(), (req, res) => {
 //              session based on fields like 'dateTimeCreated' and 'timeElapsed'
 //              using username and apiKey [temp] request-header
 // @access      Public
-router.get('/', cors(), (req, res) => {
+router.get('/', (req, res) => {
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
@@ -90,7 +90,7 @@ router.get('/', cors(), (req, res) => {
 // @description get session using username, sessionNum and apiKey [temp] request-header
 //              this will allow players to load any previous sessions
 // @access      Public
-router.get('/load', cors(), (req, res) => {
+router.get('/load', (req, res) => {
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
