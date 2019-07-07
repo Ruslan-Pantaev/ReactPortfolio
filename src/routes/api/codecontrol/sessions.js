@@ -17,9 +17,6 @@ router.get('/test', (req, res) => res.json({msg: "sessions works"}));
 // @description create/insert new session based on username and apiKey query params
 // @access      Public
 router.post('/save', (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -54,9 +51,6 @@ router.post('/save', (req, res) => {
 //              using username and apiKey [temp] request-header
 // @access      Public
 router.get('/', (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
@@ -97,9 +91,6 @@ router.get('/', (req, res) => {
 //              this will allow players to load any previous sessions
 // @access      Public
 router.get('/load', (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {

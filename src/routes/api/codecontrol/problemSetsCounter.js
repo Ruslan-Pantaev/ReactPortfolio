@@ -21,9 +21,6 @@ router.get('/test', (req, res) => res.json({msg: "problemSetsCounter works"}));
 //              for a new instructor, the mongodb upsert flag will create a new problemSetsCounter obj
 // @access      Public
 router.get('/update', (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
@@ -71,9 +68,6 @@ router.get('/update', (req, res) => {
 //              useful for listing how many problem sets a user can choose to load from
 // @access      Public
 router.get('/', (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
