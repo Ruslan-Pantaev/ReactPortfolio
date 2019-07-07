@@ -11,13 +11,13 @@ router.all('*', cors());
 // @route       GET api/codecontrol/sessionsCounter/test
 // @description test sessionCounter route
 // @access      Public
-router.get('/test', (req, res) => res.json({msg: "sessionsCounter works"}));
+router.get('/test', cors(), (req, res) => res.json({msg: "sessionsCounter works"}));
 
 // @route       GET api/codecontrol/sessionsCounter/update
 // @description get atomic sessionNum and increment using username and apiKey [temp] request-header
 //              for a new player, the mongodb upsert flag will create a new sessionsCounter obj
 // @access      Public
-router.get('/update', (req, res) => {
+router.get('/update', cors(), (req, res) => {
   // console.log("req.headers: " + req.headers.temp)
   // console.log("req.query: " + req.query.temp)
 
@@ -69,7 +69,7 @@ router.get('/update', (req, res) => {
 // @description get latest/current sessionNum using username and apiKey [temp] request-header
 //              useful for listing how many sessions a user can choose to load from
 // @access      Public
-router.get('/', (req, res) => {
+router.get('/', cors(), (req, res) => {
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {

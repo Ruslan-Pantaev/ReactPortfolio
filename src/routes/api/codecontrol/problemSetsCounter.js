@@ -14,13 +14,13 @@ router.all('*', cors());
 // @route       GET api/codecontrol/problemSetsCounter/test
 // @description test problemSetsCounter route
 // @access      Public
-router.get('/test', (req, res) => res.json({msg: "problemSetsCounter works"}));
+router.get('/test', cors(), (req, res) => res.json({msg: "problemSetsCounter works"}));
 
 // @route       GET api/codecontrol/problemSetsCounter/update
 // @description get atomic ProblemSetsNum and increment using username and apiKey [temp] request-header
 //              for a new instructor, the mongodb upsert flag will create a new problemSetsCounter obj
 // @access      Public
-router.get('/update', (req, res) => {
+router.get('/update', cors(), (req, res) => {
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
@@ -67,7 +67,7 @@ router.get('/update', (req, res) => {
 // @description get latest/current problemSetsNum using username and apiKey [temp] request-header
 //              useful for listing how many problem sets a user can choose to load from
 // @access      Public
-router.get('/', (req, res) => {
+router.get('/', cors(), (req, res) => {
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
