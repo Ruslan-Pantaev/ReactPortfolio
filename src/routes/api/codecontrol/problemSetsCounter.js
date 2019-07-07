@@ -2,25 +2,25 @@
 // remove this route since it is not being used
 
 const express = require('express');
-const cors = require('cors');
+// const cors = require('cors');
 const router = express.Router();
 const assert = require('assert');
 const codeControlApi = require('../../../validation/codeControlApi');
 
 
 // enabling cors
-router.all('*', cors());
+// router.all('*', cors());
 
 // @route       GET api/codecontrol/problemSetsCounter/test
 // @description test problemSetsCounter route
 // @access      Public
-router.get('/test', cors(), (req, res) => res.json({msg: "problemSetsCounter works"}));
+router.get('/test', (req, res) => res.json({msg: "problemSetsCounter works"}));
 
 // @route       GET api/codecontrol/problemSetsCounter/update
 // @description get atomic ProblemSetsNum and increment using username and apiKey [temp] request-header
 //              for a new instructor, the mongodb upsert flag will create a new problemSetsCounter obj
 // @access      Public
-router.get('/update', cors(), (req, res) => {
+router.get('/update', (req, res) => {
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
@@ -67,7 +67,7 @@ router.get('/update', cors(), (req, res) => {
 // @description get latest/current problemSetsNum using username and apiKey [temp] request-header
 //              useful for listing how many problem sets a user can choose to load from
 // @access      Public
-router.get('/', cors(), (req, res) => {
+router.get('/', (req, res) => {
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {

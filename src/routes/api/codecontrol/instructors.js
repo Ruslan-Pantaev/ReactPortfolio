@@ -1,23 +1,23 @@
 const express = require('express');
-const cors = require('cors');
+// const cors = require('cors');
 const router = express.Router();
 const assert = require('assert');
 const bcrypt = require('bcryptjs');
 const codeControlApi = require('../../../validation/codeControlApi');
 
 
-// enabling cors
-router.all('*', cors());
+// // enabling cors
+// router.all('*', cors());
 
 // @route       GET api/codecontrol/instructors/test
 // @description test instructors route
 // @access      Public
-router.get('/test', cors(), (req, res) => res.json({msg: "instructors works"}));
+router.get('/test', (req, res) => res.json({msg: "instructors works"}));
 
 // @route       GET api/codecontrol/instructors/findAll
 // @description list all instructors using apiKey [temp] request-header
 // @access      Public
-router.get('/findAll', cors(), (req, res) => {
+router.get('/findAll', (req, res) => {
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
@@ -40,7 +40,7 @@ router.get('/findAll', cors(), (req, res) => {
 // @route       GET api/codecontrol/instructors/findOne
 // @description find a specific instructor using username and apiKey [temp] request-header
 // @access      Public
-router.get('/findOne', cors(), (req, res) => {
+router.get('/findOne', (req, res) => {
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
@@ -66,7 +66,7 @@ router.get('/findOne', cors(), (req, res) => {
 // @route       POST api/codecontrol/instructors/register
 // @description salt + hash pw & insert new instructor using instructors obj and apiKey in body
 // @access      Public
-router.post('/register', cors(), (req, res) => {
+router.post('/register', (req, res) => {
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -105,7 +105,7 @@ router.post('/register', cors(), (req, res) => {
 // @route       POST api/codecontrol/instructors/login
 // @description decrypt pw & login instructor using instructors obj and apiKey in body
 // @access      Public
-router.post('/login', cors(), (req, res) => {
+router.post('/login', (req, res) => {
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -142,7 +142,7 @@ router.post('/login', cors(), (req, res) => {
 // @route       GET api/codecontrol/instructors/loadAllCourses
 // @description find all problem sets for the instructor using first [temp2] and last [temp3] names and apiKey [temp] request-header
 // @access      Public
-router.get('/loadAllCourses', cors(), (req, res) => {
+router.get('/loadAllCourses', (req, res) => {
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {

@@ -1,23 +1,23 @@
 const express = require('express');
-const cors = require('cors');
+// const cors = require('cors');
 const router = express.Router();
 const assert = require('assert');
 const codeControlApi = require('../../../validation/codeControlApi');
 
 
 // enabling cors
-router.all('*', cors());
+// router.all('*', cors());
 
 // @route       GET api/stats/test
 // @description test stats route
 // @access      Public
-router.get('/test', cors(), (req, res) => res.json({msg: "stats works"}));
+router.get('/test', (req, res) => res.json({msg: "stats works"}));
 
 // @route       POST api/codecontrol/stats/save
 // @description create/insert new stats based on username, sessionNum and apiKey query params
 //              stats obj has a session_id field that references stats to a particular session
 // @access      Public
-router.post('/save', cors(), (req, res) => {
+router.post('/save', (req, res) => {
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -67,7 +67,7 @@ router.post('/save', cors(), (req, res) => {
 // @description find player's stats obj and push an event
 //              using username, sessionNum and apiKey body fields
 // @access      Public
-router.post('/pushMovementEvent', cors(), (req, res) => {
+router.post('/pushMovementEvent', (req, res) => {
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -110,7 +110,7 @@ router.post('/pushMovementEvent', cors(), (req, res) => {
 // @description find player's stats obj and push an event
 //              using username, sessionNum and apiKey body fields
 // @access      Public
-router.post('/pushChallengeEvent', cors(), (req, res) => {
+router.post('/pushChallengeEvent', (req, res) => {
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -152,7 +152,7 @@ router.post('/pushChallengeEvent', cors(), (req, res) => {
 // @route       GET api/codecontrol/stats/
 // @description find all stats for the player using username and apiKey [temp] request-header
 // @access      Public
-router.get('/', cors(), (req, res) => {
+router.get('/', (req, res) => {
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
@@ -191,7 +191,7 @@ router.get('/', cors(), (req, res) => {
 // @description get stats using username, sessionNum and apiKey [temp] request-header
 //              stats are referenced to the correct player and session
 // @access      Public
-router.get('/load', cors(), (req, res) => {
+router.get('/load', (req, res) => {
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
