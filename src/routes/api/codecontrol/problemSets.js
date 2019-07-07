@@ -12,12 +12,12 @@ router.all('*', cors());
 // @route       GET api/codecontrol/problemSets/test
 // @description test problemSets route
 // @access      Public
-router.get('/test', (req, res) => res.json({msg: "problemSets works"}));
+router.get('/test', cors(), (req, res) => res.json({msg: "problemSets works"}));
 
 // @route       POST api/codecontrol/problemSets/save
 // @description create/insert new problem set based on username and apiKey query params
 // @access      Public
-router.post('/newLessonSet', (req, res) => {
+router.post('/newLessonSet', cors(), (req, res) => {
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -48,7 +48,7 @@ router.post('/newLessonSet', (req, res) => {
 // @route       POST api/codecontrol/problemSets/clear
 // @description removes all problem sets based on username and apiKey query params
 // @access      Public
-router.post('/clear', (req, res) => {
+router.post('/clear', cors(), (req, res) => {
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -93,7 +93,7 @@ router.post('/clear', (req, res) => {
 // @route       POST api/codecontrol/problemSets/save
 // @description create/insert new problem set based on username and apiKey query params
 // @access      Public
-router.post('/pushProblemSet', (req, res) => {
+router.post('/pushProblemSet', cors(), (req, res) => {
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -135,7 +135,7 @@ router.post('/pushProblemSet', (req, res) => {
 // @route       GET api/codecontrol/problemSets/
 // @description find all problem sets for the instructor using username and apiKey [temp] request-header
 // @access      Public
-router.get('/', (req, res) => {
+router.get('/', cors(), (req, res) => {
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
@@ -172,7 +172,7 @@ router.get('/', (req, res) => {
 // @description get lesson set based on instructor's first name [temp2], last names [temp3], courseSectionNum [temp4], term [temp5] and apiKey [temp] request-header
 //              this will load the correct lesson set for player on log in
 // @access      Public
-router.get('/findOne', (req, res) => {
+router.get('/findOne', cors(), (req, res) => {
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
@@ -209,7 +209,7 @@ router.get('/findOne', (req, res) => {
 // @description get problem set using username, problemSetsNum and apiKey [temp] request-header
 //              using get request since we have to look up instructor first
 // @access      Public
-router.get('/delete', (req, res) => {
+router.get('/delete', cors(), (req, res) => {
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {

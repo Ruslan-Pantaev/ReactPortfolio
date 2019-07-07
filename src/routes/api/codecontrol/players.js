@@ -15,12 +15,12 @@ router.all('*', cors());
 // @route       GET api/codecontrol/players/test
 // @description test players route
 // @access      Public
-router.get('/test', (req, res) => res.json({msg: "players works"}));
+router.get('/test', cors(), (req, res) => res.json({msg: "players works"}));
 
 // @route       GET api/codecontrol/players/findAll
 // @description list all players using apiKey [temp] request-header
 // @access      Public
-router.get('/findAll', (req, res) => {
+router.get('/findAll', cors(), (req, res) => {
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
@@ -46,7 +46,7 @@ router.get('/findAll', (req, res) => {
 // @route       GET api/codecontrol/players/findOne
 // @description find a specific player using username and apiKey [temp] request-header
 // @access      Public
-router.get('/findOne', (req, res) => {
+router.get('/findOne', cors(), (req, res) => {
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
@@ -72,7 +72,7 @@ router.get('/findOne', (req, res) => {
 // @route       POST api/codecontrol/players/register
 // @description salt + hash pw & insert new player using player obj and apiKey in body
 // @access      Public
-router.post('/register', (req, res) => {
+router.post('/register', cors(), (req, res) => {
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -111,7 +111,7 @@ router.post('/register', (req, res) => {
 // @route       POST api/codecontrol/players/login
 // @description decrypt pw & login player using player obj and apiKey in body
 // @access      Public
-router.post('/login', (req, res) => {
+router.post('/login', cors(), (req, res) => {
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
