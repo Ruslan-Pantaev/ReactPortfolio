@@ -21,6 +21,9 @@ router.get('/test', (req, res) => res.json({msg: "players works"}));
 // @description list all players using apiKey [temp] request-header
 // @access      Public
 router.get('/findAll', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
@@ -47,6 +50,9 @@ router.get('/findAll', (req, res) => {
 // @description find a specific player using username and apiKey [temp] request-header
 // @access      Public
 router.get('/findOne', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
@@ -73,6 +79,9 @@ router.get('/findOne', (req, res) => {
 // @description salt + hash pw & insert new player using player obj and apiKey in body
 // @access      Public
 router.post('/register', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -112,6 +121,9 @@ router.post('/register', (req, res) => {
 // @description decrypt pw & login player using player obj and apiKey in body
 // @access      Public
 router.post('/login', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {

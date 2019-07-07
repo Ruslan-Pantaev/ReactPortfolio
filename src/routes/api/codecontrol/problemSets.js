@@ -18,6 +18,9 @@ router.get('/test', (req, res) => res.json({msg: "problemSets works"}));
 // @description create/insert new problem set based on username and apiKey query params
 // @access      Public
 router.post('/newLessonSet', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -49,6 +52,9 @@ router.post('/newLessonSet', (req, res) => {
 // @description removes all problem sets based on username and apiKey query params
 // @access      Public
 router.post('/clear', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -94,6 +100,9 @@ router.post('/clear', (req, res) => {
 // @description create/insert new problem set based on username and apiKey query params
 // @access      Public
 router.post('/pushProblemSet', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -136,6 +145,9 @@ router.post('/pushProblemSet', (req, res) => {
 // @description find all problem sets for the instructor using username and apiKey [temp] request-header
 // @access      Public
 router.get('/', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
@@ -173,6 +185,9 @@ router.get('/', (req, res) => {
 //              this will load the correct lesson set for player on log in
 // @access      Public
 router.get('/findOne', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
@@ -210,6 +225,9 @@ router.get('/findOne', (req, res) => {
 //              using get request since we have to look up instructor first
 // @access      Public
 router.get('/delete', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {

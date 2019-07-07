@@ -18,6 +18,9 @@ router.get('/test', (req, res) => res.json({msg: "instructors works"}));
 // @description list all instructors using apiKey [temp] request-header
 // @access      Public
 router.get('/findAll', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
@@ -41,6 +44,9 @@ router.get('/findAll', (req, res) => {
 // @description find a specific instructor using username and apiKey [temp] request-header
 // @access      Public
 router.get('/findOne', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
@@ -67,6 +73,9 @@ router.get('/findOne', (req, res) => {
 // @description salt + hash pw & insert new instructor using instructors obj and apiKey in body
 // @access      Public
 router.post('/register', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -106,6 +115,9 @@ router.post('/register', (req, res) => {
 // @description decrypt pw & login instructor using instructors obj and apiKey in body
 // @access      Public
 router.post('/login', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -143,6 +155,9 @@ router.post('/login', (req, res) => {
 // @description find all problem sets for the instructor using first [temp2] and last [temp3] names and apiKey [temp] request-header
 // @access      Public
 router.get('/loadAllCourses', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {

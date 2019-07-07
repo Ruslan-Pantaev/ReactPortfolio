@@ -21,6 +21,9 @@ router.get('/update', (req, res) => {
   // console.log("req.headers: " + req.headers.temp)
   // console.log("req.query: " + req.query.temp)
 
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
@@ -70,6 +73,9 @@ router.get('/update', (req, res) => {
 //              useful for listing how many sessions a user can choose to load from
 // @access      Public
 router.get('/', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {

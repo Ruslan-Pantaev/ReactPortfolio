@@ -18,6 +18,9 @@ router.get('/test', (req, res) => res.json({msg: "stats works"}));
 //              stats obj has a session_id field that references stats to a particular session
 // @access      Public
 router.post('/save', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -68,6 +71,9 @@ router.post('/save', (req, res) => {
 //              using username, sessionNum and apiKey body fields
 // @access      Public
 router.post('/pushMovementEvent', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -111,6 +117,9 @@ router.post('/pushMovementEvent', (req, res) => {
 //              using username, sessionNum and apiKey body fields
 // @access      Public
 router.post('/pushChallengeEvent', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
   if (codeControlApi.isValidApiCall(req.body.apiKey)) {
     delete req.body.apiKey
   } else {
@@ -153,6 +162,9 @@ router.post('/pushChallengeEvent', (req, res) => {
 // @description find all stats for the player using username and apiKey [temp] request-header
 // @access      Public
 router.get('/', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
@@ -192,6 +204,9 @@ router.get('/', (req, res) => {
 //              stats are referenced to the correct player and session
 // @access      Public
 router.get('/load', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  
   if (codeControlApi.isValidApiCall(req.headers.temp)) {
     delete req.headers.temp
   } else {
