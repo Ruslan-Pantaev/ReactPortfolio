@@ -7,11 +7,11 @@ import { Form, Button } from 'reactstrap';
 import './Menu.css';
 import './Footer.css';
 
-let unityContent = new UnityContent(
-    "/assets/unityWebGL/CodeControl_2019_2_0_2/Build/CodeControl_2019_2_0_2.json",
-    "/assets/unityWebGL/CodeControl_2019_2_0_2/Build/UnityLoader.js",
-    { adjustOnWindowResize: true }
-);
+// let unityContent = new UnityContent(
+//     "/assets/unityWebGL/CodeControl_2019_2_0_2/Build/CodeControl_2019_2_0_2.json",
+//     "/assets/unityWebGL/CodeControl_2019_2_0_2/Build/UnityLoader.js",
+//     { adjustOnWindowResize: true }
+// );
 
 const B = (props) => <span style={{fontWeight: 'bold'}}>{props.children}</span>
 const SPACING = (props) => <span style={{color: "green", fontWeight: 'bold'}}> | </span>
@@ -22,10 +22,20 @@ class CodeControl2019 extends Component {
         ReactGA.pageview('/codecontrol2019');
     }
 
-    toggleFullScreen(e) {
-        unityContent.setFullscreen(true);
-        e.preventDefault()
+    constructor(props) {
+      super(props);
+   
+      this.unityContent = new UnityContent(
+        "/assets/unityWebGL/CodeControl_2019_2_0_2/Build/CodeControl_2019_2_0_2.json",
+        "/assets/unityWebGL/CodeControl_2019_2_0_2/Build/UnityLoader.js",
+        { adjustOnWindowResize: true }
+      );
     }
+
+    // toggleFullScreen(e) {
+    //     unityContent.setFullscreen(true);
+    //     e.preventDefault()
+    // }
   
     render() {
         return (
@@ -209,7 +219,8 @@ class CodeControl2019 extends Component {
                                 borderRadius: "8px"
                             }}
                         >
-                            <Unity unityContent={unityContent} />
+                            {/* <Unity unityContent={unityContent} /> */}
+                            <Unity unityContent={this.unityContent} />;
                         </div>
                         <br></br>
                         {/* <Form onSubmit={this.toggleFullScreen}>
