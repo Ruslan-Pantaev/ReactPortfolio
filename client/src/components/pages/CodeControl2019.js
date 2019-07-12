@@ -183,6 +183,9 @@ class CodeControl2019 extends Component {
                             </p>
                             {/* <p>mouse-scroll to <B>zoom</B></p> */}
                             <br></br>
+                            <h5>Memory Management</h5>
+                            <p>If gameplay becomes slow, open chrome's View/Developer/DeveloperTools, select memory up top and click on the trash "collect garbage" icon</p>
+                            <br></br>
                             <h5>Game Play</h5>
                             <p>
                               Welcome to Code Control.  Allow me to quickly brief you on your objective.  This city needs you.
