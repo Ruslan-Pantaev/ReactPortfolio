@@ -134,16 +134,16 @@ class About extends Component {
                                 padding: "10px"
                                 }}
                         >
-                            <p>My name is Ruslan Pantaev and I'm an INTJ.  I grew up in Siberia and moved to NYC when I was six.
+                            <p>My name is Ruslan Pantaev and I grew up in Siberia and moved to NYC when I was six.
                             My grandpa is a composer in Ulan-Ude and one of my passions is music.
                             I studied Film Scoring at Berklee College of Music in Boston for two years.</p>
-                            <p>Coding is another love of mine => currently three classes and a project away from getting a
-                            B.S. degree in Computer Science from Brooklyn College.</p>
+                            <p>While making music I got exposed to a lot of software and virtual instrument libraries.
+                              Trying to figure out how it all worked, I got hooked on programming!</p>
                             <p>I enjoy working with the MERN stack (Mongo, Express, React, Node) for web dev.
                             For ai/machine learning experiments, I like python and TF. Unity and webGL (regl)
                             are also really fun!</p>
                             <p>In my spare time I play an 8-string Strandberg Boden guitar,
-                            shoot 14.1 and 9-ball pool, play basketball and ride a track bike.</p>
+                            shoot 14.1 and 9-ball pool and play basketball.</p>
                         </section>
                         <br></br>
                         <br></br>
