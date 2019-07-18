@@ -163,8 +163,9 @@ class CodeControl2019 extends Component {
                           }}>
                             <h1>Code Control 2019 rev2.0.2</h1>
                             <br></br>
-                            <h5>***Use the latest stable version of Google Chrome***</h5>
-                            <p>Safari, Firefox, Opera, and IE/Edge are NOT supported. 
+                            <h5>***For best performance, use the latest stable version of Firefox.***</h5>
+                            <p>Google Chrome was also tested to be working.
+                            Safari, Opera, IE/Edge, etc are NOT supported.
                             Please do not refresh the page until the game loads.</p>
                             <br></br>
                             {/* <p>For better performance or if your browser is not compatible, download the game below:</p>
@@ -182,9 +183,6 @@ class CodeControl2019 extends Component {
                             left-ctrl+l to <B>dance</B>*/}
                             </p>
                             {/* <p>mouse-scroll to <B>zoom</B></p> */}
-                            <br></br>
-                            <h5>Memory Management</h5>
-                            <p>If gameplay becomes slow, open chrome's View/Developer/DeveloperTools, select memory up top and click on the trash "collect garbage" icon</p>
                             <br></br>
                             <h5>Game Play</h5>
                             <p>
