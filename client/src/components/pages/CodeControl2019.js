@@ -163,7 +163,7 @@ class CodeControl2019 extends Component {
                           }}>
                             <h1>Code Control 2019 rev2.0.2</h1>
                             <br></br>
-                            <h5>***For best performance, use the latest stable version of Firefox.***</h5>
+                            <h5 style={{ color: '#82D6B9' }}>***For best performance, use the latest stable version of Firefox.***</h5>
                             <p>Google Chrome was also tested to be working.</p>
                             <p>Safari, Opera, IE/Edge, etc are NOT supported.</p>
                             <p>Please do not refresh the page until the game loads.</p>
