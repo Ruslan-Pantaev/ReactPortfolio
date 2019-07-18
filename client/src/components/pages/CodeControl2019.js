@@ -193,12 +193,11 @@ class CodeControl2019 extends Component {
                               Once you solve a challenge, the animal will safely return to the foster animal shelter.
                               Watch out for the cars, they will decrease your stamina, however returning home via the subway will boost you back up!</p>
                 
-                              <p>1.  Once you're in the city, open the 'Challenge Picker' via the game play menu icon on the left and select your challenge.</p>
-                              <p>2.  Find the animal (hint: it will be the one with the floating particles).</p>
-                              <p>3.  Solve the challenge and repeat!</p>
-                
-                              <p>Now get out there and make a difference!</p>
-                            </p>
+                            <p>1.  Once you're in the city, open the 'Challenge Picker' via the game play menu icon on the left and select your challenge.</p>
+                            <p>2.  Find the animal (hint: it will be the one with the floating particles).</p>
+                            <p>3.  Solve the challenge and repeat!</p>
+              
+                            <p>Now get out there and make a difference!</p>
                         </div>
                         <br></br>
                         <div id="gameContainer" style={{
