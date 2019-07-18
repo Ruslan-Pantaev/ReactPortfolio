@@ -164,9 +164,9 @@ class CodeControl2019 extends Component {
                             <h1>Code Control 2019 rev2.0.2</h1>
                             <br></br>
                             <h5>***For best performance, use the latest stable version of Firefox.***</h5>
-                            <p>Google Chrome was also tested to be working.
-                            Safari, Opera, IE/Edge, etc are NOT supported.
-                            Please do not refresh the page until the game loads.</p>
+                            <p>Google Chrome was also tested to be working.</p>
+                            <p>Safari, Opera, IE/Edge, etc are NOT supported.</p>
+                            <p>Please do not refresh the page until the game loads.</p>
                             <br></br>
                             {/* <p>For better performance or if your browser is not compatible, download the game below:</p>
                             <a style={{color: "green"}} href="https://drive.google.com/open?id=1GZTsmEgCz3yeb4qMAjFSFwio7mvLuHdw" target="_blank" rel="noopener noreferrer">Download 64-bit OSX build</a>
@@ -191,13 +191,13 @@ class CodeControl2019 extends Component {
                               Here is where your coding prowess and problem solving skills come into play.
                               Each Digital-ID-Tag will contain a coding challenge that you must solve to save the animal.
                               Once you solve a challenge, the animal will safely return to the foster animal shelter.
-                              Watch out for the cars, they will decrease your stamina, however returning home via the subway will boost you back up!
+                              Watch out for the cars, they will decrease your stamina, however returning home via the subway will boost you back up!</p>
                 
-                              1.  Once you're in the city, open the 'Challenge Picker' via the game play menu icon on the left and select your challenge.
-                              2.  Find the animal (hint: it will be the one with the floating particles).
-                              3.  Solve the challenge and repeat!
+                              <p>1.  Once you're in the city, open the 'Challenge Picker' via the game play menu icon on the left and select your challenge.</p>
+                              <p>2.  Find the animal (hint: it will be the one with the floating particles).</p>
+                              <p>3.  Solve the challenge and repeat!</p>
                 
-                              Now get out there and make a difference!
+                              <p>Now get out there and make a difference!</p>
                             </p>
                         </div>
                         <br></br>
