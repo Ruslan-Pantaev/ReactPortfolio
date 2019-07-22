@@ -425,7 +425,7 @@ class Projects extends Component {
                             <br></br>
                             <Iframe url="https://ruslan-pantaev.github.io/3d_regl_vis_env/"
                                 width="70%"
-                                height="50vw"
+                                height="150vw"
                                 // id="myId"
                                 // className="myClassname"
                                 display="initial"
