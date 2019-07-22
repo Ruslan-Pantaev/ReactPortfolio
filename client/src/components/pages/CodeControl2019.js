@@ -177,7 +177,7 @@ class CodeControl2019 extends Component {
                             <br></br>
                             <br></br> */}
                             <h5>Controls</h5>
-                            <p>w,a,s,d or arrow-keys to <B>move</B><SPACING></SPACING>spacebar to <B>jump</B><SPACING></SPACING>
+                            <p><SPACING></SPACING>w,a,s,d or arrow-keys to <B>move</B><SPACING></SPACING>spacebar to <B>jump</B><SPACING></SPACING>
                             {/* c to <B>crouch</B><SPACING></SPACING>hold left-shift to <B>walk slowly</B></p>
                             <p>g,h,j,k to make <B>hand signals</B><SPACING></SPACING>l to activate <B>flashlight</B><SPACING></SPACING>
                             left-ctrl+l to <B>dance</B>*/}
