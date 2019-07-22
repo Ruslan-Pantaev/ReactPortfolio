@@ -484,7 +484,7 @@ class Projects extends Component {
                             <br></br>
                             <br></br>
                             <ReactPlayer
-                                url="youtu.be/FHL3sajrMYc"
+                                url="https://youtu.be/FHL3sajrMYc"
                                 width="70%"
                                 height="35vw"
                                 controls
@@ -526,7 +526,7 @@ class Projects extends Component {
                             <br></br>
                             <br></br>
                             <ReactPlayer
-                                url="www.youtube.com/watch?v=7wmJ4Xb8Zrc"
+                                url="https://youtube.com/watch?v=7wmJ4Xb8Zrc"
                                 width="70%"
                                 height="35vw"
                                 controls
