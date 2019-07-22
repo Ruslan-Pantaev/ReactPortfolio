@@ -673,7 +673,7 @@ class Projects extends Component {
                                 <p>Latest Stable Releases of Safari and Chrome are recommended</p>
                                 <p>Currently not supported on mobile platforms</p>
                             </section>
-                            <br></br>
+                            {/* <br></br>
                             <br></br>
                             <br></br>
                             <br></br>
@@ -688,7 +688,7 @@ class Projects extends Component {
                             <br></br>
                             <br></br>
                             <br></br>
-                            <br></br>
+                            <br></br> */}
                         </div>
                     </div>
                     <br></br>
@@ -713,7 +713,7 @@ class Projects extends Component {
                         <div id="footerLinks">
                             <a href="https://github.com/Ruslan-Pantaev" target="_blank" rel="noopener noreferrer"> <img alt="gitHub" src={require("../../assets/socialMediaIcons/Github.png")} /></a>
                             <a href="https://www.linkedin.com/in/ruslan-pantaev-482579b8" target="_blank"rel="noopener noreferrer"> <img alt="linkedin" src={require("../../assets/socialMediaIcons/Linkedin.png")} /></a> 
-                            <a href="https://www.instagram.com/arpiseaQ/" target="_blank"rel="noopener noreferrer"> <img alt="instagram" src={require("../../assets/socialMediaIcons/Instagram.png")} /></a> 
+                            <a href="https://www.instagram.com/ruslan_pantaev/" target="_blank"rel="noopener noreferrer"> <img alt="instagram" src={require("../../assets/socialMediaIcons/Instagram.png")} /></a> 
                             <a href="https://baltosequoia.deviantart.com" target="_blank" rel="noopener noreferrer"> <img alt="deviantart" src={require("../../assets/socialMediaIcons/Deviantart.png")} /></a> 
                             <a href="https://soundcloud.com/ruslanpantaev" target="_blank" rel="noopener noreferrer"> <img alt="soundcloud" src={require("../../assets/socialMediaIcons/Soundcloud.png")} /></a>
                         </div>
