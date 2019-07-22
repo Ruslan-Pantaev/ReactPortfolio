@@ -212,7 +212,7 @@ class Projects extends Component {
                                 <br></br>
                                 <h3>Compatibility:</h3>
                                 <p>Currently not supported on mobile platforms</p>
-                                <p>Requires Latest Stable Release of Google Chrome and webGL 2.0 compliant GPUs</p>
+                                <p>Requires Latest Stable Release of Google Chrome or Firefox and webGL 2.0 compliant GPUs</p>
                                 <br></br>
                                 <br></br>
                                 <a href="/codecontrol2019" target="_blank" rel="noopener noreferrer">
@@ -257,7 +257,7 @@ class Projects extends Component {
                                 padding: "10px"
                             }}
                         >
-                            <section 
+                            {/* <section 
                                 style={{
                                     // width:"100%",
                                     position: "relative",
@@ -355,7 +355,7 @@ class Projects extends Component {
                                 </a>
                                 <br></br>
                                 <br></br>
-                            </section>
+                            </section> */}
                             {/* <br></br>
                             <img
                                 src={require("../../assets/images/codecontrol_browser_compatibility.png")}
@@ -484,7 +484,7 @@ class Projects extends Component {
                             <br></br>
                             <br></br>
                             <ReactPlayer
-                                url="https://youtu.be/FHL3sajrMYc"
+                                url="youtu.be/FHL3sajrMYc"
                                 width="70%"
                                 height="35vw"
                                 controls
@@ -526,7 +526,7 @@ class Projects extends Component {
                             <br></br>
                             <br></br>
                             <ReactPlayer
-                                url="https://www.youtube.com/watch?v=7wmJ4Xb8Zrc"
+                                url="www.youtube.com/watch?v=7wmJ4Xb8Zrc"
                                 width="70%"
                                 height="35vw"
                                 controls
