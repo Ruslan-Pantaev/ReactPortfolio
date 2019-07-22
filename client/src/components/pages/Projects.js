@@ -502,7 +502,7 @@ class Projects extends Component {
                             <br></br>
                             <br></br>
                         </div>
-                        <br></br>
+                        {/* <br></br>
                         <br></br>
                         <div style={{
                                 position: "relative",
@@ -543,7 +543,7 @@ class Projects extends Component {
                             <br></br>
                             <br></br>
                             <br></br>
-                        </div>
+                        </div> */}
                         <br></br>
                         <br></br>
                         <div style={{
