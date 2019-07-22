@@ -198,6 +198,7 @@ class CodeControl2019 extends Component {
                             <p>3.  Solve the challenge and repeat!</p>
               
                             <p>Now get out there and make a difference!</p>
+                            <h5 style={{ color: '#82D6B9' }}>username: test1 password: test1</h5>
                         </div>
                         <br></br>
                         <div id="gameContainer" style={{
