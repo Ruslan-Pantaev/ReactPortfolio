@@ -4,7 +4,7 @@ nginx.rtf
 
 package-lock.json
 client/package-lock.json
-client/public/assets/unityWebGL/
+# client/public/assets/unityWebGL/
 .DS_Store
 client/.DS_Store
 
