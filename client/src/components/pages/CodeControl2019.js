@@ -47,6 +47,8 @@ class CodeControl2019 extends Component {
           progression: progression
         });
       });
+
+      this.forceUpdate();
     }
 
     // toggleFullScreen(e) {
