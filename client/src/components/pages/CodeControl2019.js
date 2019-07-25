@@ -40,7 +40,7 @@ class CodeControl2019 extends Component {
     render() {
         return (
               <div id="outer-container" style={{ overflow: "hidden" }}>
-                <Menu
+                {/* <Menu
                     right
                     customBurgerIcon={ <img src={require("../../assets/menu/thin_burger_light.png")} alt={""} /> }
                     customCrossIcon={ <img src={require("../../assets/menu/round_cross.png")} alt={""} /> }
@@ -55,7 +55,7 @@ class CodeControl2019 extends Component {
                         <li><a style={{color: '#fff'}} href="/projects">Projects</a></li>
                         <li><a style={{color: '#aaeaff'}} href="/contact">Contact</a></li>
                     </ul>
-                </Menu>
+                </Menu> */}
                 <div
                     id="page-wrap"
                     style={{
@@ -68,7 +68,7 @@ class CodeControl2019 extends Component {
                     }}
                 >
                     <img
-                        src={require("../../assets/images/paper_black.jpg")}
+                        src={require("../../assets/images/abstract2.jpg")}
                         alt={""}
                         style={{
                             position: "fixed",
@@ -85,7 +85,7 @@ class CodeControl2019 extends Component {
                             // overflow: "auto",
                             // objectFit: "fill",
                             display: "inline-block",
-                            opacity: 0.08
+                            opacity: 0.1
                         }}
                     />
                     <div style={{
@@ -120,7 +120,7 @@ class CodeControl2019 extends Component {
                             position="+=0"
                             ease="Back.easeOut"
                         > */}
-                            <img
+                            {/* <img
                                 // width={"42%"}
                                 src={require("../../assets/images/favicon3.svg")}
                                 alt={""}
@@ -139,7 +139,7 @@ class CodeControl2019 extends Component {
                                     // display: "block",
                                     // opacity: 1
                                 }}
-                            />
+                            /> */}
                         {/* </Tween> */}
                         <br></br>
                         <br></br>
@@ -256,15 +256,15 @@ class CodeControl2019 extends Component {
                             right: 0,
                             margin: "auto"
                         }}>
-                        <div id="footerLinks">
+                        {/* <div id="footerLinks">
                             <a href="https://github.com/Ruslan-Pantaev" target="_blank" rel="noopener noreferrer"> <img alt="gitHub" src={require("../../assets/socialMediaIcons/Github.png")} /></a>
                             <a href="https://www.linkedin.com/in/ruslan-pantaev-482579b8" target="_blank"rel="noopener noreferrer"> <img alt="linkedin" src={require("../../assets/socialMediaIcons/Linkedin.png")} /></a> 
                             <a href="https://www.instagram.com/ruslan_pantaev/" target="_blank"rel="noopener noreferrer"> <img alt="instagram" src={require("../../assets/socialMediaIcons/Instagram.png")} /></a> 
                             <a href="https://baltosequoia.deviantart.com" target="_blank" rel="noopener noreferrer"> <img alt="deviantart" src={require("../../assets/socialMediaIcons/Deviantart.png")} /></a> 
                             <a href="https://soundcloud.com/ruslanpantaev" target="_blank" rel="noopener noreferrer"> <img alt="soundcloud" src={require("../../assets/socialMediaIcons/Soundcloud.png")} /></a>
-                        </div>
+                        </div> */}
                         <br></br>
-                        <p id="footerSig" style={{color: "#999"}}>Ruslan Pantaev &copy; 2019</p>
+                        <p id="footerSig" style={{color: "#999"}}>Code Control &copy; 2019</p>
                     </footer>
                     <br></br>
                     <br></br>
