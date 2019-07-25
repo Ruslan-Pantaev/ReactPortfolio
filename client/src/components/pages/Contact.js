@@ -55,12 +55,12 @@ class Contact extends Component {
                     outerContainerId={ "outer-container" }
                     style={{ outline: "none" }}
                 >
-                    <ul style={{ outline: "none" }}>
-                        <li><Link style={{color: '#aaeaff'}} to="/">Home</Link></li>
-                        <li><Link style={{color: '#aaeaff'}} to="/about">About</Link></li>
-                        <li><Link style={{color: '#aaeaff'}} to="/cv">CV</Link></li>
-                        <li><Link style={{color: '#aaeaff'}} to="/projects">Projects</Link></li>
-                        <li><Link style={{color: '#fff'}} to="/contact">Contact</Link></li>
+                    <ul style={{ outline: "none", listStyle: "none" }}>
+                        <li><Link style={{color: '#fff'}} to="/">Home</Link></li>
+                        <li><Link style={{color: '#fff'}} to="/about">About</Link></li>
+                        <li><Link style={{color: '#fff'}} to="/cv">CV</Link></li>
+                        <li><Link style={{color: '#fff'}} to="/projects">Projects</Link></li>
+                        <li><Link style={{color: '#666'}} to="/contact">Contact</Link></li>
                     </ul>
                 </Menu>
                 <div
@@ -71,11 +71,11 @@ class Contact extends Component {
                         width: "auto/9",
                         height: "auto",
                         margin: "auto",
-                        backgroundImage: "radial-gradient(circle, #666666, #4c4c4c, #343434, #1d1d1d, #000000)"
+                        // backgroundImage: "radial-gradient(circle, #666666, #4c4c4c, #343434, #1d1d1d, #000000)"
                     }}
                 >
                     <img
-                        src={require("../../assets/images/wireframe2.png")}
+                        src={require("../../assets/images/arch.jpg")}
                         alt={""}
                         style={{
                             position: "fixed",
@@ -91,7 +91,7 @@ class Contact extends Component {
                             // overflow: "auto",
                             // objectFit: "fill",
                             display: "inline-block",
-                            opacity: 0.1
+                            opacity: 1
                         }}
                     />
                     <div style={{
@@ -116,7 +116,7 @@ class Contact extends Component {
                     >
                         <img
                             // width={"42%"}
-                            src={require("../../assets/images/favicon3.svg")}
+                            src={require("../../assets/images/favicon3_white.png")}
                             alt={""}
                             style={{
                                 position: "relative",
@@ -232,7 +232,7 @@ class Contact extends Component {
                             <a href="https://soundcloud.com/ruslanpantaev" target="_blank" rel="noopener noreferrer"> <img alt="soundcloud" src={require("../../assets/socialMediaIcons/Soundcloud.png")} /></a>
                         </div>
                         <br></br>
-                        <p id="footerSig" style={{color: "#ccc"}}>Ruslan Pantaev &copy; 2019</p>
+                        <p id="footerSig" style={{color: "#fff"}}>Ruslan Pantaev &copy; 2019</p>
                     </footer>
                     <br></br>
                     <br></br>
