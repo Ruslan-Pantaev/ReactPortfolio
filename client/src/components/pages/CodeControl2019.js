@@ -57,6 +57,12 @@ class CodeControl2019 extends Component {
     // }
   
     render() {
+      let loadingProgress
+      
+      if (this.state.progression != 1){
+        loadingProgress = <div><h3>{`Loading ${this.state.progression * 100} percent...`}</h3></div>
+      }
+      
         return (
               <div id="outer-container" style={{ overflow: "hidden" }}>
                 {/* <Menu
@@ -239,7 +245,7 @@ class CodeControl2019 extends Component {
                                 borderRadius: "8px"
                             }}
                         >
-                            <div>{`Loading ${this.state.progression * 100} percent...`}</div>
+                            {loadingProgress}
                             <Unity unityContent={this.unityContent}/>;
                         </div>
                         <br></br>
