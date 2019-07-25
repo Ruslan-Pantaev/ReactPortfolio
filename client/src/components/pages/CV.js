@@ -39,7 +39,7 @@ class CV extends Component {
                     }}
                 >
                     <img
-                        src={require("../../assets/images/cubes.jpg")}
+                        src={require("../../assets/images/paper_black.jpg")}
                         alt={""}
                         style={{
                             position: "fixed",
