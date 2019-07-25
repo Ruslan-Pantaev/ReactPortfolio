@@ -16,6 +16,7 @@ import './Footer.css';
 const B = (props) => <span style={{fontWeight: 'bold'}}>{props.children}</span>
 const SPACING = (props) => <span style={{color: "green", fontWeight: 'bold'}}> | </span>
 
+
 class CodeControl2019 extends Component {
     componentDidMount() {
         ReactGA.initialize('UA-87922163-1');
@@ -31,9 +32,7 @@ class CodeControl2019 extends Component {
         { adjustOnWindowResize: true }
       );
 
-      this.state = {
-        progression: 0
-      }
+      this.state = {}
 
       // Create a new listener for our progression Event.
       // While the Unity player is loading, it will
@@ -44,7 +43,7 @@ class CodeControl2019 extends Component {
         // Now we can use the progression to for example
         // display it on our React app.
 
-        this.setState = ({
+        this.setState({
           progression: progression
         });
       });
