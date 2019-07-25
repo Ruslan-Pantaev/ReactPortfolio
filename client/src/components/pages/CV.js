@@ -192,7 +192,7 @@ class CV extends Component {
                             <a href="https://soundcloud.com/ruslanpantaev" target="_blank" rel="noopener noreferrer"> <img alt="soundcloud" src={require("../../assets/socialMediaIcons/Soundcloud.png")} /></a>
                         </div>
                         <br></br>
-                        <p id="footerSig" style={{color: "#333"}}>Ruslan Pantaev &copy; 2019</p>
+                        <p id="footerSig" style={{color: "#fff"}}>Ruslan Pantaev &copy; 2019</p>
                     </footer>
                     <br></br>
                     <br></br>
