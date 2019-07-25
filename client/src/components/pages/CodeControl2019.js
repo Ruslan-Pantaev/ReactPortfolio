@@ -30,6 +30,20 @@ class CodeControl2019 extends Component {
         "/assets/unityWebGL/CodeControl_2019_2_0_2/Build/UnityLoader.js",
         { adjustOnWindowResize: true }
       );
+
+      // Create a new listener for our progression Event.
+      // While the Unity player is loading, it will
+      // constantly keep telling us the progression.
+
+      this.unityContent.on("progress", progression => {
+
+        // Now we can use the progression to for example
+        // display it on our React app.
+
+        this.setState({
+          progression: progression
+        });
+      });
     }
 
     // toggleFullScreen(e) {
@@ -220,8 +234,8 @@ class CodeControl2019 extends Component {
                                 borderRadius: "8px"
                             }}
                         >
-                            {/* <Unity unityContent={unityContent} /> */}
-                            <Unity unityContent={this.unityContent} />;
+                            <div>{`Loading ${this.state.progression * 100} percent...`}</div>
+                            <Unity unityContent={this.unityContent}/>;
                         </div>
                         <br></br>
                         {/* <Form onSubmit={this.toggleFullScreen}>
