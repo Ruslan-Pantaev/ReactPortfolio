@@ -64,11 +64,11 @@ class CodeControl2019 extends Component {
                         width: "auto/9",
                         height: "auto",
                         margin: "auto",
-                        backgroundImage: "radial-gradient(circle, #252424, #292828, #2d2c2c, #303031, #343435, #393939, #3d3d3e, #424242, #484848, #4e4e4e, #545454, #5a5a5a)"
+                        // backgroundImage: "radial-gradient(circle, #252424, #292828, #2d2c2c, #303031, #343435, #393939, #3d3d3e, #424242, #484848, #4e4e4e, #545454, #5a5a5a)"
                     }}
                 >
                     <img
-                        src={require("../../assets/images/wireframe.png")}
+                        src={require("../../assets/images/paper_black.jpg")}
                         alt={""}
                         style={{
                             position: "fixed",

@@ -19,13 +19,14 @@ class About extends Component {
                     outerContainerId={ "outer-container" }
                     style={{ outline: "none" }}
                 >
-                    <ul style={{ outline: "none" }}>
-                        <li><Link style={{color: '#aaeaff'}} to="/">Home</Link></li>
-                        <li><Link style={{color: '#fff'}} to="/about">About</Link></li>
-                        <li><Link style={{color: '#aaeaff'}} to="/cv">CV</Link></li>
-                        <li><Link style={{color: '#aaeaff'}} to="/projects">Projects</Link></li>
-                        <li><Link style={{color: '#aaeaff'}} to="/contact">Contact</Link></li>
+                    <ul style={{ outline: "none", listStyle: "none" }}>
+                        <li><Link style={{color: '#fff'}} to="/">Home</Link></li>
+                        <li><Link style={{color: '#666'}} to="/about">About</Link></li>
+                        <li><Link style={{color: '#fff'}} to="/cv">CV</Link></li>
+                        <li><Link style={{color: '#fff'}} to="/projects">Projects</Link></li>
+                        <li><Link style={{color: '#fff'}} to="/contact">Contact</Link></li>
                     </ul>
+
                 </Menu>
                 <div
                     id="page-wrap"
@@ -35,20 +36,22 @@ class About extends Component {
                         width: "auto/9",
                         height: "auto",
                         margin: "auto",
-                        backgroundImage: "radial-gradient(circle, #e0f8f8, #d9f6f6, #d3f4f4, #ccf1f2, #c5eff0, #beecef, #b8eaef, #b1e7ef, #aae4f0, #a3e0f1, #9edcf3, #99d8f4)"
+                        // backgroundColor: "#666"
+                        // backgroundImage: "radial-gradient(circle, #e0f8f8, #d9f6f6, #d3f4f4, #ccf1f2, #c5eff0, #beecef, #b8eaef, #b1e7ef, #aae4f0, #a3e0f1, #9edcf3, #99d8f4)"
                         // backgroundImage: "radial-gradient(circle, #91fbff, #8af7fb, #82f3f8, #7af0f4, #72ecf1, #68e6ef, #5edfed, #54d9eb, #49cee9, #42c3e6, #40b7e1, #42acdc)"
                         // backgroundImage: "radial-gradient(circle, #09aaed, #09abf1, #0aadf4, #0baef8, #0eaffb, #05b4fd, #00b8fe, #00bdff, #03c6ff, #18ceff, #2dd6ff, #40deff)"
                     }}
                 >
                     <img
-                        src={require("../../assets/images/wireframe.png")}
+                        src={require("../../assets/images/paper_white.jpg")}
                         alt={""}
                         style={{
                             position: "fixed",
                             textAlign: "center",
-                            // height: "calc(100vmax + 100vmax)",
-                            height: "100vh",
-                            width: "100vw",
+                            height: "100%",
+                            width: "100%",
+                            // height: "100vh",
+                            // width: "100vw",
                             top: 0,
                             bottom: 0,
                             left: 0,
@@ -57,7 +60,7 @@ class About extends Component {
                             // overflow: "auto",
                             // objectFit: "fill",
                             display: "inline-block",
-                            opacity: 0.1
+                            opacity: 1
                         }}
                     />
                     <div style={{
@@ -82,7 +85,7 @@ class About extends Component {
                     }}>
                         <img
                             // width={"42%"}
-                            src={require("../../assets/images/favicon3.svg")}
+                            src={require("../../assets/images/favicon3_black.png")}
                             alt={""}
                             style={{
                                 position: "relative",
@@ -104,7 +107,7 @@ class About extends Component {
                         <br></br>
                         <br></br>
                         <br></br>
-                        <h1>Привет, Hello</h1>
+                        <h1 style={{ color: "#333" }}>About</h1>
                         <br></br>
                         <section 
                             style={{
@@ -126,12 +129,13 @@ class About extends Component {
                                 margin: "auto",
                                 // display: "block",
                                 // opacity: 1
-                                backgroundColor: "rgba(181, 183, 183, 0.1)",
+                                backgroundColor: "rgba(200, 200, 200, 0.5)",
                                 borderStyle: "groove",
                                 borderWidth: "1px",
                                 borderColor: "#999",
                                 borderRadius: "8px",
-                                padding: "10px"
+                                padding: "10px",
+                                color: "#000"
                                 }}
                         >
                             <p>My name is Ruslan Pantaev and I grew up in Siberia and moved to NYC when I was six.
@@ -158,7 +162,7 @@ class About extends Component {
                         position="+=0"
                         ease="Back.easeOut"
                     > */}
-                        <img
+                        {/* <img
                             src={require("../../assets/images/homeMudHat.jpg")}
                             alt={""}
                             style={{
@@ -176,7 +180,7 @@ class About extends Component {
                                 // display: "block",
                                 // opacity: 0.1
                             }}
-                        />
+                        /> */}
                     </div>
                     <br></br>
                     <br></br>

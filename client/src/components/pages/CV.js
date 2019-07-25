@@ -13,18 +13,18 @@ class CV extends Component {
             <div id="outer-container" style={{ overflow: "hidden" }}>
                 <Menu
                     right
-                    customBurgerIcon={ <img src={require("../../assets/menu/thin_burger.png")} alt={""} /> }
+                    customBurgerIcon={ <img src={require("../../assets/menu/thin_burger_light.png")} alt={""} /> }
                     customCrossIcon={ <img src={require("../../assets/menu/round_cross.png")} alt={""} /> }
                     pageWrapId={ "page-wrap" }
                     outerContainerId={ "outer-container" }
                     style={{ outline: "none" }}
                 >
-                    <ul style={{ outline: "none" }}>
-                        <li><Link style={{color: '#aaeaff'}} to="/">Home</Link></li>
-                        <li><Link style={{color: '#aaeaff'}} to="/about">About</Link></li>
-                        <li><Link style={{color: '#fff'}} to="/cv">CV</Link></li>
-                        <li><Link style={{color: '#aaeaff'}} to="/projects">Projects</Link></li>
-                        <li><Link style={{color: '#aaeaff'}} to="/contact">Contact</Link></li>
+                    <ul style={{ outline: "none", listStyle: "none" }}>
+                        <li><Link style={{color: '#fff'}} to="/">Home</Link></li>
+                        <li><Link style={{color: '#fff'}} to="/about">About</Link></li>
+                        <li><Link style={{color: '#666'}} to="/cv">CV</Link></li>
+                        <li><Link style={{color: '#fff'}} to="/projects">Projects</Link></li>
+                        <li><Link style={{color: '#fff'}} to="/contact">Contact</Link></li>
                     </ul>
                 </Menu>
                 <div
@@ -35,11 +35,11 @@ class CV extends Component {
                         width: "auto/9",
                         height: "auto",
                         margin: "auto",
-                        backgroundImage: "radial-gradient(circle, #ffffff, #f7f7fa, #eeeef5, #e4e7f1, #d9dfec, #d1dced, #c8daee, #bed8ee, #b4daf3, #a8ddf6, #9be0f7, #8de3f7)"
+                        // backgroundImage: "radial-gradient(circle, #ffffff, #f7f7fa, #eeeef5, #e4e7f1, #d9dfec, #d1dced, #c8daee, #bed8ee, #b4daf3, #a8ddf6, #9be0f7, #8de3f7)"
                     }}
                 >
                     <img
-                        src={require("../../assets/images/wireframe.png")}
+                        src={require("../../assets/images/cubes.jpg")}
                         alt={""}
                         style={{
                             position: "fixed",
@@ -56,7 +56,7 @@ class CV extends Component {
                             // overflow: "auto",
                             // objectFit: "fill",
                             display: "inline-block",
-                            opacity: 0.08
+                            opacity: 1
                         }}
                     />
                     <div style={{
@@ -93,7 +93,7 @@ class CV extends Component {
                         > */}
                             <img
                                 // width={"42%"}
-                                src={require("../../assets/images/favicon3.svg")}
+                                src={require("../../assets/images/favicon3_white.png")}
                                 alt={""}
                                 style={{
                                     position: "relative",
@@ -116,7 +116,7 @@ class CV extends Component {
                         <br></br>
                         <br></br>
                         <br></br>
-                        <h1>CV - Resume</h1>
+                        <h1 style={{ color: "white" }}>CV - Resume</h1>
                         <br></br>
                         <section 
                             style={{

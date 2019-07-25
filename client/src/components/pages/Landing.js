@@ -37,12 +37,20 @@ class Landing extends Component {
             outerContainerId={ "outer-container" }
             style={{ outline: "none" }}
           >
-              <ul style={{ outline: "none", listStyle: "none" }}>
-                  <li><a style={{color: '#aaeaff'}} href="/">Home</a></li>
+              {/* <ul style={{ outline: "none", listStyle: "none" }}>
+                  <li><a style={{color: '#666'}} href="/">Home</a></li>
                   <li><a style={{color: '#fff'}} href="/about">About</a></li>
                   <li><a style={{color: '#fff'}} href="/cv">CV</a></li>
                   <li><a style={{color: '#fff'}} href="/projects">Projects</a></li>
                   <li><a style={{color: '#fff'}} href="/contact">Contact</a></li>
+              </ul> */}
+
+              <ul style={{ outline: "none", listStyle: "none" }}>
+                  <li><Link style={{color: '#666'}} to="/">Home</Link></li>
+                  <li><Link style={{color: '#fff'}} to="/about">About</Link></li>
+                  <li><Link style={{color: '#fff'}} to="/cv">CV</Link></li>
+                  <li><Link style={{color: '#fff'}} to="/projects">Projects</Link></li>
+                  <li><Link style={{color: '#fff'}} to="/contact">Contact</Link></li>
               </ul>
           </Menu>
         );

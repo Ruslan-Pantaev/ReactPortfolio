@@ -55,12 +55,12 @@ class Projects extends Component {
                     outerContainerId={ "outer-container" }
                     style={{ outline: "none" }}
                 >
-                    <ul style={{ outline: "none" }}>
-                        <li><Link style={{color: '#aaeaff'}} to="/">Home</Link></li>
-                        <li><Link style={{color: '#aaeaff'}} to="/about">About</Link></li>
-                        <li><Link style={{color: '#aaeaff'}} to="/cv">CV</Link></li>
-                        <li><Link style={{color: '#fff'}} to="/projects">Projects</Link></li>
-                        <li><Link style={{color: '#aaeaff'}} to="/contact">Contact</Link></li>
+                    <ul style={{ outline: "none", listStyle: "none" }}>
+                        <li><Link style={{color: '#fff'}} to="/">Home</Link></li>
+                        <li><Link style={{color: '#fff'}} to="/about">About</Link></li>
+                        <li><Link style={{color: '#fff'}} to="/cv">CV</Link></li>
+                        <li><Link style={{color: '#666'}} to="/projects">Projects</Link></li>
+                        <li><Link style={{color: '#fff'}} to="/contact">Contact</Link></li>
                     </ul>
                 </Menu>
                 <div
@@ -71,11 +71,12 @@ class Projects extends Component {
                         width: "auto/9",
                         height: "auto",
                         margin: "auto",
-                        backgroundImage: "radial-gradient(circle, #fcfcfc, #f3f1f4, #ede5ea, #e8d9dc, #e2cdcd)"
+                        backgroundColor: "white"
+                        // backgroundImage: "radial-gradient(circle, #fcfcfc, #f3f1f4, #ede5ea, #e8d9dc, #e2cdcd)"
                     }}
                 >
                     <img
-                        src={require("../../assets/images/wireframe2.png")}
+                        src={require("../../assets/images/arch3.jpg")}
                         alt={""}
                         style={{
                             position: "fixed",
@@ -91,7 +92,7 @@ class Projects extends Component {
                             margin: "auto",
                             // objectFit: "fill",
                             display: "inline-block",
-                            opacity: 0.08
+                            opacity: 0.2
                         }}
                     />
                     <div style={{
@@ -179,7 +180,8 @@ class Projects extends Component {
                                     borderColor: "#999",
                                     borderRadius: "8px",
                                     padding: "10px",
-                                    backgroundColor: "rgba(181, 183, 183, 0.1)"
+                                    backgroundColor: "rgba(200, 200, 200, 0.1)",
+                                    // backgroundColor: "rgba(181, 183, 183, 0.1)"
                                 }}
                             >
                                 <h3>Title:</h3>
@@ -238,7 +240,7 @@ class Projects extends Component {
                                 <br></br>
                             </section>
                         </div>
-                        <br></br>
+                        {/* <br></br>
                         <br></br>
                         <div style={{
                                 position: "relative",
@@ -256,7 +258,7 @@ class Projects extends Component {
                                 borderRadius: "8px",
                                 padding: "10px"
                             }}
-                        >
+                        > */}
                             {/* <section 
                                 style={{
                                     // width:"100%",
@@ -375,7 +377,7 @@ class Projects extends Component {
                                 }}
                             />
                             <br></br> */}
-                        </div>
+                        {/* </div> */}
                         <br></br>
                         <br></br>
                         <div style={{
@@ -635,7 +637,8 @@ class Projects extends Component {
                                     borderColor: "#999",
                                     borderRadius: "8px",
                                     padding: "10px",
-                                    backgroundColor: "rgba(181, 183, 183, 0.1)"
+                                    backgroundColor: "rgba(200, 200, 200, 0.1)",
+                                    // backgroundColor: "rgba(181, 183, 183, 0.1)"
                                     }}
                             >
                                 <h3>Title:</h3>
@@ -646,13 +649,13 @@ class Projects extends Component {
                                     You can find "The Walking City" album on Spotify, Tidal and iTunes.</p>
                                 <br></br>
                                 <a
-                                    href='https://github.com/Ruslan-Pantaev/audiofabric-walkingcity'
+                                    href="https://ruslan-pantaev.github.io/audiofabric-walkingcity/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     style={{ color: "#666" }}
                                 >
                                     <h6 style={{
-                                        color: "#666",
+                                        color: "#000",
                                         width: "200px",
                                         textAlign: "center",
                                         borderStyle: "outset",
@@ -665,7 +668,7 @@ class Projects extends Component {
                                         left: 0,
                                         right: 0,
                                         margin: "auto"
-                                    }}>Git Repo Link</h6>
+                                    }}>See it in action here</h6>
                                 </a>
                                 <br></br>
                                 <br></br>
