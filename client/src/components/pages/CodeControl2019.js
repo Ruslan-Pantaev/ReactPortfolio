@@ -31,6 +31,10 @@ class CodeControl2019 extends Component {
         { adjustOnWindowResize: true }
       );
 
+      this.state = {
+        progression: 0
+      }
+
       // Create a new listener for our progression Event.
       // While the Unity player is loading, it will
       // constantly keep telling us the progression.
@@ -40,7 +44,7 @@ class CodeControl2019 extends Component {
         // Now we can use the progression to for example
         // display it on our React app.
 
-        this.setState({
+        this.setState = ({
           progression: progression
         });
       });
