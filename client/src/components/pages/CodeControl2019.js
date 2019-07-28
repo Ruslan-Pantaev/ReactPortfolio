@@ -27,8 +27,8 @@ class CodeControl2019 extends Component {
       super(props);
    
       this.unityContent = new UnityContent(
-        "/assets/unityWebGL/CodeControl_2019_2_0_2/Build/CodeControl_2019_2_0_2.json",
-        "/assets/unityWebGL/CodeControl_2019_2_0_2/Build/UnityLoader.js",
+        "/assets/unityWebGL/CodeControl_2019_2_1_0/Build/CodeControl_2019_2_1_0.json",
+        "/assets/unityWebGL/CodeControl_2019_2_1_0/Build/UnityLoader.js",
         { adjustOnWindowResize: true }
       );
 
