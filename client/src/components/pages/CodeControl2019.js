@@ -186,7 +186,7 @@ class CodeControl2019 extends Component {
                             // display: "block",
                             // opacity: 1
                           }}>
-                            <h1>Code Control 2019 rev2.0.2</h1>
+                            <h1>Code Control 2019 rev2.1.0</h1>
                             <br></br>
                             <h5 style={{ color: '#82D6B9' }}>***For best performance, use the latest stable version of Firefox.***</h5>
                             <p>Google Chrome was also tested to be working.</p>
@@ -216,10 +216,10 @@ class CodeControl2019 extends Component {
                               Here is where your coding prowess and problem solving skills come into play.
                               Each Digital-ID-Tag will contain a coding challenge that you must solve to save the animal.
                               Once you solve a challenge, the animal will safely return to the foster animal shelter.
-                              Watch out for the cars, they will decrease your stamina, however returning home via the subway will boost you back up!</p>
-                
-                            <p>1.  Once you're in the city, open the 'Challenge Picker' via the game play menu icon on the left and select your challenge.</p>
-                            <p>2.  Find the animal (hint: it will be the one with the floating particles).</p>
+                              Watch out for the cars, they will decrease your health, however solving a challenge will boost you back up!</p>
+
+                            <p>1.  Click on the icon in the upper left to preview all the challenges.</p>
+                            <p>2.  Find the animals with the help of the map and when prompted, press enter to begin the challenge.</p>
                             <p>3.  Solve the challenge and repeat!</p>
               
                             <p>Now get out there and make a difference!</p>
