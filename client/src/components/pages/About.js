@@ -22,7 +22,6 @@ class About extends Component {
                     <ul style={{ outline: "none", listStyle: "none" }}>
                         <li><Link style={{color: '#fff'}} to="/">Home</Link></li>
                         <li><Link style={{color: '#666'}} to="/about">About</Link></li>
-                        <li><Link style={{color: '#fff'}} to="/cv">CV</Link></li>
                         <li><Link style={{color: '#fff'}} to="/projects">Projects</Link></li>
                         <li><Link style={{color: '#fff'}} to="/contact">Contact</Link></li>
                     </ul>

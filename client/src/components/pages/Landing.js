@@ -40,7 +40,6 @@ class Landing extends Component {
               {/* <ul style={{ outline: "none", listStyle: "none" }}>
                   <li><a style={{color: '#666'}} href="/">Home</a></li>
                   <li><a style={{color: '#fff'}} href="/about">About</a></li>
-                  <li><a style={{color: '#fff'}} href="/cv">CV</a></li>
                   <li><a style={{color: '#fff'}} href="/projects">Projects</a></li>
                   <li><a style={{color: '#fff'}} href="/contact">Contact</a></li>
               </ul> */}
@@ -48,7 +47,6 @@ class Landing extends Component {
               <ul style={{ outline: "none", listStyle: "none" }}>
                   <li><Link style={{color: '#666'}} to="/">Home</Link></li>
                   <li><Link style={{color: '#fff'}} to="/about">About</Link></li>
-                  <li><Link style={{color: '#fff'}} to="/cv">CV</Link></li>
                   <li><Link style={{color: '#fff'}} to="/projects">Projects</Link></li>
                   <li><Link style={{color: '#fff'}} to="/contact">Contact</Link></li>
               </ul>
@@ -59,7 +57,6 @@ class Landing extends Component {
           <div style={{ display: "inlineBlock", padding: "10px", outline: "none", position: "fixed", zIndex: 10, left: "50%", transform: "translateX(-50%)" }}>
             <Link style={{ color: '#000', marginRight: "20px" }} to="/">Home</Link>
             <Link style={{ color: '#666', marginRight: "20px"}} to="/about">About</Link>
-            <Link style={{ color: '#666', marginRight: "20px"}} to="/cv">CV</Link>
             <Link style={{ color: '#666', marginRight: "20px"}} to="/projects">Projects</Link>
             <Link style={{ color: '#666', marginRight: "0px"}} to="/contact">Contact</Link>
           </div>
