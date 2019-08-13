@@ -76,7 +76,6 @@ class CodeControl2019 extends Component {
                     <ul style={{ outline: "none" }}>
                         <li><a style={{color: '#aaeaff'}} href="/">Home</a></li>
                         <li><a style={{color: '#aaeaff'}} href="/about">About</a></li>
-                        <li><a style={{color: '#aaeaff'}} href="/cv">CV</a></li>
                         <li><a style={{color: '#fff'}} href="/projects">Projects</a></li>
                         <li><a style={{color: '#aaeaff'}} href="/contact">Contact</a></li>
                     </ul>
