@@ -208,7 +208,7 @@ class CodeControl2019 extends Component {
                             </p>
                             {/* <p>mouse-scroll to <B>zoom</B></p> */}
                             <br></br>
-                            <h5>Game Play</h5>
+                            {/* <h5>Game Play</h5>
                             <p>
                               Welcome to Code Control.  Allow me to quickly brief you on your objective.  This city needs you.
                               A data center power outage corrupted the Digital-ID-Tags worn by foster animals in the city, causing them to run loose.
@@ -221,8 +221,8 @@ class CodeControl2019 extends Component {
                             <p>2.  Find the animals with the help of the map and when prompted, press enter to begin the challenge.</p>
                             <p>3.  Solve the challenge and repeat!</p>
               
-                            <p>Now get out there and make a difference!</p>
-                            <h5 style={{ color: '#82D6B9' }}>username: test1 password: test1</h5>
+                            <p>Now get out there and make a difference!</p> */}
+                            <h5 style={{ color: '#82D6B9' }}>Student Registration Code:  cisc5001</h5>
                         </div>
                         <br></br>
                         <div id="gameContainer" style={{
