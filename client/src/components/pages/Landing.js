@@ -200,7 +200,7 @@ class Landing extends Component {
                                         value: "#111"
                                     },
                                     number: {
-                                        value: this.state.width/8 + this.state.height/12,
+                                        value: this.state.width/40 + this.state.height/60,
                                         density: {
                                             enable: false,
                                             // value_area: 10
@@ -219,7 +219,7 @@ class Landing extends Component {
                                     },
                                     line_linked: {
                                         enable: true,
-                                        distance: 75,
+                                        distance: 120,
                                         opacity: 1,
                                         color: "#999"
                                         // color: "#be1a1a" //red
