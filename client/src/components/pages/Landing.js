@@ -1,176 +1,1044 @@
 import React, { Component } from 'react';
+import { StickyContainer, Sticky } from 'react-sticky';
 import Particles from 'react-particles-js';
 import { Tween } from 'react-gsap';
 import { bubble as Menu } from 'react-burger-menu';
 import { Link } from 'react-router-dom';
+import Iframe from 'react-iframe';
+import Gist from 'react-gist';
 import './Menu.css';
 
 
+// import { Link } from 'react-router-dom';
+import { Form, FormGroup, Input, Label, Button, Alert } from 'reactstrap';
+import './Footer.css';
+import Axios from 'axios';
+
+
 class Landing extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { width: 0, height: 0 };
-        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  constructor() {
+    super()
+    this.state = {
+        name: '',
+        email: '',
+        message: '',
+        alert: false
     }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.onDismiss = this.onDismiss.bind(this)
+  }
+
+  handleChange = e => {
+      this.setState({ [e.target.name]: e.target.value })
+  }
+
+  async handleSubmit(e) {
+      this.setState({ alert: true })
+      e.preventDefault()
+      const { name, email, message } = this.state
+      await Axios.post('/api/form', {
+          name,
+          email,
+          message
+      })
+  }
+
+  onDismiss() {
+      this.setState({ alert: false });
+      // setTimeout(() => {
+          window.location.reload()
+      // }, 1000);
+  }
+
+    // constructor(props) {
+    //     super(props);
+    //     // this.state = { width: 0, height: 0 };
+    //     // this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    // }
       
-    componentDidMount() {
-        this.updateWindowDimensions();
-        window.addEventListener('resize', this.updateWindowDimensions);
-    }
+    // componentDidMount() {
+    //     this.updateWindowDimensions();
+    //     window.addEventListener('resize', this.updateWindowDimensions);
+    // }
     
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.updateWindowDimensions);
-    }
+    // componentWillUnmount() {
+    //     window.removeEventListener('resize', this.updateWindowDimensions);
+    // }
     
-    updateWindowDimensions() {
-        this.setState({ width: window.innerWidth, height: window.innerHeight });
-    }
+    // updateWindowDimensions() {
+    //     this.setState({ width: window.innerWidth, height: window.innerHeight });
+    // }
 
-    renderMenu() {
-      if (this.state.width < 600) {
-        return (
-          <Menu
-            right
-            customBurgerIcon={ <img src={require("../../assets/menu/thin_burger_light.png")} alt={""} /> }
-            customCrossIcon={ <img src={require("../../assets/menu/round_cross.png")} alt={""} /> }
-            pageWrapId={ "page-wrap" }
-            outerContainerId={ "outer-container" }
-            style={{ outline: "none" }}
-          >
-              {/* <ul style={{ outline: "none", listStyle: "none" }}>
-                  <li><a style={{color: '#666'}} href="/">Home</a></li>
-                  <li><a style={{color: '#fff'}} href="/about">About</a></li>
-                  <li><a style={{color: '#fff'}} href="/projects">Projects</a></li>
-                  <li><a style={{color: '#fff'}} href="/contact">Contact</a></li>
-              </ul> */}
+    // renderMenu() {
+    //   if (this.state.width < 600) {
+    //     return (
+    //       <Menu
+    //         right
+    //         customBurgerIcon={ <img src={require("../../assets/menu/thin_burger_light.png")} alt={""} /> }
+    //         customCrossIcon={ <img src={require("../../assets/menu/round_cross.png")} alt={""} /> }
+    //         pageWrapId={ "page-wrap" }
+    //         outerContainerId={ "outer-container" }
+    //         style={{ outline: "none" }}
+    //       >
+    //           {/* <ul style={{ outline: "none", listStyle: "none" }}>
+    //               <li><a style={{color: '#666'}} href="/">Home</a></li>
+    //               <li><a style={{color: '#fff'}} href="/about">About</a></li>
+    //               <li><a style={{color: '#fff'}} href="/projects">Projects</a></li>
+    //               <li><a style={{color: '#fff'}} href="/contact">Contact</a></li>
+    //           </ul> */}
 
-              <ul style={{ outline: "none", listStyle: "none" }}>
-                  <li><Link style={{color: '#666'}} to="/">Home</Link></li>
-                  <li><Link style={{color: '#fff'}} to="/about">About</Link></li>
-                  <li><Link style={{color: '#fff'}} to="/projects">Projects</Link></li>
-                  <li><Link style={{color: '#fff'}} to="/contact">Contact</Link></li>
-              </ul>
-          </Menu>
-        );
-      } else {
-        return (
-          <div style={{ display: "inlineBlock", padding: "10px", outline: "none", position: "fixed", zIndex: 10, left: "50%", transform: "translateX(-50%)" }}>
-            <Link style={{ color: '#000', marginRight: "20px" }} to="/">Home</Link>
-            <Link style={{ color: '#666', marginRight: "20px"}} to="/about">About</Link>
-            <Link style={{ color: '#666', marginRight: "20px"}} to="/projects">Projects</Link>
-            <Link style={{ color: '#666', marginRight: "0px"}} to="/contact">Contact</Link>
-          </div>
-        );
-      }
-    }
+    //           <ul style={{ outline: "none", listStyle: "none" }}>
+    //               <li><Link style={{color: '#666'}} to="/">Home</Link></li>
+    //               <li><Link style={{color: '#fff'}} to="/about">About</Link></li>
+    //               <li><Link style={{color: '#fff'}} to="/projects">Projects</Link></li>
+    //               <li><Link style={{color: '#fff'}} to="/contact">Contact</Link></li>
+    //           </ul>
+    //       </Menu>
+    //     );
+    //   } else {
+    //     return (
+    //       <div style={{ display: "inlineBlock", padding: "10px", outline: "none", position: "fixed", zIndex: 10, left: "50%", transform: "translateX(-50%)" }}>
+    //         <Link style={{ color: '#000', marginRight: "20px" }} to="/">Home</Link>
+    //         <Link style={{ color: '#666', marginRight: "20px"}} to="/about">About</Link>
+    //         <Link style={{ color: '#666', marginRight: "20px"}} to="/projects">Projects</Link>
+    //         <Link style={{ color: '#666', marginRight: "0px"}} to="/contact">Contact</Link>
+    //       </div>
+    //     );
+    //   }
+    // }
 
     render() {
         // console.log(this.state.width)
         
 
         return (
-            <div id="outer-container" style={{ overflow: "hidden" }}>
-                { this.renderMenu() }
+          // <StickyContainer>
+          //   <Sticky>
+          //     <div style={{ height: "100vh", backgroundColor: "666" }}>
+          //       <p>Landing</p>
+          //     </div>
+          //   </Sticky>
+
+          //   <Sticky>
+          //     <div style={{ height: "100vh", backgroundColor: "blue" }}>
+          //       <p>About</p>
+          //     </div>
+          //   </Sticky>
+          // </StickyContainer>
+          // <div>
+          
+          <div>
+          
+            <div style={{ height: "100vh", backgroundColor: "#333", position: "relative" }}>
+              <span style={{
+                  position: "absolute",
+                  textAlign: "center",
+                  width: "60%",
+                  height: "auto",
+                  top: 0,
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  margin: "auto",
+                  opacity: 1
+              }}>
+                <Tween
+                    wrapper={
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                        width="100%" height="100%"
+                        viewBox="0 0 800 600"/>
+                    }
+                    from={{
+                    svgDraw: 0
+                    }}
+                    to={{
+                    svgDraw: 1
+                    }}
+                    duration={7}
+                >
+                    {/* rp */}
+                    <path fill="none" stroke="#eee" /*"#be1a1a"*/ strokeWidth="3" d="M 250 400 L 300 300 A 100 50 0 1 1 300 150 L 350 450 L 450 450 L 500 150 A 100 50 0 1 1 500 300" />
+                </Tween>
+              </span>
+              <span style = {{ width:"100%", position: "absolute" }}>
+                <Particles
+                  params={{
+                      // fps_limit: 28,
+                      particles: {
+                          color: {
+                              value: "#ccc"
+                          },
+                          number: {
+                              // value: this.state.width/40 + this.state.height/60,
+                              value: 20,
+                              density: {
+                                  enable: false,
+                                  // value_area: 10
+                              }
+                          },
+                          size: {
+                              value: 3
+                          },
+                          move: {
+                              enable: true,
+                              direction: "right",
+                              random: true,
+                              straight: true,
+                              speed: 2,
+                              out_mode: "out"
+                          },
+                          line_linked: {
+                              enable: true,
+                              distance: 160,
+                              opacity: 1,
+                              color: "#ddd"
+                              // color: "#be1a1a" //red
+                              // color: "#09aaed" //blue
+                          }
+                      },
+                      interactivity: {
+                          events: {
+                              onhover: {
+                                  enable: true,
+                                  mode: "bubble"
+                              },
+                              onclick: {
+                                  enable: true,
+                                  mode: "repulse"
+                              }
+                          },
+                          modes: {
+                              bubble: {
+                                  size: 5,
+                                  distance: 100,
+                                  opacity: 0.8,
+                                  duration: 5
+                              },
+                              repulse: {
+                                  distance: 100,
+                                  duration: 0.5
+                              },
+                              grab: {
+                                  line_linked: {
+                                      opacity: 0.8
+                                  },
+                                  distance: 300
+                              }
+                          }
+                      },
+                      retina_detect: true
+                    }}
+                    height={"100vh"}
+                  />
+              </span>
+            </div>
+
+            {/* ABOUT */}
+            <div style={{ height: "100vh", backgroundColor: "#333", position: "relative" }}>
+                {/* <img
+                  src={require("../../assets/images/paper_white.jpg")}
+                  alt={""}
+                  style={{
+                      position: "relative",
+                      textAlign: "center",
+                      height: "100vh",
+                      width: "100vw",
+                      // height: "100vh",
+                      // width: "100vw",
+                      top: 0,
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      margin: "auto",
+                      // overflow: "auto",
+                      // objectFit: "fill",
+                      // display: "inline-block",
+                      opacity: 1
+                  }}
+                /> */}
+                    <h1 style={{ color: "#333" }}>About</h1>
+                    <br></br>
+                    <section 
+                        style={{
+                            // width:"100%",
+                            position: "relative",
+                            // color: "#000",\
+                            // fontFamily: "Museo",
+                            textAlign: "center",
+                            // textAlignVertical: "center",
+                            // display: "block",
+                            // maxHeight: "80%",
+                            maxWidth: 600,
+                            width: "auto/9",
+                            height: "auto",
+                            top: 0,
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            margin: "auto",
+                            // display: "block",
+                            // opacity: 1
+                            backgroundColor: "rgba(200, 200, 200, 0.5)",
+                            borderStyle: "groove",
+                            borderWidth: "1px",
+                            borderColor: "#999",
+                            borderRadius: "8px",
+                            padding: "10px",
+                            color: "#fff"
+                            }}
+                    >
+                        <p>I am a dedicated and collaborative Full-Stack Software Engineer with successful experience architecting, building and deploying projects on time and according to specifications. I enjoy the challenge of solving problems while collaborating with and learning from team members. Independently, I exercise continuous integration and automated testing.</p>
+                    </section>
+                </div>
+
+                {/* PROJECTS */}
                 <div
                     id="page-wrap"
                     style={{
-                        height:"100vh",
                         position: "relative",
-                        backgroundColor: "#fff"
-                        // backgroundImage: "radial-gradient(circle, #bebebe, #a4a4a4, #8b8b8b, #737373, #5c5c5c, #4d4d4d, #3f3f3f, #313131, #272727, #1d1d1d, #141414, #060606)"
+                        overflow: "hidden",
+                        width: "auto/9",
+                        height: "auto",
+                        margin: "auto",
+                        backgroundColor: "white"
+                        // backgroundImage: "radial-gradient(circle, #fcfcfc, #f3f1f4, #ede5ea, #e8d9dc, #e2cdcd)"
                     }}
                 >
-                    {/* <span style={{
-                            position: "absolute",
+                    <img
+                        src={require("../../assets/images/arch4.jpg")}
+                        alt={""}
+                        style={{
+                            position: "fixed",
+                            // overflow: "hidden",
                             textAlign: "center",
-                            width: "auto",
-                            height: "auto",
+                            // height: "calc(100vmax + 100vmax)",
+                            height: "100vh",
+                            width: "100vw",
                             top: 0,
                             bottom: 0,
                             left: 0,
                             right: 0,
                             margin: "auto",
-                            opacity: 1
-                        }}>
-                        <Tween
-                            wrapper={
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                width="100%" height="100%"
-                                viewBox="0 0 820 620"/>
-                            }
-                            from={{
-                            svgDraw: 1, opacity: 0.1
-                            }}
-                            to={{
-                            svgDraw: 0, opacity: 0.3
-                            }}
-                            duration={7}
-                        >
-                            <path fill="none" stroke="#000" strokeWidth="300%" d="M 50 300 A 100 50 0 1 1 750 300 A 100 50 0 1 1 50 300" />
-                        </Tween>
-                    </span> */}
-                    <span style={{
-                            position: "absolute",
-                            textAlign: "center",
-                            // maxHeight: "40%",
-                            maxWidth: "1000px",
-                            width: "60%",
-                            height: "auto",
-                            top: 0,
-                            bottom: 0,
-                            left: 0,
-                            right: 0,
-                            margin: "auto",
-                            opacity: 1
-                        }}>
-                        <Tween
-                            wrapper={
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                width="100%" height="100%"
-                                viewBox="0 0 800 600"/>
-                            }
-                            from={{
-                            svgDraw: 0, opacity: 0.5, x: '200px', y: '200px', scale: '0.1'
-                            }}
-                            to={{
-                            svgDraw: 1, opacity: 1, x: '0px', y: '0px', scale: '1'
-                            }}
-                            duration={7}
-                        >
-                            {/* not in use */}
-                            {/* <path fill="#111111" stroke="#333333" stroke-width="250%" d="M41.40 0L41.40-49.61L34.56-49.61L34.56-28.87L14.40-28.87L14.40-49.61L7.56-49.61L7.56 0L14.40 0L14.40-23.26L34.56-23.26L34.56 0ZM82.58-44.14L83.38-49.61L56.52-49.61L56.52 0L83.95 0L83.95-5.47L63.36-5.47L63.36-22.46L80.06-22.46L80.06-27.94L63.36-27.94L63.36-44.14ZM121.82 0L122.62-5.98L102.24-5.98L102.24-49.61L95.40-49.61L95.40 0ZM158.04 0L158.83-5.98L138.46-5.98L138.46-49.61L131.62-49.61L131.62 0ZM203.76-24.77C203.76-41.62 195.34-50.47 183.17-50.47C171.00-50.47 162.58-41.26 162.58-24.70C162.58-7.85 171.00 0.86 183.17 0.86C195.34 0.86 203.76-8.21 203.76-24.77ZM196.49-24.77C196.49-10.22 191.23-4.75 183.17-4.75C175.32-4.75 169.85-10.15 169.85-24.70C169.85-39.24 175.10-44.86 183.17-44.86C191.23-44.86 196.49-39.31 196.49-24.77Z"/> */}
-                            {/* <path fill="000000" stroke="#ffffff" stroke-width="1%" d="M 50 300 A 100 50 0 1 1 750 300 A 100 50 0 1 1 50 300" /> */}
-
-                            {/* heart */}
-                            {/* <path fill="#000000" stroke="#111" strokeWidth="1%" d="M 100 300 A 50 50 0 1 1 400 100 A 50 50 0 1 1 700 300 L 400 600 L 100 300" /> */}
-                            {/* <path fill="#666" stroke="#999" strokeWidth="1" d="M 100 300 A 50 50 0 1 1 400 100 A 50 50 0 1 1 700 300 L 400 600 L 100 300" /> */}
-
-                            {/* rp */}
-                            <path fill="none" stroke="#000" /*"#be1a1a"*/ strokeWidth="3" d="M 250 400 L 300 300 A 100 50 0 1 1 300 150 L 350 450 L 450 450 L 500 150 A 100 50 0 1 1 500 300" />
-                        </Tween>
-                    </span>
-
-                    {/* uncomment for the sphere */}
-                    {/* <Tween
-                        from={{ x: '0px', rotation: 0, scale: 0.1, opacity: 0 }}
-                        to={{ x: '0px', rotation: 0, scale: 1, opacity: 1 }}
-                        // stagger={1}
-                        duration={7}
-                        repeat={0}
-                        yoyo={true}
-                        position="+=0"
-                        ease="Back.easeOut"
+                            // objectFit: "fill",
+                            display: "inline-block",
+                            opacity: 0.2
+                        }}
+                    />
+                    <div style={{
+                        // width:"100%",
+                        position: "relative",
+                        color: "#000",
+                        textAlign: "center",
+                        // fontFamily: "monospace",
+                        // textAlignVertical: "center",
+                        // display: "block",
+                        // maxHeight: "80%",
+                        width: "auto/9",
+                        height: "auto",
+                        top: 0,
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        margin: "auto",
+                        // display: "block",
+                        opacity: 1
+                        }}
                     >
                         <img
                             // width={"42%"}
-                            src={require("../../assets/images/sphere1.png")}
+                            src={require("../../assets/images/favicon3.svg")}
                             alt={""}
                             style={{
-                                position: "absolute",
+                                position: "relative",
                                 textAlign: "center",
-                                maxHeight: "90%",
-                                maxWidth: "100%",
-                                width: "80%",
+                                // maxHeight: "100%",
+                                maxWidth: "800px",
+                                width: "100%",
+                                height: "auto",
+                                top: 0,
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                margin: "auto",
+                                // display: "block",
+                                // opacity: 1
+                            }}
+                        />
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <h1>Projects</h1>
+                        <br></br>
+                        <div style={{
+                                position: "relative",
+                                textAlign: "center",
+                                overflow: "hidden",
+                                width: "95%",
+                                top: 0,
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                margin: "auto",
+                                borderStyle: "solid",
+                                borderWidth: "1px",
+                                borderColor: "#999",
+                                borderRadius: "8px",
+                                padding: "10px"
+                            }}
+                        >
+                            <section 
+                                style={{
+                                    // width:"100%",
+                                    position: "relative",
+                                    color: "#000",
+                                    textAlign: "center",
+                                    // textAlignVertical: "center",
+                                    // display: "block",
+                                    // maxHeight: "80%",
+                                    maxWidth: 600,
+                                    width: "auto/9",
+                                    height: "auto",
+                                    top: 0,
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    margin: "auto",
+                                    borderStyle: "solid",
+                                    borderWidth: "1px",
+                                    borderColor: "#999",
+                                    borderRadius: "8px",
+                                    padding: "10px",
+                                    backgroundColor: "rgba(200, 200, 200, 0.1)",
+                                    // backgroundColor: "rgba(181, 183, 183, 0.1)"
+                                }}
+                            >
+                                <h3>Title:</h3>
+                                <p>Code Control 2019 3D Beta: A Game for Teaching Introductory Programming</p>
+                                <h3>Authors:</h3>
+                                <p>Inspired by Kwan Holloway's and Mike Williams' original Code Control project</p>
+                                <p>(In alphabetical order): Devorah Kletenik, Ruslan Pantaev (Lead Developer) and Deborah Sturm</p>
+                                {/* <a
+                                    href='https://github.com/Ruslan-Pantaev/CodeControl_clean'
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ color: "#666" }}
+                                >
+                                    <h6 style={{
+                                        color: "#666",
+                                        width: "200px",
+                                        textAlign: "center",
+                                        borderStyle: "outset",
+                                        borderWidth: "5px",
+                                        borderColor: "#999",
+                                        borderRadius: "8px",
+                                        padding: "10px",
+                                        top: 0,
+                                        bottom: 0,
+                                        left: 0,
+                                        right: 0,
+                                        margin: "auto"
+                                    }}>Git Repo Link</h6>
+                                </a> */}
+                                <br></br>
+                                <h3>Compatibility:</h3>
+                                <p>Currently not supported on mobile platforms</p>
+                                <p>Requires Latest Stable Release of Google Chrome or Firefox and webGL 2.0 compliant GPUs</p>
+                                <br></br>
+                                <br></br>
+                                <a href="/codecontrol2019" target="_blank" rel="noopener noreferrer">
+                                    <h3 style={{
+                                        color: "#000",
+                                        width: "200px",
+                                        textAlign: "center",
+                                        borderStyle: "outset",
+                                        borderWidth: "5px",
+                                        borderColor: "#999",
+                                        borderRadius: "8px",
+                                        padding: "10px",
+                                        top: 0,
+                                        bottom: 0,
+                                        left: 0,
+                                        right: 0,
+                                        margin: "auto"
+                                    }}>
+                                        Launch Code Control 2019 3D
+                                    </h3>
+                                </a>
+                                <br></br>
+                                <br></br>
+                            </section>
+                        </div>
+                        {/* <br></br>
+                        <br></br>
+                        <div style={{
+                                position: "relative",
+                                textAlign: "center",
+                                overflow: "hidden",
+                                width: "95%",
+                                top: 0,
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                margin: "auto",
+                                borderStyle: "solid",
+                                borderWidth: "1px",
+                                borderColor: "#999",
+                                borderRadius: "8px",
+                                padding: "10px"
+                            }}
+                        > */}
+                            {/* <section 
+                                style={{
+                                    // width:"100%",
+                                    position: "relative",
+                                    color: "#000",
+                                    textAlign: "center",
+                                    // textAlignVertical: "center",
+                                    // display: "block",
+                                    // maxHeight: "80%",
+                                    maxWidth: 600,
+                                    width: "auto/9",
+                                    height: "auto",
+                                    top: 0,
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    margin: "auto",
+                                    borderStyle: "solid",
+                                    borderWidth: "1px",
+                                    borderColor: "#999",
+                                    borderRadius: "8px",
+                                    padding: "10px",
+                                    backgroundColor: "rgba(181, 183, 183, 0.1)"
+                                }}
+                            >
+                                <h3>Title:</h3>
+                                <p>Code Control 2D: A Game for Teaching Introductory Programming</p>
+                                <h3>Authors:</h3>
+                                <p>(In alphabetical order): Kwan Holloway, Devorah Kletenik, Ruslan Pantaev, Deborah Sturm, and Mike Williams</p>
+                                <h3>Abstract:</h3>
+                                <p>Code Control is an educational serious game developed to help students 
+                                    taking the Introductory Programming courses at CUNY colleges learn to program. 
+                                    The game's storyline is about a spaceship that has lost control of its orbit and 
+                                    is on a collision course with the sun. Ten scientists are trapped on the spaceship 
+                                    and need to be found and escorted to escape pods. In order to do so, the player must 
+                                    complete short programming challenges; for example, opening doors using conditional 
+                                    statements, figuring out a path to take by specifying array elements, trying a number
+                                    of keys using nested loops. The game has several levels corresponding to the basic 
+                                    constructs taught and a cumulative final challenge. A debriefing stage at each level 
+                                    teaches the player about the information that is covered on that level and the player 
+                                    is always able to access the ``notes'' if they need a reminder.</p>
+                                <p>Code Control was designed to be more like a "real game," and includes an extensive storyline, 
+                                    sound effects, and rich graphics. The design allows for non-linear exploration of the game 
+                                    world and incorporates power-ups such as double-jumps and speed-ups. Secret levels are used 
+                                    to fill in parts of the storyline and give information about the antagonist and his motive.</p>
+                                <p>Utilizing Code Control in conjunction with traditional instruction gives potentially struggling 
+                                    students visual context for some functional topics covered in introductory CS coursework. 
+                                    We also wanted to make this experience as engaging and fun as possible to further incentivize 
+                                    player retention.</p>
+                                <a
+                                    href='https://github.com/Ruslan-Pantaev/CodeControl_clean'
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ color: "#666" }}
+                                >
+                                    <h6 style={{
+                                        color: "#666",
+                                        width: "200px",
+                                        textAlign: "center",
+                                        borderStyle: "outset",
+                                        borderWidth: "5px",
+                                        borderColor: "#999",
+                                        borderRadius: "8px",
+                                        padding: "10px",
+                                        top: 0,
+                                        bottom: 0,
+                                        left: 0,
+                                        right: 0,
+                                        margin: "auto"
+                                    }}>Git Repo Link</h6>
+                                </a>
+                                <br></br>
+                                <h3>Compatibility:</h3>
+                                <p>Currently not supported on mobile platforms</p>
+                                <p>Latest Stable Releases of FireFox and Chrome are recommended</p>
+                                <br></br>
+                                <br></br>
+                                <a href="/codecontrol" target="_blank" rel="noopener noreferrer">
+                                    <h3 style={{
+                                        color: "#000",
+                                        width: "200px",
+                                        textAlign: "center",
+                                        borderStyle: "outset",
+                                        borderWidth: "5px",
+                                        borderColor: "#999",
+                                        borderRadius: "8px",
+                                        padding: "10px",
+                                        top: 0,
+                                        bottom: 0,
+                                        left: 0,
+                                        right: 0,
+                                        margin: "auto"
+                                    }}>
+                                        Launch Code Control 2D
+                                    </h3>
+                                </a>
+                                <br></br>
+                                <br></br>
+                            </section> */}
+                            {/* <br></br>
+                            <img
+                                src={require("../../assets/images/codecontrol_browser_compatibility.png")}
+                                alt={""}
+                                style={{
+                                    position: "relative",
+                                    textAlign: "center",
+                                    // maxHeight: "600px",
+                                    // maxWidth: "960px",
+                                    width: "70%",
+                                    height: "auto",
+                                    top: 0,
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    margin: "auto"
+                                }}
+                            />
+                            <br></br> */}
+                        {/* </div> */}
+                        <br></br>
+                        <br></br>
+                        <div style={{
+                                position: "relative",
+                                textAlign: "center",
+                                overflow: "hidden",
+                                width: "95%",
+                                top: 0,
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                margin: "auto",
+                                borderStyle: "solid",
+                                borderWidth: "1px",
+                                borderColor: "#999",
+                                borderRadius: "8px",
+                                padding: "10px"
+                            }}
+                        >
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <a
+                                href='https://github.com/Ruslan-Pantaev/3d_regl_vis_env'
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ color: "#666" }}
+                            >
+                                <h6 style={{
+                                    color: "#666",
+                                    width: "200px",
+                                    // height: "auto",
+                                    textAlign: "center",
+                                    borderStyle: "outset",
+                                    borderWidth: "5px",
+                                    borderColor: "#999",
+                                    borderRadius: "8px",
+                                    padding: "10px",
+                                    top: 0,
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    margin: "auto"
+                                }}>Git Repo Link</h6>
+                            </a>
+                            <br></br>
+                            <br></br>
+                            <Iframe url="https://ruslan-pantaev.github.io/3d_regl_vis_env/"
+                                width="70%"
+                                height="750px"
+                                // id="myId"
+                                // className="myClassname"
+                                display="initial"
+                                position="relative"
+                                allowFullScreen/>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                        </div>
+                        {/* <br></br>
+                        <br></br>
+                        <div style={{
+                                position: "relative",
+                                textAlign: "center",
+                                overflow: "hidden",
+                                width: "95%",
+                                top: 0,
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                margin: "auto",
+                                borderStyle: "solid",
+                                borderWidth: "1px",
+                                borderColor: "#999",
+                                borderRadius: "8px",
+                                padding: "10px"
+                            }}
+                        >
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <a
+                                href='https://github.com/Ruslan-Pantaev/RPmatrix'
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ color: "#666" }}
+                            >
+                                <h6 style={{
+                                    color: "#666",
+                                    width: "200px",
+                                    textAlign: "center",
+                                    borderStyle: "outset",
+                                    borderWidth: "5px",
+                                    borderColor: "#999",
+                                    borderRadius: "8px",
+                                    padding: "10px",
+                                    top: 0,
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    margin: "auto"
+                                }}>Git Repo Link</h6>
+                            </a>
+                            <br></br>
+                            <br></br>
+                            <ReactPlayer
+                                url="https://youtu.be/FHL3sajrMYc"
+                                width="70%"
+                                height="35vw"
+                                controls
+                                style={{
+                                    // position: "relative",
+                                    textAlign: "center",
+                                    top: 0,
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    margin: "auto"
+                                }}/>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                        </div> */}
+                        {/* <br></br>
+                        <br></br>
+                        <div style={{
+                                position: "relative",
+                                textAlign: "center",
+                                overflow: "hidden",
+                                width: "95%",
+                                top: 0,
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                margin: "auto",
+                                borderStyle: "solid",
+                                borderWidth: "1px",
+                                borderColor: "#999",
+                                borderRadius: "8px",
+                                padding: "10px"
+                            }}
+                        >
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <ReactPlayer
+                                url="https://youtube.com/watch?v=7wmJ4Xb8Zrc"
+                                width="70%"
+                                height="35vw"
+                                controls
+                                style={{
+                                    // position: "relative",
+                                    textAlign: "center",
+                                    top: 0,
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    margin: "auto"
+                                }}/>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                        </div> */}
+                        <br></br>
+                        <br></br>
+                        <div style={{
+                                position: "relative",
+                                textAlign: "center",
+                                overflow: "hidden",
+                                width: "95%",
+                                top: 0,
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                margin: "auto",
+                                borderStyle: "solid",
+                                borderWidth: "1px",
+                                borderColor: "#999",
+                                borderRadius: "8px",
+                                padding: "10px"
+                            }}
+                        >
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <div style={{
+                                    overflow: "hidden",
+                                    maxWidth: "900px",
+                                    minWidth: "200px",
+                                    width: "70vw",
+                                    height: "auto",
+                                    textAlign: "center",
+                                    top: 0,
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    margin: "auto"
+                                }}
+                            >
+                                <Gist id='b02aeafbd8bfebf8d0be41584e6f5da0' />
+                            </div>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                        </div>
+                        <br></br>
+                        <br></br>
+                        <div style={{
+                                position: "relative",
+                                textAlign: "center",
+                                overflow: "hidden",
+                                width: "95%",
+                                top: 0,
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                margin: "auto",
+                                borderStyle: "solid",
+                                borderWidth: "1px",
+                                borderColor: "#999",
+                                borderRadius: "8px",
+                                padding: "10px"
+                            }}
+                        >
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <section 
+                                style={{
+                                    // width:"100%",
+                                    position: "relative",
+                                    color: "#000",
+                                    textAlign: "center",
+                                    overflow: "hidden",
+                                    // textAlignVertical: "center",
+                                    // display: "block",
+                                    // maxHeight: "80%",
+                                    maxWidth: 600,
+                                    width: "auto/9",
+                                    height: "auto",
+                                    top: 0,
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    margin: "auto",
+                                    borderStyle: "solid",
+                                    borderWidth: "1px",
+                                    borderColor: "#999",
+                                    borderRadius: "8px",
+                                    padding: "10px",
+                                    backgroundColor: "rgba(200, 200, 200, 0.1)",
+                                    // backgroundColor: "rgba(181, 183, 183, 0.1)"
+                                    }}
+                            >
+                                <h3>Title:</h3>
+                                <p>arpiseaQ - The Walking City</p>
+                                <h3>Authors:</h3>
+                                <p>3d Visualization forked from Taylor Baldwin (git user rolyatmax)'s audiofabric repo.</p>
+                                <p>All music is written, mixed and engineered by Ruslan Pantaev under the arpiseaQ alias. 
+                                    You can find "The Walking City" album on Spotify, Tidal and iTunes.</p>
+                                <br></br>
+                                <a
+                                    href="https://ruslan-pantaev.github.io/audiofabric-walkingcity/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ color: "#666" }}
+                                >
+                                    <h6 style={{
+                                        color: "#000",
+                                        width: "200px",
+                                        textAlign: "center",
+                                        borderStyle: "outset",
+                                        borderWidth: "5px",
+                                        borderColor: "#999",
+                                        borderRadius: "8px",
+                                        padding: "10px",
+                                        top: 0,
+                                        bottom: 0,
+                                        left: 0,
+                                        right: 0,
+                                        margin: "auto"
+                                    }}>See it in action here</h6>
+                                </a>
+                                <br></br>
+                                <br></br>
+                                <h3>Compatibility:</h3>
+                                <p>Latest Stable Releases of Safari and Chrome are recommended</p>
+                                <p>Currently not supported on mobile platforms</p>
+                            </section>
+                            {/* <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <Iframe url="https://ruslan-pantaev.github.io/audiofabric-walkingcity/"
+                                width="70%"
+                                height="1165px"
+                                // id="myId"
+                                // className="myClassname"
+                                display="initial"
+                                position="relative"
+                                allowFullScreen/>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br> */}
+                        </div>
+                    </div>
+                  </div>
+
+
+                {/* CONTACT */}
+                <div
+                    id="page-wrap"
+                    style={{
+                        position: "relative",
+                        overflow: "hidden",
+                        width: "auto/9",
+                        height: "auto",
+                        margin: "auto",
+                        // backgroundImage: "radial-gradient(circle, #666666, #4c4c4c, #343434, #1d1d1d, #000000)"
+                        // backgroundColor: "RGBA(0,0,0,0.5)"
+                    }}
+                >
+                    <div style={{
+                        // width:"100%",
+                        position: "relative",
+                        color: "#fff",
+                        textAlign: "center",
+                        // fontFamily: "monospace",
+                        // textAlignVertical: "center",
+                        // display: "block",
+                        // maxHeight: "80%",
+                        width: "auto/9",
+                        height: "auto",
+                        top: 0,
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        margin: "auto",
+                        // display: "block",
+                        opacity: 1
+                        }}
+                    >
+                        <img
+                            // width={"42%"}
+                            src={require("../../assets/images/favicon3_white.png")}
+                            alt={""}
+                            style={{
+                                position: "relative",
+                                textAlign: "center",
+                                // maxHeight: "100%",
+                                maxWidth: "800px",
+                                width: "100%",
+                                height: "auto",
+                                top: 0,
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                margin: "auto",
+                                // display: "block",
+                                // opacity: 1
+                            }}
+                        />
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <h1>Contact</h1>
+                        <br></br>
+                        <br></br>
+                        <Form
+                            onSubmit={this.handleSubmit}
+                            style={{
+                                // width:"100%",
+                                position: "relative",
+                                color: "#fff",
+                                textAlign: "center",
+                                maxWidth: "600px",
+                                width: "auto/9",
+                                height: "auto",
+                                top: 0,
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                margin: "auto",
+                                // display: "block"
+                                }}>
+                            <FormGroup>
+                                <Label for="name">Name:</Label>
+                                <Input
+                                    type="text"
+                                    name="name"
+                                    onChange={this.handleChange} />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label for="email">Email:</Label>
+                                <Input
+                                    type="email"
+                                    name="email"
+                                    onChange={this.handleChange} />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label for="message">Message:</Label>
+                                <Input
+                                    type="textarea"
+                                    name="message"
+                                    onChange={this.handleChange} />
+                            </FormGroup>
+                            <Button color="info">Submit</Button>
+                        </Form>
+                        <br></br>
+                        <br></br>
+                        <Alert
+                            color="success"
+                            isOpen={this.state.alert}
+                            toggle={this.onDismiss}
+                            fade={true}
+                            style={{
+                                position: "relative",
+                                textAlign: "center",
+                                maxWidth: "600px",
+                                width: "auto/9",
                                 height: "auto",
                                 top: 0,
                                 bottom: 0,
@@ -179,223 +1047,37 @@ class Landing extends Component {
                                 margin: "auto",
                                 opacity: 1
                             }}
-                        />
-                    </Tween> */}
-                    <Tween
-                        from={{ x: '0px', rotation: -5, scale: 0.1, opacity: 0 }}
-                        to={{ x: '0px', rotation: 0, scale: 1, opacity: 1 }}
-                        // stagger={1}
-                        duration={7}
-                        repeat={0}
-                        yoyo={true}
-                        position="+=0"
-                        ease="Back.easeOut"
-                    >
-                    <span style = {{width:"100%", position: "absolute"}}>
-                        <Particles
-                            params={{
-                                // fps_limit: 28,
-                                particles: {
-                                    color: {
-                                        value: "#111"
-                                    },
-                                    number: {
-                                        value: this.state.width/40 + this.state.height/60,
-                                        density: {
-                                            enable: false,
-                                            // value_area: 10
-                                        }
-                                    },
-                                    size: {
-                                        value: 1
-                                    },
-                                    move: {
-                                        enable: true,
-                                        direction: "right",
-                                        random: true,
-                                        straight: true,
-                                        speed: 2,
-                                        out_mode: "out"
-                                    },
-                                    line_linked: {
-                                        enable: true,
-                                        distance: 120,
-                                        opacity: 1,
-                                        color: "#999"
-                                        // color: "#be1a1a" //red
-                                        // color: "#09aaed" //blue
-                                    }
-                                },
-                                interactivity: {
-                                    events: {
-                                        onhover: {
-                                            enable: true,
-                                            mode: "bubble"
-                                        },
-                                        onclick: {
-                                            enable: true,
-                                            mode: "repulse"
-                                        }
-                                    },
-                                    modes: {
-                                        bubble: {
-                                            size: 5,
-                                            distance: 100,
-                                            opacity: 0.8,
-                                            duration: 5
-                                        },
-                                        repulse: {
-                                            distance: 100,
-                                            duration: 0.5
-                                        },
-                                        grab: {
-                                            line_linked: {
-                                                opacity: 0.8
-                                            },
-                                            distance: 300
-                                        }
-                                    }
-                                },
-                                retina_detect: true
-                            }}
-                            height={"100vh"}
-                        />
-                    </span>
-                    </Tween>
-                    {/* <Tween
-                        from={{ y: '200px', rotation: 0, scale: 0.01, opacity: 0 }}
-                        to={{ y: '0px', rotation: 0, scale: 1, opacity: 1 }}
-                        // stagger={1}
-                        duration={8}
-                        repeat={0}
-                        yoyo={true}
-                        position="+=0"
-                        ease="Back.easeOut"
-                    >
-                    <span style = {{width:"100%", position: "absolute"}}>
-                        <Particles
-                            params={{
-                                // fps_limit: 28,
-                                particles: {
-                                    color: {
-                                        value: "#111"
-                                    },
-                                    number: {
-                                        value: this.state.width/15,
-                                        density: {
-                                            enable: false,
-                                            // value_area: 10
-                                        }
-                                    },
-                                    size: {
-                                        value: 2
-                                    },
-                                    shape: {
-                                        type: "image",
-                                        image: {
-                                            src: "/assets/images/3.svg",
-                                            width: 50,
-                                            height: 50
-                                        }
-                                    },
-                                    line_linked: {
-                                        enable: true,
-                                        distance: 80,
-                                        opacity: 0.3,
-                                        color: "#ddd"
-                                        // color: "#09aaed" //blue
-                                        // color: "#be1a1a" //red
-                                    },
-                                    move: {
-                                        speed: 2
-                                    },
-                                    opacity: {
-                                        anim: {
-                                            enable: true,
-                                            opacity_min: 0.05,
-                                            speed: 2,
-                                            sync: false
-                                        },
-                                        value: 0.6
-                                    }
-                                },
-                                polygon: {
-                                    enable: true,
-                                    scale: 1,
-                                    type: "inline", // inside
-                                    move: {
-                                        radius: 100
-                                    },
-                                    url: "/assets/images/3.svg",
-                                    inline: {
-                                        arrangement: "random-point"//"equidistant"
-                                    },
-                                    draw: {
-                                        enable: false,
-                                        stroke: {
-                                            color: "rgba(0,0,0,0.3)",
-                                            width: 1
-                                        }
-                                    }
-                                },
-                                retina_detect: true,
-                                interactivity: {
-                                    events: {
-                                        onhover: {
-                                            enable: true,
-                                            mode: "grab"
-                                        },
-                                        onclick: {
-                                            enable: false,
-                                            mode: "push"
-                                        }
-                                    },
-                                    modes: {
-                                        bubble: {
-                                            size: 40,
-                                            distance: 40,
-                                            opacity: 0,
-                                            // duration: 2
-                                        },
-                                        repulse: {
-                                            distance: 40
-                                        },
-                                        grab: {
-                                            line_linked: {
-                                                opacity: 0.8
-                                            },
-                                            distance: 300
-                                        }
-                                    }
-                                }
-                            }}
-                            height={"100vh"}
-                        />
-                    </span>
-                    </Tween> */}
-                    <Tween
-                        from={{ x: '0px', rotation: 0, scale: 0.01, opacity: 0 }}
-                        to={{ x: '0px', rotation: 0, scale: 1, opacity: 1 }}
-                        // stagger={1}
-                        duration={7}
-                        repeat={0}
-                        yoyo={false}
-                        position="+=0"
-                        ease="Back.easeOut"
-                    >
-                        <p
-                            style={{
-                                textAlign: "center",
-                                color: "#999",
-                                // fontFamily: "monospace",
-                                position: "absolute",
-                                bottom: 10,
-                                width: "100%"
-                                }}
                         >
-                            Ruslan Pantaev &copy; 2019
-                        </p>
-                    </Tween>
+                            Email Sent
+                        </Alert>
+                    </div>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <footer className="footerClass"
+                        style={{
+                            textAlign: "center",
+                            top: 0,
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            margin: "auto"
+                        }}>
+                        <div id="footerLinks">
+                            <a href="https://github.com/Ruslan-Pantaev" target="_blank" rel="noopener noreferrer"> <img alt="gitHub" src={require("../../assets/socialMediaIcons/Github.png")} /></a>
+                            <a href="https://www.linkedin.com/in/ruslan-pantaev-482579b8" target="_blank"rel="noopener noreferrer"> <img alt="linkedin" src={require("../../assets/socialMediaIcons/Linkedin.png")} /></a> 
+                            <a href="https://www.instagram.com/ruslan_pantaev/" target="_blank"rel="noopener noreferrer"> <img alt="instagram" src={require("../../assets/socialMediaIcons/Instagram.png")} /></a> 
+                            <a href="https://baltosequoia.deviantart.com" target="_blank" rel="noopener noreferrer"> <img alt="deviantart" src={require("../../assets/socialMediaIcons/Deviantart.png")} /></a> 
+                            <a href="https://soundcloud.com/ruslanpantaev" target="_blank" rel="noopener noreferrer"> <img alt="soundcloud" src={require("../../assets/socialMediaIcons/Soundcloud.png")} /></a>
+                        </div>
+                        <br></br>
+                        <p id="footerSig" style={{color: "#fff"}}>Ruslan Pantaev &copy; 2019</p>
+                    </footer>
+                    <br></br>
+                    <br></br>
                 </div>
             </div>
         );
