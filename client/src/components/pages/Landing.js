@@ -130,7 +130,29 @@ class Landing extends Component {
           
           <div>
           
-            <div style={{ height: "100vh", backgroundColor: "#333", position: "relative" }}>
+            <div style={{ height: "100vh", backgroundColor: "rgba(200, 200, 200, 0)", position: "relative" }}>
+            <img
+                src={require("../../assets/images/arch4.jpg")}
+                // src={require("../../assets/images/arch4.jpg")}
+                alt={""}
+                style={{
+                    position: "fixed",
+                    overflow: "hidden",
+                    textAlign: "center",
+                    // height: "calc(100vmax + 100vmax)",
+                    height: "100vh",
+                    width: "100vw",
+                    top: 0,
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    margin: "auto",
+                    // objectFit: "fill",
+                    // display: "inline-block",
+                    opacity: 1,
+                    // zIndex: -1
+                }}
+            />
               <span style={{
                   position: "absolute",
                   textAlign: "center",
@@ -192,7 +214,7 @@ class Landing extends Component {
                               enable: true,
                               distance: 160,
                               opacity: 1,
-                              color: "#ddd"
+                              color: "#fff"
                               // color: "#be1a1a" //red
                               // color: "#09aaed" //blue
                           }
@@ -235,29 +257,33 @@ class Landing extends Component {
             </div>
 
             {/* ABOUT */}
-            <div style={{ height: "100vh", backgroundColor: "#333", position: "relative" }}>
-                {/* <img
-                  src={require("../../assets/images/paper_white.jpg")}
+            <div style={{ height: "auto", backgroundColor: "rgba(200, 200, 200, 0.2)", position: "relative" }}>
+              {/* <img
+                  src={require("../../assets/images/water1.JPG")}
+                  // src={require("../../assets/images/arch4.jpg")}
                   alt={""}
                   style={{
-                      position: "relative",
+                      position: "absolute",
+                      overflow: "hidden",
                       textAlign: "center",
+                      // height: "calc(100vmax + 100vmax)",
                       height: "100vh",
                       width: "100vw",
-                      // height: "100vh",
-                      // width: "100vw",
                       top: 0,
                       bottom: 0,
                       left: 0,
                       right: 0,
                       margin: "auto",
-                      // overflow: "auto",
                       // objectFit: "fill",
                       // display: "inline-block",
-                      opacity: 1
+                      opacity: 1,
+                      // zIndex: 1
                   }}
-                /> */}
-                    <h1 style={{ color: "#333" }}>About</h1>
+              /> */}
+                    <br></br>
+                    <br></br>
+                    <h1 style={{ textAlign: "center", color: "#fff" }}>About</h1>
+                    <br></br>
                     <br></br>
                     <section 
                         style={{
@@ -279,17 +305,23 @@ class Landing extends Component {
                             margin: "auto",
                             // display: "block",
                             // opacity: 1
-                            backgroundColor: "rgba(200, 200, 200, 0.5)",
+                            // backgroundColor: "rgba(200, 200, 200, 1)",
+                            backgroundColor: "#777",
                             borderStyle: "groove",
                             borderWidth: "1px",
                             borderColor: "#999",
                             borderRadius: "8px",
                             padding: "10px",
-                            color: "#fff"
+                            color: "#fff",
+                            opacity: 0.9
                             }}
                     >
                         <p>I am a dedicated and collaborative Full-Stack Software Engineer with successful experience architecting, building and deploying projects on time and according to specifications. I enjoy the challenge of solving problems while collaborating with and learning from team members. Independently, I exercise continuous integration and automated testing.</p>
                     </section>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
                 </div>
 
                 {/* PROJECTS */}
@@ -301,16 +333,18 @@ class Landing extends Component {
                         width: "auto/9",
                         height: "auto",
                         margin: "auto",
-                        backgroundColor: "white"
-                        // backgroundImage: "radial-gradient(circle, #fcfcfc, #f3f1f4, #ede5ea, #e8d9dc, #e2cdcd)"
+                        backgroundColor: "#ddd"
+                        // backgroundColor: "rgba(100, 100, 100, 1)"
+                        // backgroundImage: "radial-gradient(circle, rgba(2,0,36,1) 3%, rgba(0,212,255,1) 31%, rgba(9,9,121,1) 74%)"
                     }}
                 >
-                    <img
-                        src={require("../../assets/images/arch4.jpg")}
+                  {/* <img
+                        src={require("../../assets/images/arch2.jpg")}
+                        // src={require("../../assets/images/arch4.jpg")}
                         alt={""}
                         style={{
                             position: "fixed",
-                            // overflow: "hidden",
+                            overflow: "hidden",
                             textAlign: "center",
                             // height: "calc(100vmax + 100vmax)",
                             height: "100vh",
@@ -321,10 +355,11 @@ class Landing extends Component {
                             right: 0,
                             margin: "auto",
                             // objectFit: "fill",
-                            display: "inline-block",
-                            opacity: 0.2
+                            // display: "inline-block",
+                            opacity: 1,
+                            zIndex: -10
                         }}
-                    />
+                    /> */}
                     <div style={{
                         // width:"100%",
                         position: "relative",
@@ -345,7 +380,7 @@ class Landing extends Component {
                         opacity: 1
                         }}
                     >
-                        <img
+                        {/* <img
                             // width={"42%"}
                             src={require("../../assets/images/favicon3.svg")}
                             alt={""}
@@ -366,10 +401,11 @@ class Landing extends Component {
                             }}
                         />
                         <br></br>
-                        <br></br>
+                        <br></br> */}
                         <br></br>
                         <br></br>
                         <h1>Projects</h1>
+                        <br></br>
                         <br></br>
                         <div style={{
                                 position: "relative",
@@ -410,7 +446,7 @@ class Landing extends Component {
                                     borderColor: "#999",
                                     borderRadius: "8px",
                                     padding: "10px",
-                                    backgroundColor: "rgba(200, 200, 200, 0.1)",
+                                    backgroundColor: "rgba(200, 200, 200, 0.8)",
                                     // backgroundColor: "rgba(181, 183, 183, 0.1)"
                                 }}
                             >
@@ -867,7 +903,7 @@ class Landing extends Component {
                                     borderColor: "#999",
                                     borderRadius: "8px",
                                     padding: "10px",
-                                    backgroundColor: "rgba(200, 200, 200, 0.1)",
+                                    backgroundColor: "rgba(200, 200, 200, 0.8)",
                                     // backgroundColor: "rgba(181, 183, 183, 0.1)"
                                     }}
                             >
@@ -922,6 +958,10 @@ class Landing extends Component {
                             <br></br>
                             <br></br>
                             <br></br> */}
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
                         </div>
                     </div>
                   </div>
@@ -937,9 +977,31 @@ class Landing extends Component {
                         height: "auto",
                         margin: "auto",
                         // backgroundImage: "radial-gradient(circle, #666666, #4c4c4c, #343434, #1d1d1d, #000000)"
-                        // backgroundColor: "RGBA(0,0,0,0.5)"
+                        backgroundColor: "rgba(200, 200, 200, 0)"
                     }}
                 >
+                    <img
+                        src={require("../../assets/images/paper_black.jpg")}
+                        // src={require("../../assets/images/arch4.jpg")}
+                        alt={""}
+                        style={{
+                            position: "absolute",
+                            overflow: "hidden",
+                            textAlign: "center",
+                            // height: "calc(100vmax + 100vmax)",
+                            height: "100%",
+                            width: "100%",
+                            top: 0,
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            margin: "auto",
+                            // objectFit: "fill",
+                            // display: "inline-block",
+                            opacity: 1,
+                            // zIndex: 1
+                        }}
+                    />
                     <div style={{
                         // width:"100%",
                         position: "relative",
