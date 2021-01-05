@@ -6,7 +6,7 @@
   "author": "Ruslan Pantaev",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.2.1",
     "normalize.css": "^8.0.1",
     "react": "^16.7.0",
